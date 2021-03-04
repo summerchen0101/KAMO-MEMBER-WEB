@@ -1,0 +1,297 @@
+.btnbase {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    outline: none;
+
+    &:hover,
+    &:focus {
+        outline: none;
+    }
+}
+
+.primary_btn {
+    background: $primary-gradient;
+    color: #fff;
+    line-height: 45px;
+    // padding: .85rem .75rem;
+    border-radius: 4px;
+    border: 1px solid $main-color;
+    box-shadow: rgb(80, 243, 243) 0px 1px 0px 0px inset;
+    transition: color .15s ease-in-out;
+
+    &:hover {
+        color: #fff;
+        background: lighten($main-color, 5%);
+    }
+
+    &:disabled {
+        background: linear-gradient(rgb(185, 185, 185), rgb(170, 170, 170));
+        color: #fff;
+        border: 1px solid $border-color;
+        cursor: default !important;
+        box-shadow: none;
+
+        &:hover {
+            color: #fff;
+            background: linear-gradient(rgb(144, 144, 144), rgb(124, 124, 124));
+        }
+    }
+}
+
+
+.outline_btn {
+    background: transparent;
+    // padding: .85rem .75rem;
+    line-height: 45px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.outline_btn.color-gray {
+    color: $second-text-color;
+    border: 1px solid $border-color;
+
+    &:hover {
+        color: $main-color;
+        border: 1px solid $main-color;
+    }
+}
+
+.outline_btn.color-blue {
+    border: 1px solid $main-color;
+    color: $main-color;
+
+    &:hover {
+        background: $main-color;
+        color: #fff;
+    }
+
+    &.active {
+        color: #00CDFF;
+        border: 1px solid #00CDFF;
+    }
+}
+
+.forget_pwd {
+    color: $second-text-color;
+    padding: .85rem .75rem;
+
+    &:hover {
+        color: lighten($main-color, 20%);
+    }
+}
+
+.sec_btn {
+    min-width: 55px;
+    font-size: .9rem;
+    text-align: center;
+    outline: none;
+    padding: .425rem .7rem;
+    margin: 0 .4rem;
+    cursor: pointer;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.sec_btn.outline {
+    background: transparent;
+    color: $main-color;
+    border: 1px solid $border-color;
+
+    &:hover,
+    &:focus {
+        color: #fff;
+        border: 1px solid $main-color;
+        background: lighten($main-color, 10%);
+        outline: 0;
+    }
+}
+
+.sec_btn.color-blue {
+    background: $primary-gradient;
+    color: #fff;
+    border: 1px solid $main-color;
+    box-shadow: rgb(80, 243, 243) 0px 1px 0px 0px inset;
+    ;
+
+    &:hover {
+        background: lighten($main-color, 10%);
+        outline: 0;
+    }
+}
+
+.sec_btn.color-yellow {
+    background: linear-gradient(#f7c049 0%, $yellow-color 100%);
+    color: #fff;
+    border: 1px solid $yellow-color;
+    box-shadow: #ffd67c 0px 1px 0px 0px inset;
+    ;
+
+    &:hover {
+        background: lighten($yellow-color, 10%);
+        outline: 0;
+    }
+}
+
+.sec_btn.color-green {
+    background: linear-gradient(#58dc51 0%, $green-color 100%);
+    color: #fff;
+    border: 1px solid $green-color;
+    box-shadow: #60ea59 0px 1px 0px 0px inset;
+    ;
+
+    &:hover {
+        background: lighten($green-color, 10%);
+        outline: 0;
+    }
+}
+
+.sec_btn.color-red {
+    background: linear-gradient(#ff736c 0%, $red-color 100%);
+    color: #fff;
+    border: 1px solid $red-color;
+    box-shadow: #ffa19c 0px 1px 0px 0px inset;
+    ;
+
+    &:hover {
+        background: lighten($red-color, 10%);
+        outline: 0;
+    }
+}
+
+.title-bar-btn {
+    background: $primary-gradient;
+    border: 1px solid $main-color;
+    box-shadow: rgb(80, 243, 243) 0px 1px 0px 0px inset;
+    line-height: 1.3rem;
+    border-radius: 1.5rem;
+    padding: .25rem .75rem;
+    @include flex(row, flex-start, center);
+    color: #fff;
+
+    &:hover {
+        background: lighten($main-color, 5%);
+    }
+}
+
+.icon-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: 0;
+
+    .iconfont {
+        font-size: 16px;
+        width: 20px;
+        line-height: 20px;
+        margin-right: 4px;
+        text-align: center;
+        display: block;
+    }
+
+    .reload.spin-animation {
+        @include animation(spin, 0.5s, ease-in);
+    }
+
+    &:hover {
+        outline: 0 !important;
+        border: none;
+    }
+}
+
+.mini_btn {
+    padding: .3rem 0.8rem;
+    text-align: center;
+    min-width: 60px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    display: inline-block;
+    background: $primary-gradient;
+    border: 1px solid $main-color;
+    box-shadow: rgb(80, 243, 243) 0px 1px 0px 0px inset;
+    ;
+    color: #fff;
+    cursor: pointer;
+    outline: 0;
+
+    &:hover {
+        background: lighten($main-color, 10%);
+    }
+}
+
+.status-tab {
+    display: flex;
+    border-width: 1px 0px 1px 1px;
+    border-style: solid;
+    border-color: $border-color;
+    border-radius: 4px;
+    background: linear-gradient(to top, #edf1f4, #fdfffe);
+    overflow: hidden;
+}
+
+.status-switch {
+    box-sizing: border-box;
+    color: $base-text;
+    cursor: pointer;
+    min-width: 70px;
+    width: 100%;
+    line-height: 37px;
+    padding: 0 10px;
+    text-align: center;
+    display: inline-block;
+    border-right: 1px solid $border-color;
+    font-size: 15px;
+
+    // &:last-of-type{
+    //     border-right: none;
+    // }
+    &:hover,
+    &:active,
+    &.active {
+        color: #fff;
+        background: $primary-gradient;
+        border-right: 1px solid $main-color;
+        box-shadow: rgb(80, 243, 243) 0px 1px 0px 0px inset;
+        ;
+    }
+}
+
+.status-btn {
+    background: $primary-gradient;
+    border-radius: 4px;
+    min-width: 70px;
+    min-height: 39px;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid $main-color;
+    box-shadow: rgb(80, 243, 243) 0px 1px 0px 0px inset;
+    ;
+
+    &:hover {
+        color: #fff;
+        background: lighten($main-color, 10%);
+    }
+
+}

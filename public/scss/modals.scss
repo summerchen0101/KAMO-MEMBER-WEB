@@ -1,0 +1,134 @@
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 99;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    // overflow: auto;
+    overflow: hidden;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black w/ opacity */
+    // padding-top: 60px;
+
+}
+
+/* Fix body scroll */
+.modal-open {
+    position: fixed;
+    height: 100%;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.97);
+    margin: 5% auto 15% auto;
+    border-radius: 5px;
+    overflow: hidden;
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid $border-color;
+    // padding: 2rem;
+    width: 25%;
+    min-height: 235px;
+    /* Could be more or less, depending on screen size */
+    min-width: 400px;
+}
+
+.modal-top {
+    text-align: center;
+    position: relative;
+    padding: 1.5rem 2rem 1rem 2rem;
+
+    .main-title {
+        font-size: 1.6rem;
+        // &::after {
+        //     display: none;
+        // }
+    }
+}
+
+/* The Close Button (x) */
+.close-btn {
+    position: absolute;
+    z-index: 11;
+    right: 1rem;
+    top: 1rem;
+    color: $base-text;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: $inputbg;
+    border-radius: 50%;
+    @include flex(row, center, center);
+    transition: all .15s ease;
+    border: 1px solid $border-color;
+    &::before {
+        content: '\00D7';
+        font-size: 28px;
+        font-weight: normal;
+        color: $second-text-color;
+        position: relative;
+        bottom: 2px;
+
+    }
+    &:hover, &:focus{
+        background: $main-color;
+        border: 1px solid $main-color;
+    }
+    &:hover::before,
+    &:focus::before {
+        color: #fff;
+    }
+}
+
+.modal-main {
+    padding: 2rem;
+
+    .descript {
+        font-size: 15px;
+        margin-bottom: .5rem;
+        line-height: 1.5rem;
+    }
+
+    small {
+        font-size: 14px;
+        line-height: 1.5rem;
+    }
+
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.35s;
+    animation: animatezoom 0.35s;
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0.1)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0.1)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}

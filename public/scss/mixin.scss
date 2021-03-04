@@ -1,0 +1,62 @@
+//共用函式
+@mixin shape($width, $height, $bg, $radius) {
+    width: $width;
+    height: $height;
+    background: $bg;
+    border-radius: $radius;
+}
+
+@mixin flex($direction, $arrangePrimary, $arrangeVice) {
+    display: flex;
+    flex-direction: $direction; //row | row-reverse | column | column-reverse;
+    justify-content: $arrangePrimary; //flex-start|flex-end|center|space-between|space-around|initial|inherit;
+    align-items: $arrangeVice; //flex-start | flex-end | center | baseline | stretch;
+}
+@mixin list-item{
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+  }
+  @mixin  box-shadow {
+    box-shadow: 0px 0px 8px #0000000F;
+  }
+  @mixin ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  // icon reload animation
+@mixin animation-name($name){
+  animation-name: $name;
+  -webkit-animation-name: $name;
+  -moz-animation-name: $name;
+  -ms-animation-name: $name;
+}
+
+@mixin animation-duration($duration){
+  animation-duration: $duration;
+  -webkit-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -ms-animation-duration: $duration;
+}
+
+@mixin animation-timing-function($func){
+  animation-timing-function: $func;
+  -webkit-animation-timing-function: $func;
+  -moz-animation-timing-function: $func;
+  -ms-animation-timing-function: $func;
+}
+
+@mixin animation($name, $duration, $timing-func){
+  @include animation-name($name);
+  @include animation-duration($duration);
+  @include animation-timing-function($timing-func);
+}
+
+@keyframes spin{
+  to { transform: rotate(360deg) }
+}
