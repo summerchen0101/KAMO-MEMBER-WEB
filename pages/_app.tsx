@@ -8,8 +8,10 @@ import theme from '@/lib/theme'
 import PopupProvider from '@/context/PopupContext'
 import PaginationProvider from '@/context/PaginationProvider'
 import MetaHead from '@/components/MetaHead'
-import 'swiper/swiper-bundle.css'
-import '@/style/global.scss'
+import 'swiper/swiper.scss'
+import 'swiper/components/navigation/navigation.scss'
+import 'swiper/components/pagination/pagination.scss'
+import 'swiper/components/scrollbar/scrollbar.scss'
 
 const MyApp = ({ Component, props }) => {
   return (

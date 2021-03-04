@@ -1,7 +1,10 @@
 import moment from 'moment'
 import $ from 'jquery'
+import { useToast } from '@chakra-ui/toast'
 
 const useHelper = () => {
+  const toast = useToast()
+
   function getBase64(file) {
     return new Promise<string>((resolve, reject) => {
       const reader = new FileReader()
@@ -11,20 +14,11 @@ const useHelper = () => {
   }
 
   const copyToClipboard = (text) => {
-    const input = document.body.appendChild(document.createElement('input'))
-    input.value = text
-    input.focus()
-    input.select()
-    document.execCommand('copy')
-    input.parentNode.removeChild(input)
+    navigator.clipboard.writeText(text)
+    toast({ status: 'success', title: '已複製至剪貼簿' })
   }
 
-  const closeBottomPopup = () => {
-    $('.mask').fadeOut()
-    $('.slide-up-section').removeClass('slide-up')
-  }
-
-  return { getBase64, copyToClipboard, closeBottomPopup }
+  return { getBase64, copyToClipboard }
 }
 
 export default useHelper

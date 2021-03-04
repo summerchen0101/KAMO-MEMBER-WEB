@@ -6,7 +6,7 @@
     left: 0;
     right: 0;
     z-index: 10;
-    box-shadow: 0 3px 9px 0 rgba(0,0,0,.08);
+    box-shadow: 0 3px 9px 0 rgba(0, 0, 0, .08);
 }
 
 .header {
@@ -23,35 +23,10 @@
         .left {
             width: 65%;
             opacity: .9;
-            padding-left: .5rem;
             @include flex(row, flex-start, center);
 
-            .time {
-                color: #fff;
-                font-size: .9rem;
-                width: 37%;
-            }
-
-            .noti {
-                width: 63%;
-                @include flex(row, space-between, center);
-
-                .iconfont {
-                    color: #fff;
-                    font-size: 18px;
-                }
-
-                marquee {
-                    color: #fff;
-                    display: block;
-                    width: 100%;
-                    margin: 0 1rem;
-                    font-size: .9rem;
-
-                }
-            }
-
         }
+
         .right {
             @include flex(row, flex-end, center);
             width: 35%;
@@ -104,27 +79,22 @@
                 background-color: $main-color !important;
             }
 
-            .message-box {
-                width: 23px;
-                height: 23px;
-                position: relative;
-                bottom: -1px;
+            // .message-box {
+            //     width: 23px;
+            //     height: 23px;
+            //     position: relative;
+            //     bottom: -1px;
 
-                .red-dot {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    width: 8px;
-                    height: 8px;
-                    background: $red-color;
-                    border-radius: 50%;
-                }
-            }
-
-            .iconfont.mail {
-                font-size: 22px;
-                color: #fff;
-            }
+            //     .red-dot {
+            //         position: absolute;
+            //         top: 0;
+            //         right: 0;
+            //         width: 8px;
+            //         height: 8px;
+            //         background: $red-color;
+            //         border-radius: 50%;
+            //     }
+            // }
 
             .name {
                 color: #fff;
@@ -139,14 +109,14 @@
                 color: #fff;
                 padding-left: 10px;
                 margin-right: 8px;
-                border-left: 1px solid rgba(255, 255, 255, .4);
+                // border-left: 1px solid rgba(255, 255, 255, .4);
             }
         }
     }
 }
 
 .nav {
-    background: linear-gradient(180deg, rgba(0,220,255,1) 0%, rgba(0,194,255,1) 100%);
+    background: linear-gradient(180deg, rgba(0, 220, 255, 1) 0%, rgba(0, 194, 255, 1) 100%);
     width: 100%;
     height: 70px;
 
@@ -213,6 +183,49 @@
             }
         }
     }
+}
+
+
+.marquee-box {
+    overflow: hidden;
+    position: relative;
+}
+
+
+.marquee-box p {
+    position: absolute;
+    white-space: nowrap;
+    animation: marquee 10s linear infinite;
+    padding: 0;
+    margin: 0;
+}
+
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.page-link {
+    color: $main-color;
+
+    &:hover {
+        color: #999
+    }
+}
+
+.page-item.active .page-link {
+    border-color: $main-color;
+    background-color: $main-color;
+}
+
+.page-item.disabled .page-link {
+    color: $second-text-color
 }
 
 // nav side

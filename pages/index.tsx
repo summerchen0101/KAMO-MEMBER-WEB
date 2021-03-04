@@ -1,5 +1,5 @@
 import useRequest from '@/utils/useRequest'
-import { Center, Spinner } from '@chakra-ui/react'
+import { Center } from '@chakra-ui/react'
 import { useRouter } from 'next/dist/client/router'
 import React, { useEffect } from 'react'
 
@@ -17,7 +17,7 @@ const IndexPage = () => {
   }, [])
   return (
     <Center h="100vh" bg="gray.100">
-      <Spinner size="xl" color="gray.400" thickness="4px" />
+      {/* <Spinner size="xl" color="gray.400" thickness="4px" /> */}
     </Center>
   )
 }

@@ -39,17 +39,20 @@ import {
   BetRecordSummary,
   UserContact,
   EditUserInfoRequest,
+  MemberBankOption,
 } from '@/lib/types'
 import { useGlobalProvider } from '@/context/GlobalProvider'
 import { useToast } from '@chakra-ui/toast'
+import { useLoaderProvider } from '@/context/LoaderProvider'
 
 const useRequest = () => {
   const router = useRouter()
   const { token } = useGlobalProvider()
+  const { loadingStart, loadingEnd } = useLoaderProvider()
   const config: AxiosRequestConfig = {
     withCredentials: true,
     baseURL: process.env.apiBaseUrl,
-    validateStatus: (status) => {
+    validateStatus: function (status) {
       return true
     },
     headers: {
@@ -58,13 +61,18 @@ const useRequest = () => {
   }
   const AxiosInstance = Axios.create(config)
   const toast = useToast()
+  AxiosInstance.interceptors.request.use((req) => {
+    loadingStart()
+    return req
+  })
   AxiosInstance.interceptors.response.use((res) => {
+    loadingEnd()
     let errorMsg = ''
     if (res.data.code) {
       errorMsg = errCodes[res.data.code] || `錯誤代碼 ${res.data.code}`
     } else if (res.status === 401) {
       router.push('/login')
-      errorMsg = httpStatus[401]
+      // errorMsg = httpStatus[401]
     } else if (res.status === 500) {
       errorMsg = '系統錯誤'
     } else if (res.data.error) {
@@ -106,6 +114,8 @@ const useRequest = () => {
       perpage: 100,
       ...req,
     })
+  const applyActivity = (activity_id: number) =>
+    post<null>('activity_rec/add', { activity_id })
 
   const getActivityDetail = (id: number) =>
     get<ActivityDetail>(`activity/view/${id}`)
@@ -156,7 +166,7 @@ const useRequest = () => {
     })
 
   const getMemberBankOptions = () =>
-    post<BaseListResponse<OptionBasic>>('member_bank/options', {
+    post<BaseListResponse<MemberBankOption>>('member_bank/options', {
       page: 1,
       perpage: 100,
     })
@@ -186,7 +196,7 @@ const useRequest = () => {
     post<null>('withdraw_rec/add', req)
 
   /**
-   * 盤口
+   * 賽事盤口
    */
   const getHandicapList = (req?: DateRangeListRequest) =>
     post<BaseListResponse<Handicap>>('handicap/list', {
@@ -194,6 +204,7 @@ const useRequest = () => {
       perpage: 100,
       ...req,
     })
+  const getHotHandicaps = () => post<BaseListResponse<Handicap>>('handicap/hot')
 
   const getHandicapDetail = (id: number) => get<Handicap>(`handicap/view/${id}`)
 
@@ -283,12 +294,14 @@ const useRequest = () => {
     createWithdraw,
     getNewsList,
     getNewsDetail,
+    applyActivity,
     getActivityList,
     getActivityDetail,
     getMarqueeList,
     getBannerList,
     getHandicapDetail,
     getHandicapList,
+    getHotHandicaps,
     getScoreList,
     getOddsList,
     getFaqList,

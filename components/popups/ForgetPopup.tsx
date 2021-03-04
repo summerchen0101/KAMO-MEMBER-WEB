@@ -28,32 +28,6 @@ type LoginFormData = {
 
 function ForgetPopup() {
   const [visible, setVisible] = usePopupContext('forgetPw')
-  const { token, setToken } = useGlobalProvider()
-  const API = useRequest()
-  const { copyToClipboard } = useHelper()
-  const [captchaImg, setCaptchaImg] = useState('')
-  const { register, handleSubmit, errors, getValues } = useForm<LoginFormData>()
-  const onSubmit = handleSubmit(async (d) => {
-    try {
-      const res = await API.login({
-        acc: d.acc,
-        pass: d.pass,
-        code: d.code,
-        token,
-      })
-      setToken(res.data.token)
-    } catch (err) {}
-  })
-  const fetchCaptcha = async () => {
-    try {
-      const res = await API.getCaptcha()
-      setCaptchaImg(res.data.img)
-      setToken(res.data.token)
-    } catch (err) {}
-  }
-  useEffect(() => {
-    fetchCaptcha()
-  }, [])
   return (
     <Modal isOpen={visible} onClose={() => setVisible(false)}>
       <ModalOverlay />

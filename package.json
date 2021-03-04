@@ -1,8 +1,8 @@
 {
-  "name": "ncs-member-mobile",
+  "name": "kamo-member-web",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3377",
     "build": "next build",
     "start": "next start",
     "post-update": "yarn upgrade --latest",

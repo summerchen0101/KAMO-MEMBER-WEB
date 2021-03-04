@@ -31,3 +31,8 @@ export enum GameStatus {
   Canceled = 5,
   Postpone = 6,
 }
+export enum Payway {
+  Bankcard = 1,
+  ATM = 2,
+  CVS = 3,
+}

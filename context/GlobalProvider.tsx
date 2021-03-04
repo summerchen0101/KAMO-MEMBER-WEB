@@ -1,5 +1,12 @@
 import React, { createContext, useContext, useMemo, useState } from 'react'
-import { Handicap, Odds, UserContact, UserInfo } from '@/lib/types'
+import {
+  Handicap,
+  MemberBank,
+  MemberBankOption,
+  Odds,
+  UserContact,
+  UserInfo,
+} from '@/lib/types'
 import useStorage from '@/utils/useStorage'
 import useTransfer from '@/utils/useTransfer'
 
@@ -14,22 +21,23 @@ type ContextState = {
   setBettingInfo: React.Dispatch<React.SetStateAction<Odds>>
   eventInfo: Handicap
   setEventInfo: React.Dispatch<React.SetStateAction<Handicap>>
-  userBalance: string
+  bankcardOpts: MemberBankOption[]
+  setBankcardOpts: React.Dispatch<React.SetStateAction<MemberBankOption[]>>
+  bankcards: MemberBank[]
+  setBankcards: React.Dispatch<React.SetStateAction<MemberBank[]>>
 }
 
 const GlobalContext = createContext<ContextState>(null)
 
 const GlobalProvider: React.FC = ({ children }) => {
   const [user, setUser] = useState<UserInfo>(null)
+  const [bankcardOpts, setBankcardOpts] = useState<MemberBankOption[]>([])
+  const [bankcards, setBankcards] = useState<MemberBank[]>([])
   const [userContact, setUserContact] = useState<UserContact>(null)
   const [token, setToken] = useStorage<string>('token', '')
   const [bettingInfo, setBettingInfo] = useState<Odds>(null)
   const [eventInfo, setEventInfo] = useStorage<Handicap>('event', null)
   const { toCurrency } = useTransfer()
-  const userBalance = useMemo(
-    () => (user?.balance ? toCurrency(user?.balance) : '0'),
-    [user],
-  )
   return (
     <GlobalContext.Provider
       value={{
@@ -43,7 +51,10 @@ const GlobalProvider: React.FC = ({ children }) => {
         setBettingInfo,
         eventInfo,
         setEventInfo,
-        userBalance,
+        bankcardOpts,
+        setBankcardOpts,
+        bankcards,
+        setBankcards,
       }}
     >
       {children}

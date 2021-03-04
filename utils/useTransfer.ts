@@ -11,10 +11,13 @@ const useTransfer = () => {
   const isBeforeDay = (unixTime: number) =>
     moment(unixTime * 1000).isBefore(moment(), 'day')
 
-  const toCurrency = (num: number) => numeral(num).format('0,0')
+  const toCurrency = (num: number, decimal?: number) =>
+    numeral(num).format(
+      decimal ? `0,0.${Array(decimal).fill('0').join('')}` : '0,0',
+    )
 
-  const toOptionName = function (
-    options: OptionType[],
+  const toOptionName = function <T extends string | number>(
+    options: OptionType<T>[],
     code: number | string,
   ): string {
     return options.find((t) => t.value === code)?.label
@@ -67,8 +70,9 @@ const useTransfer = () => {
   }, [])
 
   const amountToCanWin = useCallback((amount, odds) => {
+    // 手續費5%
     if (amount && odds) {
-      return numeral(amount).multiply(odds).value()
+      return numeral(amount).multiply(odds).multiply(0.95).value()
     }
     return 0
   }, [])

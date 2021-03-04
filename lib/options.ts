@@ -2,6 +2,7 @@ import {
   AccountingStatus,
   GameStatus,
   NewsType,
+  Payway,
   ProcessStatus,
   Section,
 } from './enums'
@@ -64,4 +65,10 @@ export const gameStatusOpts = [
   { label: '待定', value: GameStatus.Determining },
   { label: '取消', value: GameStatus.Canceled },
   { label: '延期', value: GameStatus.Postpone },
+]
+
+export const paywayOpts = [
+  { label: '银行卡转卡', value: Payway.Bankcard },
+  { label: 'ATM充值', value: Payway.ATM },
+  { label: '超商代码', value: Payway.CVS },
 ]

@@ -46,17 +46,24 @@ function login() {
     fetchCaptcha()
   }, [])
   return (
-    <Center w="100vw" h="100vh" bgColor="brand.500">
+    <Center w="100vw" h="100vh" bgColor="" className="login-bg">
       <Box>
-        <Box className="lang-select">
-          <Image className="flag" src="/images/lang_cn.png" m="auto" />
-        </Box>
+        {/* <Box className="lang-select">
+          <Image className="flag" src="/img/lang_cn.png" m="auto" />
+        </Box> */}
         <Box mb="20px">
           <Image src="/img/logo.png" m="auto" />
         </Box>
-        <Box borderRadius="md" bg="#fff" p="20px" as="form" onSubmit={onSubmit}>
-          {/* <div className="form-title">欢迎登入</div> */}
+        <Box
+          className="form-wrap"
+          p="32px 32px 0 32px"
+          as="form"
+          onSubmit={onSubmit}
+        >
           <Box className="form-group">
+            <Box className="main-title center" mb="32px">
+              欢迎登入
+            </Box>
             <input
               type="text"
               className="form-input account-input"
@@ -101,7 +108,7 @@ function login() {
             <span className="checkmark" />
             <p className="ft-15 text-lighgray">记忆帐密</p>
           </label> */}
-          <button type="submit" className="btnbase primary_btn mt-4 mb-2">
+          <button type="submit" className="btnbase primary_btn mt-4 mb-3">
             登入
           </button>
           <button

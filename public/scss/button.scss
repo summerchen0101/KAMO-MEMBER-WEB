@@ -21,7 +21,7 @@
 .primary_btn {
     background: $primary-gradient;
     color: #fff;
-    line-height: 45px;
+    line-height: 43px;
     // padding: .85rem .75rem;
     border-radius: 4px;
     border: 1px solid $main-color;
@@ -46,7 +46,6 @@
         }
     }
 }
-
 
 .outline_btn {
     background: transparent;
@@ -87,7 +86,16 @@
 .forget_pwd {
     color: $second-text-color;
     padding: .85rem .75rem;
-
+    position: relative;
+    &::before{
+        position: absolute;
+        content: '';
+        height: 1px;
+        top: 0;
+        left: -32px;
+        right: -32px;
+        background-color: $border-color;
+    }
     &:hover {
         color: lighten($main-color, 20%);
     }

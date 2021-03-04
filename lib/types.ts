@@ -38,9 +38,9 @@ export interface CheckLoginResponseData {
   member: Member
 }
 
-export type OptionType = {
+export type OptionType<T> = {
   label: string
-  value: string | number
+  value: T
 }
 export type OptionBasic = {
   id: number
@@ -71,6 +71,8 @@ export interface NewsDetail {
 export interface Activity {
   id: number
   title: string
+  content: string
+  content_mobile: string
   img: string
   img_mobile: string
   start_at: number
@@ -143,30 +145,22 @@ export interface WithdrawCreateRequest {
   sec_pass: string
 }
 
+export interface TeamInfo {
+  id: number
+  league_id: number
+  league_name: string
+  name: string
+  name_en: string
+}
+
 export interface Handicap {
-  bet_amount_limit: number
+  single_game_limit: number
   bet_sum: number
   game_code: string
   id: number
-  league: {
-    game_code: string
-    group_code: string
-    id: number
-    name: string
-  }
   play_at: number
-  team_away: {
-    id: number
-    league_id: number
-    name: string
-    name_en: string
-  }
-  team_home: {
-    id: number
-    league_id: number
-    name: string
-    name_en: string
-  }
+  team_away: TeamInfo
+  team_home: TeamInfo
 }
 
 export interface BetRecordSummary {
@@ -187,25 +181,9 @@ export interface BetRecord {
   game_code: string
   handicap: {
     id: number
-    league: {
-      game_code: string
-      group_code: string
-      id: number
-      name: string
-    }
     play_at: number
-    team_away: {
-      id: number
-      league_id: number
-      name: string
-      name_en: string
-    }
-    team_home: {
-      id: number
-      league_id: number
-      name: string
-      name_en: string
-    }
+    team_away: TeamInfo
+    team_home: TeamInfo
   }
   home_percent: number
   home_point: number
@@ -214,6 +192,9 @@ export interface BetRecord {
   rebate: number
   result: number
   section_code: string
+  bet_type: string
+  sn: string
+  valid_amount: number
 }
 
 export interface BetCreateRequest {
@@ -226,7 +207,7 @@ export interface Odds {
   id: number
   away_percent: number
   away_point: number
-  bet_amount_limit: number
+  single_game_limit: number
   bet_sum: number
   game_code: string
   home_percent: number
@@ -274,6 +255,14 @@ export interface MemberBank {
   name: string
   person: string
   updated_at: number
+}
+
+export interface MemberBankOption {
+  acc: string
+  branch: string
+  id: number
+  name: string
+  person: string
 }
 
 export interface MemberBankCreateRequest {

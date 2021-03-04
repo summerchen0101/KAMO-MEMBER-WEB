@@ -8,6 +8,8 @@ import {
   DateRangeListRequest,
   Handicap,
   Marquee,
+  MemberBank,
+  MemberBankOption,
   OptionBasic,
   Score,
   UserContact,
@@ -20,18 +22,32 @@ const useService = () => {
   const [banners, setBanners] = useState<Banner[]>([])
   const [handicaps, setHandicaps] = useState<Handicap[]>([])
   const [scores, setScores] = useState<Score[]>([])
-  const [bankCardOpts, setBankCardOpts] = useState<OptionBasic[]>([])
+
   const toast = useToast()
   const { loadingStart, loadingEnd } = useLoaderProvider()
   const API = useRequest()
   const router = useRouter()
-  const { setUser, setUserContact } = useGlobalProvider()
+  const {
+    setUser,
+    setUserContact,
+    setBankcardOpts,
+    setBankcards,
+  } = useGlobalProvider()
   const { setTotalCount, setTotalPages, setPage } = usePaginationContext()
+
+  const applyActivity = async (id: number) => {
+    loadingStart()
+    try {
+      await API.applyActivity(id)
+      toast({ status: 'success', title: '申請已送出' })
+    } catch (err) {}
+    loadingEnd()
+  }
 
   const fetchBankCardOpts = async () => {
     try {
       const res = await API.getMemberBankOptions()
-      setBankCardOpts(res.data.list)
+      setBankcardOpts(res.data.list)
     } catch (err) {}
   }
   const handleSendPhoneCode = async (acc: string) => {
@@ -83,6 +99,15 @@ const useService = () => {
     } catch (err) {}
   }, [])
 
+  const fetchMemberBankList = async () => {
+    loadingStart()
+    try {
+      const res = await API.getMemberBankList()
+      setBankcards(res.data.list)
+    } catch (err) {}
+    loadingEnd()
+  }
+
   const fetchHandicaps = useCallback(async (req?: DateRangeListRequest) => {
     loadingStart()
     try {
@@ -113,7 +138,8 @@ const useService = () => {
     fetchScores,
     fetchUserContact,
     fetchBankCardOpts,
-    bankCardOpts,
+    fetchMemberBankList,
+    applyActivity,
     banners,
     marquee,
     handicaps,
