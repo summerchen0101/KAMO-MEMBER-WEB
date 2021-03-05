@@ -26,6 +26,10 @@
         "no-use-before-define": "warn",
         "react/prop-types": "off",
         "camelcase": "off",
-        "no-unused-vars": "warn"
+        "no-unused-vars": "warn",
+        "react/display-name": "off"
+    },
+    "globals": {
+        "JSX": "readonly"
     }
 }
