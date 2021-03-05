@@ -71,7 +71,7 @@ const useRequest = () => {
     if (res.data.code) {
       errorMsg = errCodes[res.data.code] || `錯誤代碼 ${res.data.code}`
     } else if (res.status === 401) {
-      router.push('/login')
+      // router.push('/login')
       // errorMsg = httpStatus[401]
     } else if (res.status === 500) {
       errorMsg = '系統錯誤'
@@ -79,7 +79,7 @@ const useRequest = () => {
       errorMsg = '操作錯誤'
     }
     if (errorMsg) {
-      toast({ status: 'error', title: errorMsg })
+      // toast({ status: 'error', title: errorMsg })
       throw new Error(errorMsg)
     }
     return res.data
