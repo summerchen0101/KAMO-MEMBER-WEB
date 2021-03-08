@@ -57,14 +57,14 @@ const Home: React.FC = () => {
   }, [])
   return (
     <Dashboard>
-      <main className="main">
+      <main className="main ">
         {/* 轮播 */}
         <CarouselBanner banners={banners} />
         {/* 公告 */}
         <Marquee msgs={marquee} />
         {/* APP下载 */}
-        <Stack display="flex" className="appDownload-container">
-          <Center w="full" className="laout" m="45px auto 45px auto">
+        <Stack display="flex" className="appDownload-container laout">
+          <Center w="full" m="45px auto 45px auto">
             <Image src="/img/title-appDownload.png" w="411px" h="73px"></Image>
           </Center>
           <Center w="full">
@@ -117,10 +117,10 @@ const Home: React.FC = () => {
         </Stack>
         {/* 服务与优势 */}
         <Stack w="100%" className="service-container laout">
-          <Center w="full" className="laout" m="35px auto 55px auto">
+          <Center w="full" m="35px auto 55px auto">
             <Image src="/img/title-service.png" w="411px" h="73px"></Image>
           </Center>
-          <Flex w="full" className="service-wrap ">
+          <Box className="service-wrap ">
             <Box className="service-itemBox">
               <Image src="/img/home-service01.png" w="140px" h="140px"></Image>
               <Box className="service-content">
@@ -157,7 +157,7 @@ const Home: React.FC = () => {
                 </Text>
               </Box>
             </Box>
-          </Flex>
+          </Box>
         </Stack>
       </main>
       <Footer />

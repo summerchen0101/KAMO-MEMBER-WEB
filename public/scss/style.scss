@@ -403,6 +403,7 @@ body {
 }
 
 .appDownload-container {
+    position: relative;
     .appDownload-leftbox {
         width: 710px;
         max-width: 710px !important;
@@ -472,8 +473,7 @@ body {
 }
 
 .service-wrap {
-    flex-wrap: wrap;
-
+    width: 1200px;
     .service-itemBox {
         float: left;
         position: relative;

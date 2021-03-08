@@ -2002,6 +2002,10 @@ body {
   }
 }
 
+.appDownload-container {
+  position: relative;
+}
+
 .appDownload-container .appDownload-leftbox {
   width: 710px;
   max-width: 710px !important;
@@ -2071,8 +2075,7 @@ body {
 }
 
 .service-wrap {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  width: 1200px;
 }
 
 .service-wrap .service-itemBox {
