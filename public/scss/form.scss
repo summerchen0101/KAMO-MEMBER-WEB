@@ -22,152 +22,44 @@
     }
 }
 
-// 充值 下注列表
-.method-btn-wrap {
-    display: flex;
-    flex-wrap: wrap;
 
-    .trans-input[placeholder] {
-        color: $second-text-color;
-    }
-
-    .trans-input {
-        &:focus {
-            box-shadow: 0 0 0 4px #00cdff21 inset;
-        }
-    }
-
-    &>div,
-    &>.trans-input {
-        text-align: center;
-        cursor: pointer;
-        font-size: $base-size;
-        width: calc((100% - (10px * 3)) / 4);
-        margin-right: 10px;
-        max-height: 45px;
-        margin-bottom: 15px;
-
-        &.flex2 {
-            flex: 2;
-            margin-right: 0;
-        }
-
-        &:nth-child(4),
-        &:nth-child(8) {
-            margin-right: 0;
-        }
-
-        &:active,
-        &:hover,
-        &:focus,
-        &.active {
-            border-color: $main-color;
-            color: $main-color;
-            outline: 0;
-        }
-
-    }
-
-    .method-input {
-        width: 100%;
-        height: 45px;
-        padding: 15px;
-        font-size: 1rem;
-        color: $base-text;
-        border: 1px solid $border-color;
-        margin-bottom: 10px;
-        outline: none;
-        -webkit-appearance: none;
-
-        &::placeholder {
-            color: $second-text-color;
-        }
-
-        &:first-of-type {
-            background: transparent;
-            border-radius: 3px 0 0 3px;
-        }
-
-        &:last-of-type {
-            background: $inputbg;
-            border-left: none;
-            border-radius: 0 3px 3px 0;
-        }
-    }
-}
-
-.form-group {
+.formGroup {
+    width: 100%;
     position: relative;
-    margin-bottom: 10px;
-    clear: both;
 
-    .form-select {
-        width: 100%;
-        line-height: 43px;
-        padding: 0 15px;
-        font-size: 16px;
-        border: 1px solid $border-color;
-        color: $base-text;
-        border-radius: 3px;
-        outline: none;
-        position: relative;
-        cursor: pointer;
-        appearance: none;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        background: url(../img/btn_select.png) no-repeat scroll transparent;
-        background-position: right 15px center;
-        background-color: #fff;
+    .formInputGroup {
+        line-height: 40px;
+        height: 40px;
+        box-shadow: inset 0 1px 15px 0 #fff;
+        // border: 1px solid #fff;
+        background-color: hsla(0,0%,100%,.5);
+        @include border-radius(20px);
+        @include flex(row,center,center);
+        overflow: hidden;
+        .iconfont{
+            width: 25px;
+            height: 25px;
+            color: $primary-color;
+            @include flex(row,center,center);
+            @include border-radius(50%);
+            background-color: rgba(255, 255, 255, .7);
+            margin: 0 10px 0 8px;
 
-        &:disabled {
-            background-color: $inputbg;
-            border-color: $inputbg;
-            cursor: default;
         }
+        .formInput {
+            flex: 1;
+            width: 100%;
+            font-size: 16px;
+            color: #fff;
+            -webkit-appearance: none;
+            background-color: transparent;
+            &::placeholder {
+                color: rgba(255, 255, 255, .6);
+            }
 
-        .placeholder {
-            color: $second-text-color;
-            position: relative;
-            top: -4px;
-        }
-
-        .iconfont {
-            position: absolute;
-            right: 15px;
-            color: $light-text-color;
-            top: 10px;
         }
     }
 
-    .input-group {
-        position: relative;
-    }
-
-    input[type="date"] {
-        position: relative;
-        padding: 10px;
-        color: $base-text;
-        font-size: 15px;
-    }
-
-    input[type="date"]::-webkit-calendar-picker-indicator {
-        color: transparent;
-        background: none;
-        z-index: 1;
-    }
-
-    input[type="date"]:before {
-        color: transparent;
-        background: none;
-        display: block;
-        font-family: "iconfont";
-        content: '\e67b';
-        font-size: 20px;
-        position: absolute;
-        top: 8px;
-        right: 15px;
-        color: $second-text-color;
-    }
 
     .form-copy {
         width: 100%;
@@ -190,38 +82,10 @@
         width: 22px;
         height: 22px;
         font-size: 22px;
-        color: $main-color;
+        color: $primary-color;
         position: absolute;
         top: 8px;
         right: 16px;
-    }
-
-    .form-input {
-        width: 100%;
-        height: 45px;
-        padding: 15px;
-        font-size: $base-size;
-        border: 1px solid $border-color;
-        background: $inputbg;
-        color: $base-text;
-        border-radius: 3px;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        -ms-border-radius: 3px;
-        -o-border-radius: 3px;
-        outline: none;
-        -webkit-appearance: none;
-        &::placeholder {
-            color: $second-text-color;
-        }
-        &:focus {
-            border-color: $main-color;
-            box-shadow: 0 0 0 4px #00cdff21 inset;
-        }
-        &:disabled {
-            opacity: .7;
-            border-color: $inputbg;
-        }
     }
 
     .btn_cancel {
@@ -229,7 +93,7 @@
         width: 22px;
         height: 22px;
         font-size: 22px;
-        color: $main-color;
+        color: $primary-color;
         position: absolute;
         top: 12px;
         right: 16px;
@@ -242,7 +106,7 @@
 
     .captcha {
         font-size: 13px;
-        color: $main-color;
+        color: $primary-color;
         text-decoration: none;
         cursor: pointer;
         position: absolute;
@@ -252,7 +116,7 @@
         border-left: 1px solid $border-color;
 
         &:hover {
-            color: lighten($main-color, 10%);
+            color: lighten($primary-color, 10%);
         }
     }
 
@@ -261,30 +125,17 @@
         width: 22px;
         height: 22px;
         font-size: 22px;
-        color: $main-color;
+        color: $primary-color;
         position: absolute;
         top: 12px;
         right: 15px;
     }
-
-    small {
-        font-size: 13px;
-    }
-
-    input[type=checkbox] {
-        width: 16px;
-        height: 16px;
-    }
-
-    .form-check-label {
-        font-size: 13px;
-    }
 }
 
-.form-control {
-    color: $base-text;
-    height: 45px;
-}
+// .form-control {
+//     color: $base-text;
+//     height: 45px;
+// }
 
 .form-date-picker {
     display: flex;
@@ -337,107 +188,8 @@
         padding-right: .5rem;
     }
 }
-
-// 资金明细
-table.cash-inner {
-    @include box-shadow;
-    width: 100%;
-
-    tr {
-        height: 42px;
-        display: flex;
-        flex-wrap: wrap;
-        text-align: center;
-        cursor: pointer;
-        background: #fff;
-
-        &:hover {
-            background: #dffbff !important;
-        }
-
-        &:nth-of-type(odd) {
-            background: $tablebg;
-
-            &:hover {
-                background: #dffbff !important;
-            }
-        }
-
-        &:first-of-type {
-            background: $primary-gradient !important;
-            color: #fff;
-            width: 100%;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 4px 4px 0 0;
-
-            &:hover {
-                background: $primary-gradient !important;
-            }
-
-        }
-
-        &:last-of-type {
-            border-radius: 0 0 4px 4px;
-        }
-
-        td {
-            font-size: 15px;
-        }
-
-        th,
-        td {
-            @include flex(row, center, center);
-            padding-left: .5rem;
-            padding-right: .5rem;
-
-            &:nth-of-type(1) {
-                -webkit-box-flex: 0;
-                -ms-flex: 0 0 12%;
-                flex: 0 0 12%;
-                max-width: 12%;
-            }
-
-            &:nth-of-type(2) {
-                -webkit-box-flex: 0;
-                -ms-flex: 0 0 16%;
-                flex: 0 0 16%;
-                max-width: 16%;
-            }
-
-            &:nth-of-type(3) {
-                -webkit-box-flex: 0;
-                -ms-flex: 0 0 18%;
-                flex: 0 0 18%;
-                max-width: 18%;
-            }
-
-            &:nth-of-type(4) {
-                -webkit-box-flex: 0;
-                -ms-flex: 0 0 21%;
-                flex: 0 0 21%;
-                max-width: 21%;
-            }
-
-            &:nth-of-type(5) {
-                -webkit-box-flex: 0;
-                -ms-flex: 0 0 16%;
-                flex: 0 0 16%;
-                max-width: 16%;
-            }
-
-            &:nth-of-type(6) {
-                -webkit-box-flex: 0;
-                -ms-flex: 0 0 17%;
-                flex: 0 0 17%;
-                max-width: 17%;
-            }
-        }
-    }
-}
-
 // checkbox
-.form-checkbox {
+.formCheckbox {
     position: relative;
     cursor: pointer;
     @include flex(row, flex-start, center);
@@ -451,15 +203,15 @@ table.cash-inner {
         width: 0;
 
         &+.checkmark {
-            border: 1px solid $check-border;
-            background: $tablebg;
+            border: 1px solid #fff;
+            background: rgba(255, 255, 255, .6);
             display: block;
             // position: absolute;
             // left: 0;
             // top: 0;
             height: 16px;
             width: 16px;
-            border-radius: 3px;
+            @include border-radius(3px);
             margin-right: 4px;
         }
 
@@ -474,7 +226,8 @@ table.cash-inner {
 
         &:checked+.checkmark {
             position: relative;
-            background: $main-color;
+            border: 1px solid $primary-color;
+            background: $primary-color;
             @include flex(row, center, center);
             text-align: center;
             flex-wrap: wrap;
@@ -483,6 +236,9 @@ table.cash-inner {
         &:checked+.checkmark:after {
             display: block;
         }
+    }
+    p{
+        color: #fff;
     }
 
 }
@@ -508,8 +264,8 @@ table.cash-inner {
             // position: absolute;
             // left: 0;
             // top: 0;
-            height: 16px;
-            width: 16px;
+            height: 15px;
+            width: 15px;
             border-radius: 50%;
             margin-right: 4px;
         }
@@ -520,7 +276,7 @@ table.cash-inner {
             border-radius: 50%;
             content: '';
             position: absolute;
-            background: $main-color;
+            background: $primary-color;
             display: none;
 
         }
@@ -553,7 +309,7 @@ table.cash-inner {
         visibility: hidden;
 
         &:checked+.slider {
-            background: $main-color;
+            background: $primary-color;
 
             &:before {
                 -webkit-transform: translateX(22px);
@@ -614,7 +370,7 @@ table.cash-inner {
     .text-area {
         border: 1px dashed $border-color;
         background: #fff;
-        color: $main-color;
+        color: $primary-color;
         font-size: 14px;
         width: 100%;
         border-radius: 4px;
@@ -645,7 +401,7 @@ table.cash-inner {
             display: flex;
             justify-content: center;
             align-items: center;
-            background: $main-color;
+            background: $primary-color;
             @include box-shadow;
         }
 
@@ -653,7 +409,7 @@ table.cash-inner {
         &:focus,
         &:active {
             &:before {
-                background: lighten($main-color, 10%);
+                background: lighten($primary-color, 10%);
             }
         }
     }

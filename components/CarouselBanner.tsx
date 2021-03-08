@@ -16,7 +16,7 @@ const CarouselBanner: React.FC<{ banners: Banner[] }> = ({ banners }) => {
         className="swiper-container"
         spaceBetween={0}
         width={1920}
-        height={360}
+        height={600}
         slidesPerView={1}
         autoplay={{ delay: 3000 }}
         speed={500}
@@ -30,11 +30,13 @@ const CarouselBanner: React.FC<{ banners: Banner[] }> = ({ banners }) => {
             {t.url ? (
               <Link href={t.url}>
                 <a target={t.is_blank ? '_blank' : '_self'}>
-                  <Image src={t.img} className="d-block" />
+                  <Image src="/img/banner.jpg"></Image>
+                  {/* <Image src={t.img} className="d-block" /> */}
                 </a>
               </Link>
             ) : (
-              <Image src={t.img} />
+              // <Image src={t.img} />
+              <Image src="/img/banner.jpg"></Image>
             )}
 
             {/* <img src="/img/banner_1.jpg" /> */}

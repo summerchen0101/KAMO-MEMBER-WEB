@@ -9,126 +9,107 @@
     box-shadow: 0 3px 9px 0 rgba(0, 0, 0, .08);
 }
 
-.header {
+.head {
     @include flex(row, center, center);
     height: 40px;
     width: 100%;
-    background-color: #12d0ff;
+    background-color: $primary-color;
     border-bottom: 1px solid rgba(235, 235, 235, .4);
 
-    .wrap {
+
+    .headbox {
         width: 100%;
         @include flex(row, space-between, center);
+        position: relative;
 
-        .left {
-            width: 65%;
-            opacity: .9;
-            @include flex(row, flex-start, center);
+    }
+}
 
-        }
+.leftbox {
+    // width: 65%;
+    opacity: .9;
+    @include flex(row, flex-start, center);
+    color: #fff;
+    font-size: 14px;
+    position: absolute;
+    left: 0;
 
-        .right {
-            @include flex(row, flex-end, center);
-            width: 35%;
-            font-size: .9rem;
+    .lang {
+        cursor: pointer;
+        flex-wrap: nowrap;
+        @include flex(row, flex-start, center);
+        transition: all 0.15s ease-out;
 
-            img {
-                display: block;
-                width: 24px;
-                height: 24px;
-                cursor: pointer;
-            }
-
-            .iconfont.down {
-                font-size: 10px;
-                color: #fff;
-                margin-left: 4px;
-                transition: all .15s ease-in-out;
-            }
-
-            .lang {
-                color: #fff;
-                outline: 0;
-                border: none;
-                background: transparent;
-            }
-
-            .lang:hover,
-            .lang.active {
-                img {
-                    filter: brightness(1.1);
-                    -webkit-filter: brightness(1.1);
-                }
-            }
-
-            .dropdown-menu {
-                z-index: 11 !important;
-                min-width: 100px !important;
-                padding: .2rem !important;
-                margin: 10px 0 0 !important;
-                font-size: 15px !important;
-                color: $second-text-color !important;
-                background-color: #fff;
-                border: 1px solid $border-color !important;
-            }
-
-            .dropdown-item.active,
-            .dropdown-item:active,
-            .dropdown-item:hover {
-                color: #fff;
-                background-color: $main-color !important;
-            }
-
-            // .message-box {
-            //     width: 23px;
-            //     height: 23px;
-            //     position: relative;
-            //     bottom: -1px;
-
-            //     .red-dot {
-            //         position: absolute;
-            //         top: 0;
-            //         right: 0;
-            //         width: 8px;
-            //         height: 8px;
-            //         background: $red-color;
-            //         border-radius: 50%;
-            //     }
+        &:hover {
+            color: #E8E3D9;
+            // img {
+            //     filter: brightness(1.1);
+            //     -webkit-filter: brightness(1.1);
             // }
-
-            .name {
-                color: #fff;
-                margin-right: 10px;
-                margin-left: 10px;
-            }
-
-            .account {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
-                color: #fff;
-                padding-left: 10px;
-                margin-right: 8px;
-                // border-left: 1px solid rgba(255, 255, 255, .4);
-            }
         }
     }
 }
 
-.nav {
-    background: linear-gradient(180deg, rgba(0, 220, 255, 1) 0%, rgba(0, 194, 255, 1) 100%);
-    width: 100%;
-    height: 70px;
+.rightbox {
+    @include flex(row, flex-end, center);
+    // width: 35%;
+    font-size: 14px;
+    position: absolute;
+    right: 0;
 
-    .wrap {
+    .name {
+        color: #fff;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .vip-level {
+        background-color: #fff;
+        display: inline-block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 12px;
+        line-height: 12px;
+        padding: 1px 5px;
+        border-radius: 2px;
+        color: $primary-color;
+    }
+
+    .account {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        color: #fff;
+        margin-left: 10px;
+        margin-right: 8px;
+
+    }
+
+    .link {
+        color: #E8E3D9;
+        text-decoration: none;
+
+        &:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
+
+.nav-bg {
+    background: linear-gradient(180deg, #FBFCFF 0%, #FFFFFF 100%);
+    width: 100%;
+
+
+    .nav-content {
         @include flex(row, flex-start, center);
-        width: 100%;
         height: 70px;
         box-sizing: border-box;
 
         .logo {
             background: transparent;
-            width: 95px;
+            width: 110px;
             height: auto;
 
         }
@@ -136,49 +117,40 @@
         .menu {
             @include flex(row, flex-start, center);
             margin-left: 3rem;
-            flex: 1;
+            // flex: 1;
 
             li {
                 position: relative;
                 @include flex(row, flex-start, center);
+                padding: 0 1rem;
 
                 a {
-                    color: #fff;
+                    color: $base-text;
                     background: transparent;
                     font-size: 16px;
-                    height: 70px;
                     overflow: hidden;
-                    padding: 0 1.2rem;
+                    padding: .5rem 0;
                     text-decoration: none;
                     @include flex(row, center, center);
-                    box-sizing: border-box;
-                    // transition: all .15s;
-
-                    &::after {
-                        content: '';
-                        width: 1px;
-                        height: 15px;
-                        background: rgba(235, 235, 235, .4);
-                        position: absolute;
-                        right: 0;
-                    }
+                    transition: all 0.15s ease-out;
+                    position: relative;
 
                     &:hover,
+                    &:active,
                     &.active {
-                        height: 70px;
-                        background: rgba(255, 255, 255, .3);
-                        border-top: 1px solid #98EBFF;
-                        border-bottom: 1px solid #2DBADC;
-                    }
+                        color: $primary-color;
 
-                    .home-icon {
-                        width: 18px;
-                        margin-right: 6px;
+                        &::after {
+                            content: "";
+                            display: block;
+                            width: 80%;
+                            height: 3px;
+                            border-radius: 3px;
+                            position: absolute;
+                            bottom: 0;
+                            background: $primary-color;
+                        }
                     }
-                }
-
-                &:last-of-type>a::after {
-                    display: none;
                 }
             }
         }
@@ -186,47 +158,24 @@
 }
 
 
-.marquee-box {
-    overflow: hidden;
-    position: relative;
-}
 
 
-.marquee-box p {
-    position: absolute;
-    white-space: nowrap;
-    animation: marquee 10s linear infinite;
-    padding: 0;
-    margin: 0;
-}
+// .page-link {
+//     color: $primary-color;
 
+//     &:hover {
+//         color: #999
+//     }
+// }
 
-@keyframes marquee {
-    0% {
-        transform: translateX(100%);
-    }
+// .page-item.active .page-link {
+//     border-color: $primary-color;
+//     background-color: $primary-color;
+// }
 
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-.page-link {
-    color: $main-color;
-
-    &:hover {
-        color: #999
-    }
-}
-
-.page-item.active .page-link {
-    border-color: $main-color;
-    background-color: $main-color;
-}
-
-.page-item.disabled .page-link {
-    color: $second-text-color
-}
+// .page-item.disabled .page-link {
+//     color: $second-text-color
+// }
 
 // nav side
 .nav-side {
@@ -259,7 +208,7 @@
             color: $base-text;
 
             &:hover {
-                color: $main-color;
+                color: $primary-color;
 
                 img {
                     filter: brightness(1.1);
@@ -284,7 +233,7 @@
             display: block;
 
             &:hover {
-                color: $main-color;
+                color: $primary-color;
                 position: relative;
             }
         }

@@ -1,45 +1,47 @@
 //footer
 .footer {
     font-size: 13px;
+    height: 210px;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // position: absolute;
-    // bottom: 0;
-    // left: 0;
-    padding: 5px 0;
-    .article-menu{
+    @include flex(column,center,center);
+    // align-items: center;
+    // justify-content: center;
+    padding: 25px 0;
+    background: linear-gradient(180deg, #3F4764 0%, #3A4159 100%);
+
+    .article-menu {
+        height: 18px;
         list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: inline;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 33px auto 18px;
 
-        li{
-            float: left;
-            padding-left: 10px;
-            padding-right: 10px;
-            border-right: 1px solid $second-text-color;
-            &:first-of-type{
-                border-left: 1px solid $second-text-color;
-            }
+        li {
 
-            &:last-of-type{
+            padding-left: 15px;
+            padding-right: 15px;
+            border-right: 1px solid #515B7C;
+
+            &:last-of-type {
                 border-right: none;
             }
-            a{
+
+            a {
                 text-decoration: none;
                 color: $base-text;
-                transition: all 0.1s ease-in-out;
                 display: inline-block;
-                &:hover{
-                    color: $main-color;
+                transition: color .15s ease-in-out;
+                &:hover {
+                    color: #fff;
                 }
             }
         }
     }
-    .copyright {
 
+    .copyright {
+        display: block;
+        width: 100%;
         text-align: center;
         margin: 0;
         padding: 10px 16px;

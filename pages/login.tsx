@@ -4,8 +4,18 @@ import { usePopupContext } from '@/context/PopupContext'
 import pattern from '@/lib/pattern'
 import useHelper from '@/utils/useHelper'
 import useRequest from '@/utils/useRequest'
-import { Box, Center, HStack, Image } from '@chakra-ui/react'
+import {
+  Box,
+  Center,
+  HStack,
+  Image,
+  Text,
+  FormLabel,
+  Flex,
+  Spacer,
+} from '@chakra-ui/react'
 import { useRouter } from 'next/dist/client/router'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
@@ -46,78 +56,103 @@ function login() {
     fetchCaptcha()
   }, [])
   return (
-    <Center w="100vw" h="100vh" bgColor="" className="login-bg">
+    <Center
+      w="100vw"
+      h="100vh"
+      bgImage="url('/img/bg-login.jpg')"
+      bgPosition="center"
+      bgRepeat="no-repeat"
+      backgroundSize="cover"
+    >
       <Box>
-        {/* <Box className="lang-select">
-          <Image className="flag" src="/img/lang_cn.png" m="auto" />
-        </Box> */}
-        <Box mb="20px">
-          <Image src="/img/logo.png" m="auto" />
+        <Box mb="30px">
+          <Image src="/img/logo.png" m="auto" w="150px" />
         </Box>
-        <Box
-          className="form-wrap"
-          p="32px 32px 0 32px"
-          as="form"
-          onSubmit={onSubmit}
-        >
-          <Box className="form-group">
-            <Box className="main-title center" mb="32px">
-              欢迎登入
-            </Box>
-            <input
-              type="text"
-              className="form-input account-input"
-              name="acc"
-              placeholder="請輸入帳號"
-              ref={register({
-                required: '不可為空',
-                pattern: {
-                  value: pattern.acc,
-                  message: '格式有誤',
-                },
-              })}
-            />
-            <FieldValidateMessage error={errors.acc} />
-          </Box>
-
-          <div className="form-group">
-            <input
-              type="password"
-              className="form-input"
-              name="pass"
-              ref={register({ required: '不可為空' })}
-              placeholder="请输入密码"
-            />
-            {/* <i className="iconfont iconeye-close btn_eye" /> */}
-          </div>
-          <HStack>
-            <Box className="form-group" w="80%">
+        <Box w="298px" as="form" onSubmit={onSubmit}>
+          <Box className="formGroup" mb="20px">
+            <Box className="formInputGroup">
+              <i className="iconfont ic-userid"></i>
               <input
                 type="text"
-                className="form-input"
-                name="code"
-                placeholder="請輸入驗證碼"
-                ref={register({ required: '不可為空' })}
+                className="formInput"
+                name="acc"
+                placeholder="請輸入帳號"
+                ref={register({
+                  required: '不可為空',
+                  pattern: {
+                    value: pattern.acc,
+                    message: '格式有誤',
+                  },
+                })}
               />
-              <FieldValidateMessage error={errors.code} />
+              <FieldValidateMessage error={errors.acc} />
+            </Box>
+          </Box>
+
+          <Box className="formGroup" mb="20px">
+            <Box className="formInputGroup">
+              <i className="iconfont ic-password"></i>
+              <input
+                type="password"
+                className="formInput"
+                name="pass"
+                ref={register({ required: '不可為空' })}
+                placeholder="请输入密码"
+              />
+            </Box>
+            {/* <i className="iconfont iconeye-close btn_eye" /> */}
+          </Box>
+          <HStack mb="20px">
+            <Box className="formGroup">
+              <Box className="formInputGroup">
+                <i className="iconfont ic-verify"></i>
+                <input
+                  type="text"
+                  className="formInput"
+                  name="code"
+                  placeholder="請輸入驗證碼"
+                  ref={register({ required: '不可為空' })}
+                />
+
+                <FieldValidateMessage error={errors.code} />
+              </Box>
             </Box>
             <Image src={captchaImg} onClick={() => fetchCaptcha()} />
           </HStack>
-          {/* <label className="form-checkbox ">
-            <input className="input-check" name="sort" type="checkbox" />
-            <span className="checkmark" />
-            <p className="ft-15 text-lighgray">记忆帐密</p>
-          </label> */}
-          <button type="submit" className="btnbase primary_btn mt-4 mb-3">
+          <Flex mb="10px">
+            <FormLabel className="formCheckbox" display="flex" w="">
+              <input className="input-check" name="sort" type="checkbox" />
+              <span className="checkmark" />
+              <Text fontSize="14px">记住密码</Text>
+            </FormLabel>
+            <Spacer />
+            <Box fontSize="14px" color="#fff" cursor="pointer">
+              <Link href="/home"> 忘记密码?</Link>
+              {/* <Link href="/home">?</Link> */}
+            </Box>
+          </Flex>
+
+          <button type="submit" className="btnbase primary_btn">
             登入
           </button>
-          <button
+          <Center mt="15px">
+            <Box fontSize="14px" color="brand.500" cursor="pointer">
+              <Link href="/register"> 注册新账号</Link>
+              {/* <Link href="/home">?</Link> */}
+            </Box>
+            <Box w="2px" h="14px" bg="rgba(255, 255, 255, .3)" mx="10px"></Box>
+            <Box fontSize="14px" color="#fff" cursor="pointer">
+              <Link href="/home"> 先去逛逛</Link>
+              {/* <Link href="/home">?</Link> */}
+            </Box>
+          </Center>
+          {/* <button
             type="button"
             className="btnbase forget_pwd"
             onClick={() => setForgetVisible(true)}
           >
             忘记密码
-          </button>
+          </button> */}
         </Box>
       </Box>
     </Center>
