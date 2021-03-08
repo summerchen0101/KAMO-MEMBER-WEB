@@ -57,6 +57,7 @@ body {
 }
 
 .laout {
+    position: relative;
     margin: 0 auto;
     // width: 100%;
     max-width: 1200px;
@@ -104,180 +105,45 @@ body {
     font-size: 14px;
 }
 
-.lh-15 {
-    line-height: 1.5;
+.border-top {
+    border-top: 1px solid #F0F0F0;
 }
 
-.main-title {
-    font-size: $base-size * 1.8;
+.border-bottom {
+    border-bottom: 1px solid #F0F0F0;
+}
+
+.section-title {
+    font-size: 18px;
     font-weight: bold;
     position: relative;
-    color: $base-text;
-
-    &.center {
-        text-align: center;
-        display: flex;
-        justify-content: center;
-
-        &::after {
-            content: '';
-            width: 60px;
-            height: 4px;
-            background: $primary-color;
-            position: absolute;
-            bottom: -1rem;
-        }
-    }
-}
-
-.title-col {
-    font-size: 1.5rem;
-    font-weight: bold;
-    position: relative;
-    margin-left: 15px;
-    color: $base-text;
-
-    &::before {
-        content: '';
-        width: 6px;
-        height: 1.5rem;
-        background: $primary-color;
-        position: absolute;
-        top: 8px;
-        left: -15px;
-    }
-
-}
-
-// Tab-menu
-.nav-tabs {
-    border: none;
-    position: relative;
-    background: #fff;
+    color: $third-text-color;
+    line-height: 18px;
     width: 100%;
+    padding-left: 12px;
 
     &::after {
-        height: 1px;
-        width: 100%;
         content: '';
-        background: $border-color;
+        width: 5px;
+        height: 18px;
         position: absolute;
-        bottom: 0;
+        top: 0;
         left: 0;
-        // left: -4%;
-        // right: -4%;
     }
 
-    .nav-link {
-        min-height: 61px;
-        color: $base-text;
-        font-size: 1.2rem;
-        position: relative;
-        font-weight: bold;
-        padding: 0.65rem 2rem;
-        @include flex(row, center, center);
-        border-radius: 0;
-        -webkit-border-radius: 0;
-        -moz-border-radius: 0;
-        -ms-border-radius: 0;
-        -o-border-radius: 0;
+    &.color-primary {
+        &::after {
+            background: $primary-color;
+        }
+    }
 
-        &.active,
-        &:hover,
-        &:focus,
-        &:active {
-            color: $primary-color;
-            background-color: transparent;
-            border-color: transparent;
-
-            &::after {
-                content: '';
-                display: block;
-                width: 100px;
-                height: 3px;
-                background: $primary-color;
-                position: absolute;
-                bottom: 1px;
-                // left: calc(50% - 30px);
-                border-radius: 3px 3px 0 0;
-                -webkit-border-radius: 3px 3px 0 0;
-                -moz-border-radius: 3px 3px 0 0;
-                -ms-border-radius: 3px 3px 0 0;
-                -o-border-radius: 3px 3px 0 0;
-            }
+    &.color-red {
+        &::after {
+            background: #E4B2B3;
         }
     }
 }
 
-.title-bar {
-    @include flex(row, flex-start, center);
-
-    .icon-btn {
-        margin-left: 10px;
-    }
-}
-
-.total-count {
-    display: flex;
-
-    &>div {
-        margin-bottom: 0;
-        margin-right: 10px;
-
-        &:last-of-type {
-            margin-right: 0;
-        }
-    }
-
-    .count-event {
-        font-size: 1rem;
-        display: flex;
-        border: 1px solid #fff;
-        line-height: 39px;
-        padding: 0 16px;
-        border-radius: 4px;
-        background: rgba(0, 0, 0, 0.5);
-        color: #fff;
-
-        span {
-            margin-left: 15px;
-        }
-    }
-
-    .form-select {
-        height: 39px;
-        min-width: 100px;
-    }
-}
-
-.filter-container {
-    display: flex;
-    position: relative;
-
-    .form-input {
-        // width: 45%;
-        width: 207px;
-        height: 39px;
-    }
-
-    .form-select {
-        position: relative;
-        height: 39px;
-        width: 165px;
-    }
-
-    .divider {
-        width: 1px;
-        height: 25px;
-        margin: 7px 15px 7px 15px;
-        background: #ebebeb;
-        display: block;
-    }
-
-    .status-tab {
-        min-width: 219px;
-    }
-}
 
 .main {
     width: 100%;
@@ -304,16 +170,9 @@ body {
     }
 }
 
-//login
-// .login-bg {
-//     position: relative;
-//     width: 100%;
-//     height: 100%;
-//     background: url(../img/bg-login.jpg) no-repeat center;
-//     background-size: cover;
-// }
 
-
+/* home
+     ========================================================================== */
 
 // banner
 .main-banner {
@@ -404,13 +263,16 @@ body {
 
 .appDownload-container {
     position: relative;
+
     .appDownload-leftbox {
         width: 710px;
         max-width: 710px !important;
+
         img {
             width: 710px;
             max-width: 710px !important;
             height: 650px;
+
             &:focus {
                 outline: none;
             }
@@ -474,6 +336,7 @@ body {
 
 .service-wrap {
     width: 1200px;
+
     .service-itemBox {
         float: left;
         position: relative;
@@ -501,6 +364,176 @@ body {
             .description {
                 font-size: 14px;
             }
+        }
+    }
+}
+
+/* my
+     ========================================================================== */
+.user-main {
+    padding-top: 130px;
+    width: 100%;
+    position: relative;
+}
+
+.user-menu {
+    // position: absolute;
+    // top: 0;
+    // bottom: 0;
+    float: left;
+    margin-bottom: 40px;
+    width: 220px;
+    min-height: 821px;
+    box-sizing: border-box;
+    background: #fff;
+    @include border-radius(5px);
+    box-shadow: 0 10px 10px 0 rgba(139, 160, 203, 0.04);
+
+    .user-name {
+        color: $third-text-color;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .user-vip {
+        background: linear-gradient(45deg, #FFDDBB 0%, #D1AF98 100%);
+        ;
+        display: inline-block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 14px;
+        line-height: 14px;
+        padding: 1px 5px;
+        border-radius: 2px;
+        color: #fff;
+        height: 16px;
+        margin-left: 5px;
+    }
+
+    .safe-level {
+        font-size: 14px;
+        color: $base-text;
+        margin-top: 5px;
+    }
+
+    .wall-menu {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 28px;
+        padding-right: 28px;
+        margin-top: 30px;
+        margin-bottom: 35px;
+
+        li {
+            cursor: pointer;
+            @include flex(column, center, center);
+            font-size: 14px;
+
+            transition: all .15s ease-in-out;
+
+            &:hover,
+            &.active,
+            &:active {
+                color: $primary-color;
+
+                .iconfont {
+                    background: $primary-gradient;
+                }
+            }
+
+            .iconfont {
+                @include flex(row, center, center);
+                width: 35px;
+                height: 35px;
+                font-size: 22px;
+
+                color: #fff;
+                @include border-radius(50%);
+                background: $base-text;
+                transition: all .15s ease-in-out;
+            }
+        }
+
+    }
+
+    .menu-inner {
+        li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            height: 48px;
+            padding: 0 28px;
+            box-sizing: border-box;
+            cursor: pointer;
+            background: transparent;
+
+            &::after {
+                content: '';
+                height: 48px;
+                width: 3px;
+                background-color: $primary-color;
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+            }
+
+            &.active,
+            &:active,
+            &:hover {
+                color: #fff;
+                background: linear-gradient(45deg, #F1D3B6 0%, #DBB290 100%);
+
+                &::after {
+                    display: block;
+                }
+            }
+        }
+    }
+
+}
+
+.user-centerContent {
+    width: 964px;
+    padding: 30px;
+    float: right;
+    background: #fff;
+    height: auto;
+    min-height: 821px;
+    @include border-radius(5px);
+    box-shadow: 0 10px 10px 0 rgba(139, 160, 203, 0.04);
+
+    .centerformLabel {
+        max-width: 80px;
+        width: 56px;
+        // text-align: right;
+        min-width: 72px;
+        color: $base-text;
+        font-size: 15px;
+        margin-right: 10px;
+    }
+
+    .centerformIinput {
+        width: 100%;
+        height: 40px;
+        font-size: 15px;
+        border-radius: 4px;
+        padding: 4px 15px;
+        color: $base-text;
+        border: 1px solid $input-border;
+        -webkit-appearance: none;
+        background-color: transparent;
+
+        &::placeholder {
+            color: $input-border;
+        }
+
+        &:focus {
+            box-shadow: 0 0 20px 0 #f2eada;
+            border-color: $primary-color;
         }
     }
 }
@@ -732,673 +765,673 @@ body {
 }
 
 //会员中心
-.my {
-    width: 100%;
-    min-height: calc(100vh - 159px);
-    position: relative;
-
-    .my-box {
-        padding: $base-size*2 $base-size $base-size $base-size;
-
-        // position: absolute;
-        // left: 50%;
-        // top: 50%;
-        // transform: translate(-50%, -50%);
-        .contents {
-            width: 100%;
-            min-height: 755px;
-            display: flex;
-            box-shadow: 0 0 10px 0 #0000000F;
-
-            // 左選單
-            .menu-section {
-                background: $base-text;
-                border-radius: 4px 0 0 4px;
-                overflow: hidden;
-
-                .menu-inner {
-                    display: block;
-                    position: relative;
-                    flex: 1;
-                    border-bottom: 1px solid #657178;
-                    margin-top: -1px;
-
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        bottom: 0;
-                        width: 25px;
-                        background: url(../img/menu_gradien.png) 0 0 no-repeat;
-                        z-index: 9;
-                    }
-
-                    .menu-list-item {
-                        position: relative;
-                        cursor: pointer;
-                        @include flex(row, flex-start, center);
-                        padding: 1rem 2rem;
-                        font-size: 1rem;
-                        color: #fff;
-                        width: 185px;
-                        height: 62px;
-                        border-top: 1px solid #657178;
-                        border-bottom: 1px solid #3A4348;
-                        background: $base-text;
-
-                        &::after {
-                            content: "";
-                            position: absolute;
-                            right: 2px;
-                            top: 0px;
-                            bottom: 0px;
-                            display: none;
-                            width: 5px;
-                            background: $primary-color;
-                            z-index: 11;
-                        }
-
-                        &.active,
-                        &:active {
-                            background: $primary-gradient;
-
-
-                            &::after {
-                                display: block;
-                            }
-                        }
-
-                        &:hover {
-                            background: linear-gradient(top, $base-text, #3b3c3c);
-
-                            &.active {
-                                background: $primary-gradient;
-
-                            }
-
-                            &::after {
-                                display: block;
-                            }
-                        }
-
-                        .counter-point {
-                            position: absolute;
-                            line-height: 18px;
-                            width: 25px;
-                            top: 22px;
-                            right: 17px;
-                            font-size: 10px;
-                            border-radius: 15px;
-                            text-align: center;
-                            font-family: Helvetica;
-                            background: $red-color;
-                            font-weight: bold;
-                            color: white;
-                            padding: 0 5px;
-                            z-index: 11;
-                        }
-
-                        .iconfont {
-                            font-size: 1.2rem;
-                            margin-right: 5px;
-                        }
-                    }
-                }
-            }
-
-            // 右內容
-            .menu-content-section {
-                width: 86%;
-                background: #fff;
-                position: relative;
-                padding: 40px;
-                border-radius: 0 4px 4px 0;
-
-                // 个人资料
-                table.profile {
-                    width: 100%;
-
-                    tr {
-                        border-width: 1px 1px 0 1px;
-                        border-style: solid;
-                        border-color: $border-color;
-                        display: flex;
-                        flex-wrap: wrap;
-
-                        &:nth-of-type(2n) {
-                            background: $tablebg;
-                        }
-
-                        &:first-of-type {
-                            border-radius: 4px 4px 0 0;
-                        }
-
-                        &:last-of-type {
-                            border-bottom: 1px solid $border-color;
-                            border-radius: 0 0 4px 4px;
-                        }
-
-                        td {
-                            padding: 0 1rem;
-                            @include flex(row, flex-start, center);
-                            line-height: 55px;
-
-
-                            &:nth-of-type(1) {
-                                font-weight: bold;
-                                width: 280px;
-                            }
-
-                            &:nth-of-type(2) {
-                                color: $second-text-color;
-                                flex: 1;
-
-
-                                &.text-red {
-                                    color: $red-color;
-
-                                    &::before {
-                                        content: '\e680';
-                                        font-family: "iconfont";
-                                        font-weight: normal;
-                                        margin-right: 5px;
-                                    }
-                                }
-                            }
-
-                            &:nth-of-type(3) {
-                                @include flex(row, flex-end, center);
-
-                                .mini_btn {
-                                    float: right;
-                                    width: 80px;
-                                    line-height: 18px;
-                                    margin-left: 10px;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                #bankcard-edit {
-                    width: 100%;
-                    padding-left: 296px;
-                    display: none;
-                    // @include flex(column, flex-start, flex-start);
-
-                    &.show {
-                        @include flex(column, flex-start, flex-start);
-                    }
-
-                    p {
-                        width: 100%;
-                        max-width: 729px;
-                        font-size: .9rem;
-                        line-height: 22px;
-                        background: $graybg;
-                        margin-bottom: 1rem;
-                        padding: .375rem 1rem;
-                        border-radius: 4px;
-
-                        .iconfont {
-                            color: $red-color;
-                            font-size: 1.2rem;
-                            position: relative;
-                            top: 2px;
-                            margin-right: 5px;
-                        }
-                    }
-
-                    .col-list {
-                        width: 100%;
-                        max-width: 729px;
-
-                        .col-list-item {
-                            font-size: 16px;
-                            line-height: 45px;
-                            width: 100%;
-                            @include flex(row, space-between, center);
-
-                            label {
-                                flex: 1;
-                                width: 100%;
-                            }
-
-                            .card-check {
-                                margin-right: 10px;
-                            }
-
-                            .sec_btn {
-                                margin: 0;
-                                width: 80px;
-                                line-height: 14px;
-                            }
-                        }
-                    }
-                }
-
-                // 充值'提领
-                .nav {
-                    height: 60px;
-                }
-
-                .mian-group {
-                    width: 100%;
-                    position: relative;
-
-                    .left-group {
-                        width: 50%;
-                        padding-right: 40px;
-                    }
-
-                    .right-group {
-                        height: 100%;
-                        width: 50%;
-                        padding-left: 50px;
-
-                        .list-item {
-                            padding: 0.5rem 1.2rem;
-
-
-                            box-shadow: none;
-                            width: 310px;
-                            min-height: 90px;
-                            margin-bottom: .5rem;
-                            transition: all 0.1s ease-in-out;
-                            cursor: pointer;
-
-                            &:hover {
-                                box-shadow: 0px 4px 10px #0000000F;
-                                // border: 1px solid $primary-color;
-
-                            }
-
-                            .list-title {
-                                font-size: 14px;
-
-                                line-height: 1.3rem;
-
-                                span {
-                                    margin-left: 1rem;
-                                    color: $base-text;
-
-                                    &.text-red {
-                                        color: $red-color;
-                                    }
-
-                                    &.text-blue {
-                                        color: $primary-color;
-                                    }
-
-                                    &.text-green {
-                                        color: $green-color;
-                                    }
-                                }
-                            }
-                        }
-
-                        .more-btn {
-
-
-                            &:hover {
-                                color: $primary-color;
-                            }
-                        }
-                    }
-
-
-                }
-
-                // 站内信'公告
-                .title-bar {
-                    .icon-btn {
-                        @include flex(row, flex-start, center);
-
-                        &:hover {
-                            color: $primary-color;
-                        }
-                    }
-                }
-
-                .message-inner {
-                    overflow-y: auto;
-                    height: 568px;
-                    border-left: 1px solid $border-color;
-                    border-bottom: 1px solid $border-color;
-
-                    &::-webkit-scrollbar {
-                        width: 10px;
-                    }
-
-                    &::-webkit-scrollbar-track {
-                        background-color: transparent;
-                    }
-
-                    &::-webkit-scrollbar-thumb {
-                        background-color: #d3d8da;
-                        border-radius: 5px;
-                    }
-                }
-
-                .message-list {
-                    position: relative;
-                    background: #fff;
-                    cursor: pointer;
-                    border-bottom: 1px solid $border-color;
-
-                    &.active,
-                    &:hover,
-                    &:focus,
-                    &:active {
-                        background: $tablebg;
-                    }
-
-                    .message-item {
-                        height: 56px;
-                        padding: 16px;
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-
-                        &.select {
-
-                            // .message-select {
-                            //     display: block;
-                            // }
-                            .form-checkbox {
-                                display: block;
-                            }
-                        }
-                    }
-
-                    &.seen {
-
-
-                        .iconfont {}
-                    }
-
-                    .form-checkbox {
-                        margin-right: 10px;
-                        display: none;
-                    }
-
-                    // .message-select {
-                    //     width: 16px;
-                    //     height: 16px;
-                    //     margin-right: 10px;
-                    //     display: none;
-                    // }
-
-                    .iconfont {
-                        font-size: 24px;
-                        width: 30px;
-                        color: $second-text-color;
-                    }
-
-                    .message-title-col {
-                        @include flex(row, space-between, center);
-                        font-size: 1rem;
-                        flex: 1;
-
-                        .message-title {
-                            width: 70%;
-                            font-weight: 600;
-                        }
-
-                        .message-time {
-                            width: 30%;
-                            color: $second-text-color;
-                            text-align: right;
-                            margin-right: 10px;
-                        }
-                    }
-
-                    .iconfont.allow-right {
-                        font-size: 16px;
-                    }
-                }
-
-                .message-content {
-                    display: block;
-                    background: $tablebg;
-                    padding: 1.6rem;
-                    box-shadow: inset 4px 0px 15px rgba(0, 0, 0, 0.05);
-                    min-height: 568px;
-
-                    .title {
-                        font-weight: bold;
-                        font-size: 1.2rem;
-                    }
-
-                    .time {
-                        color: $primary-color;
-                    }
-
-                    .text {
-                        line-height: 1.6;
-                        font-size: .9rm;
-                    }
-                }
-
-                // 銀行卡
-                .bank-list {
-                    width: 100%;
-                    display: inline-block;
-
-                    .bank-item {
-                        float: left;
-                        overflow: hidden;
-                        background: #fff;
-                        margin-bottom: 15px;
-                        margin-right: 15px;
-                        width: 365px;
-                        height: 160px;
-                        border-radius: 3px;
-                        border: 1px solid $border-color;
-                        padding: 15px 25px 65px 25px;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
-                        position: relative;
-                        @include box-shadow;
-                        transition: all .15s ease;
-
-                        &:last-of-type {
-                            margin-bottom: 0;
-                        }
-
-                        &:hover {
-
-                            .btn-wrap {
-                                display: flex;
-                                bottom: 25px;
-                            }
-                        }
-
-                        &.active {
-                            border: 1px solid $primary-color;
-
-                            .focus {
-                                display: inline-block;
-                            }
-                        }
-
-                        &.oncheck {
-
-                            .check-mask {
-                                display: flex;
-                            }
-                        }
-
-                        .bank-name {
-                            font-size: 14px;
-                            letter-spacing: 1px;
-
-                        }
-
-                        .bank-num {
-                            font-size: 18px;
-                            font-weight: bold;
-                            text-align: center;
-                            line-height: 1.8;
-                            margin-top: 14px;
-                        }
-
-                        .user-name {
-                            font-size: 14px;
-
-                            text-align: right;
-                        }
-
-                        .check-mask {
-                            width: 100%;
-                            height: 100%;
-                            padding-bottom: 15px;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            color: #fff;
-                            display: none;
-                            justify-content: center;
-                            align-items: center;
-                            z-index: 1;
-                            background: rgba(74, 83, 89, .8);
-                        }
-
-                        .btn-wrap {
-                            overflow: hidden;
-                            width: 315px;
-                            display: flex;
-                            flex-wrap: nowrap;
-                            position: absolute;
-                            left: 25px;
-                            right: 25px;
-                            bottom: 25px;
-                            // bottom: -34px;
-                            z-index: 2;
-                            transition: all .15s ease;
-
-                        }
-
-                        .focus {
-                            position: absolute;
-                            right: 0;
-                            top: 0;
-                            width: 12px;
-                            height: 12px;
-                            border-style: solid;
-                            border-width: 0px 30px 30px 0px;
-                            border-color: transparent $primary-color transparent transparent;
-                            display: none;
-
-                            .iconfont {
-                                color: #fff;
-                                font-size: 15px;
-                                position: relative;
-                                top: 0;
-                                right: -13px;
-                            }
-                        }
-                    }
-                }
-
-                // 推廣收益
-                .qr-code-box {
-                    width: 100%;
-                    text-align: center;
-
-                    img {
-                        width: 300px;
-                        height: 300px;
-                        display: block;
-                        margin: 0 auto;
-                    }
-                }
-
-                .invite-item {
-                    @include box-shadow;
-                    border: 1px solid $border-color;
-                    border-radius: 3px;
-                    -webkit-border-radius: 3px;
-                    -moz-border-radius: 3px;
-                    -ms-border-radius: 3px;
-                    -o-border-radius: 3px;
-                    padding: 15px;
-                    margin-top: 10px;
-                    min-height: 90px;
-
-                    div {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        font-size: 15px;
-                        line-height: 1.8;
-                    }
-                }
-
-                .table-wrap {
-                    width: 100%;
-                    height: 440px;
-                    overflow-y: auto;
-
-                    &::-webkit-scrollbar {
-                        width: 10px;
-                    }
-
-                    &::-webkit-scrollbar-track {
-                        background-color: transparent;
-                    }
-
-                    &::-webkit-scrollbar-thumb {
-                        background-color: #d3d8da;
-                        border-radius: 5px;
-                    }
-                }
-
-                .team {
-                    width: 100%;
-
-                    overflow-y: auto;
-                    @include box-shadow;
-
-                    tr {
-                        width: 100%;
-                        display: flex;
-
-
-                        &:last-of-type {
-                            border-radius: 0 0 4px 4px;
-                        }
-
-                        &:nth-of-type(2n+1) {
-                            background: $tablebg;
-                        }
-
-                        &:first-of-type {
-                            background: $primary-gradient;
-                            color: #fff;
-                            font-weight: bold;
-                            border-radius: 4px 4px 0 0;
-                        }
-
-                        th,
-                        td {
-                            width: 50%;
-                            padding: 0.75rem 2rem;
-                        }
-
-                        td:nth-of-type(2) {
-                            color: $second-text-color;
-                        }
-                    }
-                }
-
-
-            }
-        }
-    }
-}
+// .my {
+//     width: 100%;
+//     min-height: calc(100vh - 159px);
+//     position: relative;
+
+//     .my-box {
+//         padding: $base-size*2 $base-size $base-size $base-size;
+
+//         // position: absolute;
+//         // left: 50%;
+//         // top: 50%;
+//         // transform: translate(-50%, -50%);
+//         .contents {
+//             width: 100%;
+//             min-height: 755px;
+//             display: flex;
+//             box-shadow: 0 0 10px 0 #0000000F;
+
+//             // 左選單
+//             .menu-section {
+//                 background: $base-text;
+//                 border-radius: 4px 0 0 4px;
+//                 overflow: hidden;
+
+//                 .menu-inner {
+//                     display: block;
+//                     position: relative;
+//                     flex: 1;
+//                     border-bottom: 1px solid #657178;
+//                     margin-top: -1px;
+
+//                     &::after {
+//                         content: "";
+//                         position: absolute;
+//                         top: 0;
+//                         right: 0;
+//                         bottom: 0;
+//                         width: 25px;
+//                         background: url(../img/menu_gradien.png) 0 0 no-repeat;
+//                         z-index: 9;
+//                     }
+
+//                     .menu-list-item {
+//                         position: relative;
+//                         cursor: pointer;
+//                         @include flex(row, flex-start, center);
+//                         padding: 1rem 2rem;
+//                         font-size: 1rem;
+//                         color: #fff;
+//                         width: 185px;
+//                         height: 62px;
+//                         border-top: 1px solid #657178;
+//                         border-bottom: 1px solid #3A4348;
+//                         background: $base-text;
+
+//                         &::after {
+//                             content: "";
+//                             position: absolute;
+//                             right: 2px;
+//                             top: 0px;
+//                             bottom: 0px;
+//                             display: none;
+//                             width: 5px;
+//                             background: $primary-color;
+//                             z-index: 11;
+//                         }
+
+//                         &.active,
+//                         &:active {
+//                             background: $primary-gradient;
+
+
+//                             &::after {
+//                                 display: block;
+//                             }
+//                         }
+
+//                         &:hover {
+//                             background: linear-gradient(top, $base-text, #3b3c3c);
+
+//                             &.active {
+//                                 background: $primary-gradient;
+
+//                             }
+
+//                             &::after {
+//                                 display: block;
+//                             }
+//                         }
+
+//                         .counter-point {
+//                             position: absolute;
+//                             line-height: 18px;
+//                             width: 25px;
+//                             top: 22px;
+//                             right: 17px;
+//                             font-size: 10px;
+//                             border-radius: 15px;
+//                             text-align: center;
+//                             font-family: Helvetica;
+//                             background: $red-color;
+//                             font-weight: bold;
+//                             color: white;
+//                             padding: 0 5px;
+//                             z-index: 11;
+//                         }
+
+//                         .iconfont {
+//                             font-size: 1.2rem;
+//                             margin-right: 5px;
+//                         }
+//                     }
+//                 }
+//             }
+
+//             // 右內容
+//             .menu-content-section {
+//                 width: 86%;
+//                 background: #fff;
+//                 position: relative;
+//                 padding: 40px;
+//                 border-radius: 0 4px 4px 0;
+
+//                 // 个人资料
+//                 table.profile {
+//                     width: 100%;
+
+//                     tr {
+//                         border-width: 1px 1px 0 1px;
+//                         border-style: solid;
+//                         border-color: $border-color;
+//                         display: flex;
+//                         flex-wrap: wrap;
+
+//                         &:nth-of-type(2n) {
+//                             background: $tablebg;
+//                         }
+
+//                         &:first-of-type {
+//                             border-radius: 4px 4px 0 0;
+//                         }
+
+//                         &:last-of-type {
+//                             border-bottom: 1px solid $border-color;
+//                             border-radius: 0 0 4px 4px;
+//                         }
+
+//                         td {
+//                             padding: 0 1rem;
+//                             @include flex(row, flex-start, center);
+//                             line-height: 55px;
+
+
+//                             &:nth-of-type(1) {
+//                                 font-weight: bold;
+//                                 width: 280px;
+//                             }
+
+//                             &:nth-of-type(2) {
+//                                 color: $second-text-color;
+//                                 flex: 1;
+
+
+//                                 &.text-red {
+//                                     color: $red-color;
+
+//                                     &::before {
+//                                         content: '\e680';
+//                                         font-family: "iconfont";
+//                                         font-weight: normal;
+//                                         margin-right: 5px;
+//                                     }
+//                                 }
+//                             }
+
+//                             &:nth-of-type(3) {
+//                                 @include flex(row, flex-end, center);
+
+//                                 .mini_btn {
+//                                     float: right;
+//                                     width: 80px;
+//                                     line-height: 18px;
+//                                     margin-left: 10px;
+//                                 }
+//                             }
+//                         }
+//                     }
+//                 }
+
+//                 #bankcard-edit {
+//                     width: 100%;
+//                     padding-left: 296px;
+//                     display: none;
+//                     // @include flex(column, flex-start, flex-start);
+
+//                     &.show {
+//                         @include flex(column, flex-start, flex-start);
+//                     }
+
+//                     p {
+//                         width: 100%;
+//                         max-width: 729px;
+//                         font-size: .9rem;
+//                         line-height: 22px;
+//                         background: $graybg;
+//                         margin-bottom: 1rem;
+//                         padding: .375rem 1rem;
+//                         border-radius: 4px;
+
+//                         .iconfont {
+//                             color: $red-color;
+//                             font-size: 1.2rem;
+//                             position: relative;
+//                             top: 2px;
+//                             margin-right: 5px;
+//                         }
+//                     }
+
+//                     .col-list {
+//                         width: 100%;
+//                         max-width: 729px;
+
+//                         .col-list-item {
+//                             font-size: 16px;
+//                             line-height: 45px;
+//                             width: 100%;
+//                             @include flex(row, space-between, center);
+
+//                             label {
+//                                 flex: 1;
+//                                 width: 100%;
+//                             }
+
+//                             .card-check {
+//                                 margin-right: 10px;
+//                             }
+
+//                             .sec_btn {
+//                                 margin: 0;
+//                                 width: 80px;
+//                                 line-height: 14px;
+//                             }
+//                         }
+//                     }
+//                 }
+
+//                 // 充值'提领
+//                 .nav {
+//                     height: 60px;
+//                 }
+
+//                 .mian-group {
+//                     width: 100%;
+//                     position: relative;
+
+//                     .left-group {
+//                         width: 50%;
+//                         padding-right: 40px;
+//                     }
+
+//                     .right-group {
+//                         height: 100%;
+//                         width: 50%;
+//                         padding-left: 50px;
+
+//                         .list-item {
+//                             padding: 0.5rem 1.2rem;
+
+
+//                             box-shadow: none;
+//                             width: 310px;
+//                             min-height: 90px;
+//                             margin-bottom: .5rem;
+//                             transition: all 0.1s ease-in-out;
+//                             cursor: pointer;
+
+//                             &:hover {
+//                                 box-shadow: 0px 4px 10px #0000000F;
+//                                 // border: 1px solid $primary-color;
+
+//                             }
+
+//                             .list-title {
+//                                 font-size: 14px;
+
+//                                 line-height: 1.3rem;
+
+//                                 span {
+//                                     margin-left: 1rem;
+//                                     color: $base-text;
+
+//                                     &.text-red {
+//                                         color: $red-color;
+//                                     }
+
+//                                     &.text-blue {
+//                                         color: $primary-color;
+//                                     }
+
+//                                     &.text-green {
+//                                         color: $green-color;
+//                                     }
+//                                 }
+//                             }
+//                         }
+
+//                         .more-btn {
+
+
+//                             &:hover {
+//                                 color: $primary-color;
+//                             }
+//                         }
+//                     }
+
+
+//                 }
+
+//                 // 站内信'公告
+//                 .title-bar {
+//                     .icon-btn {
+//                         @include flex(row, flex-start, center);
+
+//                         &:hover {
+//                             color: $primary-color;
+//                         }
+//                     }
+//                 }
+
+//                 .message-inner {
+//                     overflow-y: auto;
+//                     height: 568px;
+//                     border-left: 1px solid $border-color;
+//                     border-bottom: 1px solid $border-color;
+
+//                     &::-webkit-scrollbar {
+//                         width: 10px;
+//                     }
+
+//                     &::-webkit-scrollbar-track {
+//                         background-color: transparent;
+//                     }
+
+//                     &::-webkit-scrollbar-thumb {
+//                         background-color: #d3d8da;
+//                         border-radius: 5px;
+//                     }
+//                 }
+
+//                 .message-list {
+//                     position: relative;
+//                     background: #fff;
+//                     cursor: pointer;
+//                     border-bottom: 1px solid $border-color;
+
+//                     &.active,
+//                     &:hover,
+//                     &:focus,
+//                     &:active {
+//                         background: $tablebg;
+//                     }
+
+//                     .message-item {
+//                         height: 56px;
+//                         padding: 16px;
+//                         display: flex;
+//                         justify-content: space-between;
+//                         align-items: center;
+
+//                         &.select {
+
+//                             // .message-select {
+//                             //     display: block;
+//                             // }
+//                             .form-checkbox {
+//                                 display: block;
+//                             }
+//                         }
+//                     }
+
+//                     &.seen {
+
+
+//                         .iconfont {}
+//                     }
+
+//                     .form-checkbox {
+//                         margin-right: 10px;
+//                         display: none;
+//                     }
+
+//                     // .message-select {
+//                     //     width: 16px;
+//                     //     height: 16px;
+//                     //     margin-right: 10px;
+//                     //     display: none;
+//                     // }
+
+//                     .iconfont {
+//                         font-size: 24px;
+//                         width: 30px;
+//                         color: $second-text-color;
+//                     }
+
+//                     .message-title-col {
+//                         @include flex(row, space-between, center);
+//                         font-size: 1rem;
+//                         flex: 1;
+
+//                         .message-title {
+//                             width: 70%;
+//                             font-weight: 600;
+//                         }
+
+//                         .message-time {
+//                             width: 30%;
+//                             color: $second-text-color;
+//                             text-align: right;
+//                             margin-right: 10px;
+//                         }
+//                     }
+
+//                     .iconfont.allow-right {
+//                         font-size: 16px;
+//                     }
+//                 }
+
+//                 .message-content {
+//                     display: block;
+//                     background: $tablebg;
+//                     padding: 1.6rem;
+//                     box-shadow: inset 4px 0px 15px rgba(0, 0, 0, 0.05);
+//                     min-height: 568px;
+
+//                     .title {
+//                         font-weight: bold;
+//                         font-size: 1.2rem;
+//                     }
+
+//                     .time {
+//                         color: $primary-color;
+//                     }
+
+//                     .text {
+//                         line-height: 1.6;
+//                         font-size: .9rm;
+//                     }
+//                 }
+
+//                 // 銀行卡
+//                 .bank-list {
+//                     width: 100%;
+//                     display: inline-block;
+
+//                     .bank-item {
+//                         float: left;
+//                         overflow: hidden;
+//                         background: #fff;
+//                         margin-bottom: 15px;
+//                         margin-right: 15px;
+//                         width: 365px;
+//                         height: 160px;
+//                         border-radius: 3px;
+//                         border: 1px solid $border-color;
+//                         padding: 15px 25px 65px 25px;
+//                         display: flex;
+//                         flex-direction: column;
+//                         justify-content: space-between;
+//                         position: relative;
+//                         @include box-shadow;
+//                         transition: all .15s ease;
+
+//                         &:last-of-type {
+//                             margin-bottom: 0;
+//                         }
+
+//                         &:hover {
+
+//                             .btn-wrap {
+//                                 display: flex;
+//                                 bottom: 25px;
+//                             }
+//                         }
+
+//                         &.active {
+//                             border: 1px solid $primary-color;
+
+//                             .focus {
+//                                 display: inline-block;
+//                             }
+//                         }
+
+//                         &.oncheck {
+
+//                             .check-mask {
+//                                 display: flex;
+//                             }
+//                         }
+
+//                         .bank-name {
+//                             font-size: 14px;
+//                             letter-spacing: 1px;
+
+//                         }
+
+//                         .bank-num {
+//                             font-size: 18px;
+//                             font-weight: bold;
+//                             text-align: center;
+//                             line-height: 1.8;
+//                             margin-top: 14px;
+//                         }
+
+//                         .user-name {
+//                             font-size: 14px;
+
+//                             text-align: right;
+//                         }
+
+//                         .check-mask {
+//                             width: 100%;
+//                             height: 100%;
+//                             padding-bottom: 15px;
+//                             position: absolute;
+//                             top: 0;
+//                             left: 0;
+//                             color: #fff;
+//                             display: none;
+//                             justify-content: center;
+//                             align-items: center;
+//                             z-index: 1;
+//                             background: rgba(74, 83, 89, .8);
+//                         }
+
+//                         .btn-wrap {
+//                             overflow: hidden;
+//                             width: 315px;
+//                             display: flex;
+//                             flex-wrap: nowrap;
+//                             position: absolute;
+//                             left: 25px;
+//                             right: 25px;
+//                             bottom: 25px;
+//                             // bottom: -34px;
+//                             z-index: 2;
+//                             transition: all .15s ease;
+
+//                         }
+
+//                         .focus {
+//                             position: absolute;
+//                             right: 0;
+//                             top: 0;
+//                             width: 12px;
+//                             height: 12px;
+//                             border-style: solid;
+//                             border-width: 0px 30px 30px 0px;
+//                             border-color: transparent $primary-color transparent transparent;
+//                             display: none;
+
+//                             .iconfont {
+//                                 color: #fff;
+//                                 font-size: 15px;
+//                                 position: relative;
+//                                 top: 0;
+//                                 right: -13px;
+//                             }
+//                         }
+//                     }
+//                 }
+
+//                 // 推廣收益
+//                 .qr-code-box {
+//                     width: 100%;
+//                     text-align: center;
+
+//                     img {
+//                         width: 300px;
+//                         height: 300px;
+//                         display: block;
+//                         margin: 0 auto;
+//                     }
+//                 }
+
+//                 .invite-item {
+//                     @include box-shadow;
+//                     border: 1px solid $border-color;
+//                     border-radius: 3px;
+//                     -webkit-border-radius: 3px;
+//                     -moz-border-radius: 3px;
+//                     -ms-border-radius: 3px;
+//                     -o-border-radius: 3px;
+//                     padding: 15px;
+//                     margin-top: 10px;
+//                     min-height: 90px;
+
+//                     div {
+//                         display: flex;
+//                         justify-content: space-between;
+//                         align-items: center;
+//                         font-size: 15px;
+//                         line-height: 1.8;
+//                     }
+//                 }
+
+//                 .table-wrap {
+//                     width: 100%;
+//                     height: 440px;
+//                     overflow-y: auto;
+
+//                     &::-webkit-scrollbar {
+//                         width: 10px;
+//                     }
+
+//                     &::-webkit-scrollbar-track {
+//                         background-color: transparent;
+//                     }
+
+//                     &::-webkit-scrollbar-thumb {
+//                         background-color: #d3d8da;
+//                         border-radius: 5px;
+//                     }
+//                 }
+
+//                 .team {
+//                     width: 100%;
+
+//                     overflow-y: auto;
+//                     @include box-shadow;
+
+//                     tr {
+//                         width: 100%;
+//                         display: flex;
+
+
+//                         &:last-of-type {
+//                             border-radius: 0 0 4px 4px;
+//                         }
+
+//                         &:nth-of-type(2n+1) {
+//                             background: $tablebg;
+//                         }
+
+//                         &:first-of-type {
+//                             background: $primary-gradient;
+//                             color: #fff;
+//                             font-weight: bold;
+//                             border-radius: 4px 4px 0 0;
+//                         }
+
+//                         th,
+//                         td {
+//                             width: 50%;
+//                             padding: 0.75rem 2rem;
+//                         }
+
+//                         td:nth-of-type(2) {
+//                             color: $second-text-color;
+//                         }
+//                     }
+//                 }
+
+
+//             }
+//         }
+//     }
+// }
 
 // 關於AG、幫助中心、條款規則
 .hp {

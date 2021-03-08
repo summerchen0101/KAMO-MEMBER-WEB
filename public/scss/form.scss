@@ -244,56 +244,56 @@
 }
 
 // radio
-.form-radio {
-    position: relative;
-    cursor: pointer;
-    @include flex(row, flex-start, center);
-    flex-wrap: wrap;
+// .form-radio {
+//     position: relative;
+//     cursor: pointer;
+//     @include flex(row, flex-start, center);
+//     flex-wrap: wrap;
 
-    .input-check {
-        position: absolute;
-        opacity: 0;
-        visibility: hidden;
-        height: 0;
-        width: 0;
+//     .input-check {
+//         position: absolute;
+//         opacity: 0;
+//         visibility: hidden;
+//         height: 0;
+//         width: 0;
 
-        &+.checkmark {
-            border: 1px solid $check-border;
-            background: $tablebg;
-            display: block;
-            // position: absolute;
-            // left: 0;
-            // top: 0;
-            height: 15px;
-            width: 15px;
-            border-radius: 50%;
-            margin-right: 4px;
-        }
+//         &+.checkmark {
+//             border: 1px solid $check-border;
+//             background: $tablebg;
+//             display: block;
+//             // position: absolute;
+//             // left: 0;
+//             // top: 0;
+//             height: 15px;
+//             width: 15px;
+//             border-radius: 50%;
+//             margin-right: 4px;
+//         }
 
-        &+.checkmark::after {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            content: '';
-            position: absolute;
-            background: $primary-color;
-            display: none;
+//         &+.checkmark::after {
+//             width: 8px;
+//             height: 8px;
+//             border-radius: 50%;
+//             content: '';
+//             position: absolute;
+//             background: $primary-color;
+//             display: none;
 
-        }
+//         }
 
-        &:checked+.checkmark {
-            position: relative;
-            @include flex(row, center, center);
-            text-align: center;
-            flex-wrap: wrap;
-        }
+//         &:checked+.checkmark {
+//             position: relative;
+//             @include flex(row, center, center);
+//             text-align: center;
+//             flex-wrap: wrap;
+//         }
 
-        &:checked+.checkmark:after {
-            display: block;
-        }
-    }
+//         &:checked+.checkmark:after {
+//             display: block;
+//         }
+//     }
 
-}
+// }
 
 // toggle switch
 .form-switch {

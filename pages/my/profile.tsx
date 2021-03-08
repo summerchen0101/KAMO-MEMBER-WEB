@@ -19,8 +19,11 @@ import PassPopup from '@/components/popups/PassPopup'
 import TradePassPopup from '@/components/popups/TradePassPopup'
 import BankcardListPopup from '@/components/popups/BankcardListPopup'
 import _ from 'lodash'
-import { Box, Text } from '@chakra-ui/layout'
+import { Spacer, Image, Input, Button } from '@chakra-ui/react'
+import { Box, Center, Flex, Stack, Text } from '@chakra-ui/layout'
+
 import BankcardAddPopup from '@/components/popups/BankcardAddPopup'
+// import { Button, FormLabel } from 'react-bootstrap'
 
 const ProfilePage: React.FC = () => {
   const router = useRouter()
@@ -47,7 +50,134 @@ const ProfilePage: React.FC = () => {
   }, [])
   return (
     <Dashboard>
-      <MemberMenu>
+      <main className="user-main">
+        <Box className="laout">
+          <MemberMenu></MemberMenu>
+
+          <Box className="user-centerContent">
+            <Flex alignItems="flex-end" mb="32px">
+              <Text fontSize="24px" fontWeight="bold" color="gray.700">
+                个人资料
+              </Text>
+              <Text fontSize="14px" ml="8px" mb="2px">
+                为了确保您的账户安全，请您填写相关安全信息，以备不时之需
+              </Text>
+            </Flex>
+            <Stack direction={['column']} spacing="20px" as="form">
+              <Box className="section-title color-primary">基本资料</Box>
+              <Flex alignItems="center">
+                <Box className="centerformLabel">真实姓名</Box>
+                <input
+                  type="text"
+                  className="centerformIinput"
+                  style={{ width: '346px' }}
+                  placeholder="名字需要与银行卡持卡人姓名一致，否则无法提款"
+                />
+              </Flex>
+              <Flex alignItems="center">
+                <Box className="centerformLabel">出生日期</Box>
+                <input
+                  type="text"
+                  className="centerformIinput"
+                  style={{ width: '346px' }}
+                  placeholder="添加日期，确保您已满18周岁"
+                />
+              </Flex>
+              <Flex alignItems="center">
+                <Box className="centerformLabel">注册日期</Box>
+                <Text>2020-12-23 10:26:51</Text>
+              </Flex>
+              <button
+                className="btnbase primary_btn"
+                style={{ width: '190px', margin: '16px 0 20px 82px' }}
+              >
+                保存
+              </button>
+            </Stack>
+            <Box w="full" height="1px" bgColor="#F0F0F0"></Box>
+            <Stack direction={['column']} spacing="20px" mt="20px">
+              <Box className="section-title color-red">账户安全</Box>
+              <Flex w="428px" alignItems="center">
+                <Box className="centerformLabel">手机号码</Box>
+                <Text fontSize="15px" color="red.500">
+                  未验证
+                </Text>
+                <Spacer />
+                <button
+                  className="
+                  outline_btn color-primary "
+                  style={{ width: '90px' }}
+                >
+                  验证
+                </button>
+              </Flex>
+              <Flex w="428px" alignItems="center">
+                <Box className="centerformLabel">电子邮箱</Box>
+                <Text fontSize="15px" color="blue.500">
+                  已验证
+                </Text>
+                <Spacer />
+                <button
+                  className="
+                  outline_btn color-primary "
+                  style={{ width: '90px' }}
+                >
+                  验证
+                </button>
+              </Flex>
+              <Flex w="428px" alignItems="center">
+                <Box className="centerformLabel">账户密码</Box>
+                <Text fontSize="15px">******</Text>
+                <Spacer />
+                <button
+                  className="
+                  outline_btn color-primary "
+                  style={{ width: '90px' }}
+                >
+                  修改
+                </button>
+              </Flex>
+              <Flex w="428px" alignItems="center">
+                <Box className="centerformLabel">银行卡</Box>
+                <Text fontSize="15px" color="red.500">
+                  未设置
+                </Text>
+                <Spacer />
+                <button
+                  className="
+                  outline_btn color-primary "
+                  style={{ width: '90px' }}
+                >
+                  新增
+                </button>
+                <button
+                  className="
+                  outline_btn color-primary "
+                  style={{ width: '90px', margin: '0 0 0 10px' }}
+                >
+                  设置
+                </button>
+              </Flex>
+              <Flex w="428px" alignItems="center">
+                <Box className="centerformLabel">交易密码</Box>
+                <Text fontSize="15px" color="red.500">
+                  未设置
+                </Text>
+                <Spacer />
+                <button
+                  className="
+                  outline_btn color-primary "
+                  style={{ width: '90px' }}
+                >
+                  修改
+                </button>
+              </Flex>
+            </Stack>
+          </Box>
+        </Box>
+      </main>
+
+      {/* <MemberMenu>
         <Box className="menu-content-section">
           <div className="title-col mb-4">个人资料</div>
           <table className="profile">
@@ -197,21 +327,7 @@ const ProfilePage: React.FC = () => {
             </tbody>
           </table>
         </Box>
-      </MemberMenu>
-      <NicknamePopup />
-      <WechatPopup />
-      <LinePopup />
-      <TelegramPopup />
-      <QqPopup />
-      <EmailPopup />
-      <PhonePopup />
-      <PassPopup />
-      <TradePassPopup />
-      <BankcardListPopup />
-      <BankcardAddPopup />
-
-      <Footer />
-      <FloatNav />
+      </MemberMenu> */}
     </Dashboard>
   )
 }

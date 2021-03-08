@@ -2,10 +2,10 @@ import { useGlobalProvider } from '@/context/GlobalProvider'
 import useService from '@/utils/useService'
 import useTransfer from '@/utils/useTransfer'
 import { Box, Link, Center, Stack, HStack } from '@chakra-ui/layout'
-import { Input, outline } from '@chakra-ui/react'
+import { Input, outline, Button } from '@chakra-ui/react'
 import { useRouter } from 'next/dist/client/router'
 import React from 'react'
-import { Button } from 'react-bootstrap'
+// import { Button } from 'react-bootstrap'
 
 function HeaderUserInfo() {
   const { user } = useGlobalProvider()
@@ -80,12 +80,16 @@ function HeaderUserInfo() {
           ></Box>
         </Box>
 
-        <Button className="sec_btn color-primary" style={{ width: '70px' }}>
+        <button className="sec_btn color-primary" style={{ width: '70px' }}>
           登录
-        </Button>
-        <Button className="sec_btn color-blue" style={{ width: '70px' }}>
+        </button>
+        <button
+          w="70px"
+          className="sec_btn color-blue"
+          style={{ width: '70px' }}
+        >
           注册
-        </Button>
+        </button>
       </HStack>
 
       {/* 登入後 */}

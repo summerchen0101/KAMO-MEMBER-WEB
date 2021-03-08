@@ -13,14 +13,6 @@
   align-items: $arrangeVice; //flex-start | flex-end | center | baseline | stretch;
 }
 
-// @mixin list-item {
-//   border: 1px solid $border-color;
-//   border-radius: 4px;
-//   -webkit-border-radius: 4px;
-//   -moz-border-radius: 4px;
-//   -ms-border-radius: 4px;
-//   -o-border-radius: 4px;
-// }
 
 @mixin border-radius($radius:50%) {
   -webkit-border-radius: $radius;

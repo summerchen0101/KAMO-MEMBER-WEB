@@ -24,8 +24,8 @@
 
     }
 }
-
-.leftbox {
+.headbox {
+   .leftbox {
     // width: 65%;
     opacity: .9;
     @include flex(row, flex-start, center);
@@ -96,6 +96,8 @@
         }
     }
 }
+}
+
 
 .nav-bg {
     background: linear-gradient(180deg, #FBFCFF 0%, #FFFFFF 100%);

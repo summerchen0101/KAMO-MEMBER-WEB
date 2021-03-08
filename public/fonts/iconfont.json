@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "20236197",
+      "name": "withdrawal",
+      "font_class": "withdrawal",
+      "unicode": "e688",
+      "unicode_decimal": 59016
+    },
+    {
+      "icon_id": "20236198",
+      "name": "transfer",
+      "font_class": "transfer",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
       "icon_id": "20220914",
       "name": "problem",
       "font_class": "problem",
