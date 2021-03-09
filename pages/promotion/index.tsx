@@ -2,7 +2,7 @@ import CarouselBanner from '@/components/CarouselBanner'
 import HomeHotEventItem from '@/components/HomeHotEventItem'
 import Dashboard from '@/components/Dashboard'
 import useService from '@/utils/useService'
-import { Box, Divider, Text } from '@chakra-ui/layout'
+import { Box, Center, Divider, Flex, Stack, Text } from '@chakra-ui/layout'
 import { useRouter } from 'next/dist/client/router'
 import React, { useEffect, useState } from 'react'
 import { useLoaderProvider } from '@/context/LoaderProvider'
@@ -38,25 +38,35 @@ const PromotionListPage: React.FC = () => {
   return (
     <Dashboard>
       <main className="main">
-        <section className="promotion">
-          <Box className="promotion-box laout">
-            <Box className="title-col" mt="4">
-              优惠活动
+        <Box className="laout">
+          {/* 活动 */}
+          <Box w="full" h="470px" mb="20px">
+            <Image w="100%" h="auto" src="/img/promotion.png"></Image>
+          </Box>
+          {/* 項目 */}
+          <Flex mb="40px">
+            <Box className="promo-menuWrap">
+              <ul className="tab-inner">
+                <li className="active">全部优惠</li>
+                <li>限时优惠</li>
+              </ul>
             </Box>
-            {/* 項目 */}
-            <Box className="list-container mt-4">
+            <Stack
+              direction={['column']}
+              spacing="30px"
+              className="promo-centerContent"
+            >
               {activities.map((t, i) => (
                 <Box
-                  className="promo-item"
+                  className="promo-acyivityList"
                   key={i}
                   onClick={() => router.push(`/promotion/${t.id}`)}
                 >
-                  <Box className="img-box">
-                    <Image src={t.img} className="img-fluid" />
-                  </Box>
-                  <Box className="promo-content">
+                  <Box className="itemText">
+                    <Box className="tag" bgColor="red.500">
+                      全部优惠
+                    </Box>
                     <Box className="title">{t.title}</Box>
-                    <Box className="tag">活动详情</Box>
                     <Box className="time">
                       活動時間:{' '}
                       {t.start_at ? (
@@ -67,16 +77,21 @@ const PromotionListPage: React.FC = () => {
                         '無限期'
                       )}
                     </Box>
-                    {/* <Divider my="2" borderColor="gray.300" /> */}
-                    <Box className="t-content" whiteSpace="pre-wrap">
+                    <Center className="third_btn active">查看详情</Center>
+
+                    {/* <Box className="t-content" whiteSpace="pre-wrap">
                       {t.content}
-                    </Box>
+                    </Box> */}
+                  </Box>
+                  <Box className="imgBox">
+                    {/* <Image src={t.img} /> */}
+                    <Image src="/img/promotion-item.jpg"></Image>
                   </Box>
                 </Box>
               ))}
-            </Box>
-          </Box>
-        </section>
+            </Stack>
+          </Flex>
+        </Box>
       </main>
 
       <Footer />

@@ -32,9 +32,9 @@ body {
     cursor: pointer;
 }
 
-// .text-lighgray {
-//     color: $light-text-color;
-// }
+.text-gold {
+    color: $primary-color;
+}
 
 .text-red {
     color: $red-color;
@@ -374,14 +374,10 @@ body {
     padding-top: 130px;
     width: 100%;
     position: relative;
+    padding-bottom: 20px;
 }
 
 .user-menu {
-    // position: absolute;
-    // top: 0;
-    // bottom: 0;
-    float: left;
-    margin-bottom: 40px;
     width: 220px;
     min-height: 821px;
     box-sizing: border-box;
@@ -499,7 +495,8 @@ body {
 .user-centerContent {
     width: 964px;
     padding: 30px;
-    float: right;
+    margin-left: 16px;
+    box-sizing: border-box;
     background: #fff;
     height: auto;
     min-height: 821px;
@@ -539,899 +536,118 @@ body {
 }
 
 //优惠活動
-.promotion {
-    width: 100%;
-    min-height: calc(100vh - 159px);
+.promo-menuWrap {
+    position: sticky;
+    top: 126px;
+    width: 198px;
+    min-height: 460px;
+    flex: 0 0 198px;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    @include border-radius(5px);
+    background: #fff;
+    box-shadow: 0 2px 15px 0 rgba(139, 160, 203, 0.04);
+
+    .tab-inner {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        li {
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            height: 48px;
+            padding: 0 28px;
+
+            &.active,
+            &:active,
+            &:hover {
+                color: #fff;
+                background: linear-gradient(45deg, #F1D3B6 0%, #DBB290 100%);
+            }
+        }
+
+    }
 }
 
-.promotion-box {
-    padding: $base-size;
+.promo-centerContent {
+    margin-left: 32px;
+    width: 970px;
+    min-height: 600px;
 
-    .promotion-detail {
-        box-shadow: 0 10px 10px 0 #899ac11a;
-        background: #fff;
-        border-radius: 4px;
-        overflow-x: hidden;
-        overflow-y: auto;
-        min-height: calc(100vh - 253px);
-    }
-
-    .promo-item {
-        width: 100%;
+    .promo-acyivityList {
         cursor: pointer;
-        margin-bottom: 15px;
-        // min-height: 208px;
-        display: flex;
-        transition: all 0.3s ease 0s;
-        border: 1px solid $border-color;
-        border-radius: 4apx;
-        @include box-shadow;
-        background: #fff;
+        width: 968px;
+        height: 218px;
+        border: 1px solid #fff;
+        position: relative;
+        box-shadow: 0 2px 15px 0 rgba(139, 160, 203, 0.25);
+        @include border-radius(5px);
+        overflow: hidden;
+        transition: all .15s ease-in-out;
 
         &:hover {
             transform: scale(1.02);
         }
 
-        .img-box {
-            @include flex(row, center, center);
-            width: 50%;
-            overflow: hidden;
-            margin: 1rem 0 1rem 1rem;
-            height: auto;
+        .imgBox {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
 
             img {
-                max-height: 172.5px;
-                max-width: 920px;
-                width: 920px;
-                height: 172.5px;
+                width: 100%;
+                height: 100%;
                 display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1;
             }
         }
 
-        .promo-content {
-            margin: 1rem 1.5rem;
-            // padding: .5rem 0 .5rem 1rem;
-            @include flex(column, flex-start, flex-start);
-            width: 50%;
-            position: relative;
-
+        .itemText {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            padding: 30px;
+            .tag{
+                font-size: 14px;
+                padding: 2px 5px;
+                display: inline-block;
+                color: #fff;
+                border-radius: 3px;
+                box-shadow: 0 2px 5px 0 rgba(139, 160, 203, 0.25);
+            }
             .title {
-                width: 100%;
-                font-size: 22px;
+                font-size: 28px;
                 font-weight: bold;
                 color: $primary-color;
-                margin-bottom: 1rem;
-                padding: .5rem 0;
-                position: relative;
-                padding-right: 100px;
+                width: 450px;
                 @include ellipsis;
-                @include flex(row, space-between, center);
+                margin-top: 5px;
+                margin-bottom: 5px;
             }
 
-            .tag {
-                position: absolute;
-                right: -32px;
-                top: 0;
-                display: block;
-                line-height: 48px;
-                background: url("../img/promot_tag.png") no-repeat;
-                padding: 0 15px;
-                background-size: 100%;
-                width: 116px;
-                height: 42px;
-                color: #fff;
-                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-                font-size: 15px;
-                font-weight: bold;
-                text-align: center;
-            }
-
-            .time {
-                font-size: 15px;
-                color: $base-text;
-
-                span {
-                    margin-left: 10px;
-                }
-            }
-
-            .t-content {
+            .time{
                 color: $second-text-color;
-                margin-top: 15px;
-                padding-top: .5rem;
-                font-size: 15px;
-                line-height: 1.6;
-                height: 80px;
-                overflow: hidden;
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
-                position: relative;
-
-                &::before {
-                    content: '';
-                    height: 1px;
-                    width: 100%;
-                    background: $border-color;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                }
+                font-size: 14px;
+                margin-bottom: 15px;
             }
-
         }
-
-    }
-
-    .promo-title {
-        width: 100%;
-        text-align: center;
-        margin: .5rem 0;
-        padding: .5rem 0;
-        background: transparent url(../img/promot-title.png) no-repeat center;
-        color: $base-text;
-
-        h5 {
-            font-size: 26px;
-            font-weight: bold;
-            width: 350px;
-            margin: 0 auto;
-            display: block;
-        }
-    }
-
-    .content {
-        border-top: 1px solid $border-color;
-        margin-top: 15px;
-        font-size: 16px;
-        line-height: 1.6;
-        padding: 1rem 2rem;
-        position: relative;
     }
 }
-
-// 合營計畫
-.agent {
-    width: 100%;
-    position: relative;
-    min-height: calc(100vh - 110px);
-    background-image: url(../img/agent-bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%;
-
-    .agent-box {
-        width: 1280px;
-        height: 600px;
-        display: flex;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-
-        .agent-info {
-            @include flex(column, center, flex-start);
-
-            .agent-title {
-                margin-bottom: 30px
-            }
-
-            .slogan {
-                padding: 16px;
-                background: rgba(255, 255, 255, .75);
-                border-radius: 5px;
-
-                &:nth-child(1) {
-                    margin-right: 15px;
-                }
-
-                .title {
-                    @include flex(row, flex-start, center);
-                    color: $primary-color;
-                    font-size: 20px;
-                    font-weight: bold;
-
-                    img {
-                        margin-right: 15px;
-                    }
-                }
-
-                p {
-                    margin-top: 20px;
-                    font-size: 15px;
-                    line-height: 1.6;
-                    color: $second-text-color;
-                }
-
-            }
-
-            .primary_btn {
-                border-radius: 45px;
-            }
-        }
-
-        .brand-img {
-            width: 796px;
-            height: 583px;
-        }
-    }
-
-    .footer {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-}
-
-//会员中心
-// .my {
-//     width: 100%;
-//     min-height: calc(100vh - 159px);
-//     position: relative;
-
-//     .my-box {
-//         padding: $base-size*2 $base-size $base-size $base-size;
-
-//         // position: absolute;
-//         // left: 50%;
-//         // top: 50%;
-//         // transform: translate(-50%, -50%);
-//         .contents {
-//             width: 100%;
-//             min-height: 755px;
-//             display: flex;
-//             box-shadow: 0 0 10px 0 #0000000F;
-
-//             // 左選單
-//             .menu-section {
-//                 background: $base-text;
-//                 border-radius: 4px 0 0 4px;
-//                 overflow: hidden;
-
-//                 .menu-inner {
-//                     display: block;
-//                     position: relative;
-//                     flex: 1;
-//                     border-bottom: 1px solid #657178;
-//                     margin-top: -1px;
-
-//                     &::after {
-//                         content: "";
-//                         position: absolute;
-//                         top: 0;
-//                         right: 0;
-//                         bottom: 0;
-//                         width: 25px;
-//                         background: url(../img/menu_gradien.png) 0 0 no-repeat;
-//                         z-index: 9;
-//                     }
-
-//                     .menu-list-item {
-//                         position: relative;
-//                         cursor: pointer;
-//                         @include flex(row, flex-start, center);
-//                         padding: 1rem 2rem;
-//                         font-size: 1rem;
-//                         color: #fff;
-//                         width: 185px;
-//                         height: 62px;
-//                         border-top: 1px solid #657178;
-//                         border-bottom: 1px solid #3A4348;
-//                         background: $base-text;
-
-//                         &::after {
-//                             content: "";
-//                             position: absolute;
-//                             right: 2px;
-//                             top: 0px;
-//                             bottom: 0px;
-//                             display: none;
-//                             width: 5px;
-//                             background: $primary-color;
-//                             z-index: 11;
-//                         }
-
-//                         &.active,
-//                         &:active {
-//                             background: $primary-gradient;
-
-
-//                             &::after {
-//                                 display: block;
-//                             }
-//                         }
-
-//                         &:hover {
-//                             background: linear-gradient(top, $base-text, #3b3c3c);
-
-//                             &.active {
-//                                 background: $primary-gradient;
-
-//                             }
-
-//                             &::after {
-//                                 display: block;
-//                             }
-//                         }
-
-//                         .counter-point {
-//                             position: absolute;
-//                             line-height: 18px;
-//                             width: 25px;
-//                             top: 22px;
-//                             right: 17px;
-//                             font-size: 10px;
-//                             border-radius: 15px;
-//                             text-align: center;
-//                             font-family: Helvetica;
-//                             background: $red-color;
-//                             font-weight: bold;
-//                             color: white;
-//                             padding: 0 5px;
-//                             z-index: 11;
-//                         }
-
-//                         .iconfont {
-//                             font-size: 1.2rem;
-//                             margin-right: 5px;
-//                         }
-//                     }
-//                 }
-//             }
-
-//             // 右內容
-//             .menu-content-section {
-//                 width: 86%;
-//                 background: #fff;
-//                 position: relative;
-//                 padding: 40px;
-//                 border-radius: 0 4px 4px 0;
-
-//                 // 个人资料
-//                 table.profile {
-//                     width: 100%;
-
-//                     tr {
-//                         border-width: 1px 1px 0 1px;
-//                         border-style: solid;
-//                         border-color: $border-color;
-//                         display: flex;
-//                         flex-wrap: wrap;
-
-//                         &:nth-of-type(2n) {
-//                             background: $tablebg;
-//                         }
-
-//                         &:first-of-type {
-//                             border-radius: 4px 4px 0 0;
-//                         }
-
-//                         &:last-of-type {
-//                             border-bottom: 1px solid $border-color;
-//                             border-radius: 0 0 4px 4px;
-//                         }
-
-//                         td {
-//                             padding: 0 1rem;
-//                             @include flex(row, flex-start, center);
-//                             line-height: 55px;
-
-
-//                             &:nth-of-type(1) {
-//                                 font-weight: bold;
-//                                 width: 280px;
-//                             }
-
-//                             &:nth-of-type(2) {
-//                                 color: $second-text-color;
-//                                 flex: 1;
-
-
-//                                 &.text-red {
-//                                     color: $red-color;
-
-//                                     &::before {
-//                                         content: '\e680';
-//                                         font-family: "iconfont";
-//                                         font-weight: normal;
-//                                         margin-right: 5px;
-//                                     }
-//                                 }
-//                             }
-
-//                             &:nth-of-type(3) {
-//                                 @include flex(row, flex-end, center);
-
-//                                 .mini_btn {
-//                                     float: right;
-//                                     width: 80px;
-//                                     line-height: 18px;
-//                                     margin-left: 10px;
-//                                 }
-//                             }
-//                         }
-//                     }
-//                 }
-
-//                 #bankcard-edit {
-//                     width: 100%;
-//                     padding-left: 296px;
-//                     display: none;
-//                     // @include flex(column, flex-start, flex-start);
-
-//                     &.show {
-//                         @include flex(column, flex-start, flex-start);
-//                     }
-
-//                     p {
-//                         width: 100%;
-//                         max-width: 729px;
-//                         font-size: .9rem;
-//                         line-height: 22px;
-//                         background: $graybg;
-//                         margin-bottom: 1rem;
-//                         padding: .375rem 1rem;
-//                         border-radius: 4px;
-
-//                         .iconfont {
-//                             color: $red-color;
-//                             font-size: 1.2rem;
-//                             position: relative;
-//                             top: 2px;
-//                             margin-right: 5px;
-//                         }
-//                     }
-
-//                     .col-list {
-//                         width: 100%;
-//                         max-width: 729px;
-
-//                         .col-list-item {
-//                             font-size: 16px;
-//                             line-height: 45px;
-//                             width: 100%;
-//                             @include flex(row, space-between, center);
-
-//                             label {
-//                                 flex: 1;
-//                                 width: 100%;
-//                             }
-
-//                             .card-check {
-//                                 margin-right: 10px;
-//                             }
-
-//                             .sec_btn {
-//                                 margin: 0;
-//                                 width: 80px;
-//                                 line-height: 14px;
-//                             }
-//                         }
-//                     }
-//                 }
-
-//                 // 充值'提领
-//                 .nav {
-//                     height: 60px;
-//                 }
-
-//                 .mian-group {
-//                     width: 100%;
-//                     position: relative;
-
-//                     .left-group {
-//                         width: 50%;
-//                         padding-right: 40px;
-//                     }
-
-//                     .right-group {
-//                         height: 100%;
-//                         width: 50%;
-//                         padding-left: 50px;
-
-//                         .list-item {
-//                             padding: 0.5rem 1.2rem;
-
-
-//                             box-shadow: none;
-//                             width: 310px;
-//                             min-height: 90px;
-//                             margin-bottom: .5rem;
-//                             transition: all 0.1s ease-in-out;
-//                             cursor: pointer;
-
-//                             &:hover {
-//                                 box-shadow: 0px 4px 10px #0000000F;
-//                                 // border: 1px solid $primary-color;
-
-//                             }
-
-//                             .list-title {
-//                                 font-size: 14px;
-
-//                                 line-height: 1.3rem;
-
-//                                 span {
-//                                     margin-left: 1rem;
-//                                     color: $base-text;
-
-//                                     &.text-red {
-//                                         color: $red-color;
-//                                     }
-
-//                                     &.text-blue {
-//                                         color: $primary-color;
-//                                     }
-
-//                                     &.text-green {
-//                                         color: $green-color;
-//                                     }
-//                                 }
-//                             }
-//                         }
-
-//                         .more-btn {
-
-
-//                             &:hover {
-//                                 color: $primary-color;
-//                             }
-//                         }
-//                     }
-
-
-//                 }
-
-//                 // 站内信'公告
-//                 .title-bar {
-//                     .icon-btn {
-//                         @include flex(row, flex-start, center);
-
-//                         &:hover {
-//                             color: $primary-color;
-//                         }
-//                     }
-//                 }
-
-//                 .message-inner {
-//                     overflow-y: auto;
-//                     height: 568px;
-//                     border-left: 1px solid $border-color;
-//                     border-bottom: 1px solid $border-color;
-
-//                     &::-webkit-scrollbar {
-//                         width: 10px;
-//                     }
-
-//                     &::-webkit-scrollbar-track {
-//                         background-color: transparent;
-//                     }
-
-//                     &::-webkit-scrollbar-thumb {
-//                         background-color: #d3d8da;
-//                         border-radius: 5px;
-//                     }
-//                 }
-
-//                 .message-list {
-//                     position: relative;
-//                     background: #fff;
-//                     cursor: pointer;
-//                     border-bottom: 1px solid $border-color;
-
-//                     &.active,
-//                     &:hover,
-//                     &:focus,
-//                     &:active {
-//                         background: $tablebg;
-//                     }
-
-//                     .message-item {
-//                         height: 56px;
-//                         padding: 16px;
-//                         display: flex;
-//                         justify-content: space-between;
-//                         align-items: center;
-
-//                         &.select {
-
-//                             // .message-select {
-//                             //     display: block;
-//                             // }
-//                             .form-checkbox {
-//                                 display: block;
-//                             }
-//                         }
-//                     }
-
-//                     &.seen {
-
-
-//                         .iconfont {}
-//                     }
-
-//                     .form-checkbox {
-//                         margin-right: 10px;
-//                         display: none;
-//                     }
-
-//                     // .message-select {
-//                     //     width: 16px;
-//                     //     height: 16px;
-//                     //     margin-right: 10px;
-//                     //     display: none;
-//                     // }
-
-//                     .iconfont {
-//                         font-size: 24px;
-//                         width: 30px;
-//                         color: $second-text-color;
-//                     }
-
-//                     .message-title-col {
-//                         @include flex(row, space-between, center);
-//                         font-size: 1rem;
-//                         flex: 1;
-
-//                         .message-title {
-//                             width: 70%;
-//                             font-weight: 600;
-//                         }
-
-//                         .message-time {
-//                             width: 30%;
-//                             color: $second-text-color;
-//                             text-align: right;
-//                             margin-right: 10px;
-//                         }
-//                     }
-
-//                     .iconfont.allow-right {
-//                         font-size: 16px;
-//                     }
-//                 }
-
-//                 .message-content {
-//                     display: block;
-//                     background: $tablebg;
-//                     padding: 1.6rem;
-//                     box-shadow: inset 4px 0px 15px rgba(0, 0, 0, 0.05);
-//                     min-height: 568px;
-
-//                     .title {
-//                         font-weight: bold;
-//                         font-size: 1.2rem;
-//                     }
-
-//                     .time {
-//                         color: $primary-color;
-//                     }
-
-//                     .text {
-//                         line-height: 1.6;
-//                         font-size: .9rm;
-//                     }
-//                 }
-
-//                 // 銀行卡
-//                 .bank-list {
-//                     width: 100%;
-//                     display: inline-block;
-
-//                     .bank-item {
-//                         float: left;
-//                         overflow: hidden;
-//                         background: #fff;
-//                         margin-bottom: 15px;
-//                         margin-right: 15px;
-//                         width: 365px;
-//                         height: 160px;
-//                         border-radius: 3px;
-//                         border: 1px solid $border-color;
-//                         padding: 15px 25px 65px 25px;
-//                         display: flex;
-//                         flex-direction: column;
-//                         justify-content: space-between;
-//                         position: relative;
-//                         @include box-shadow;
-//                         transition: all .15s ease;
-
-//                         &:last-of-type {
-//                             margin-bottom: 0;
-//                         }
-
-//                         &:hover {
-
-//                             .btn-wrap {
-//                                 display: flex;
-//                                 bottom: 25px;
-//                             }
-//                         }
-
-//                         &.active {
-//                             border: 1px solid $primary-color;
-
-//                             .focus {
-//                                 display: inline-block;
-//                             }
-//                         }
-
-//                         &.oncheck {
-
-//                             .check-mask {
-//                                 display: flex;
-//                             }
-//                         }
-
-//                         .bank-name {
-//                             font-size: 14px;
-//                             letter-spacing: 1px;
-
-//                         }
-
-//                         .bank-num {
-//                             font-size: 18px;
-//                             font-weight: bold;
-//                             text-align: center;
-//                             line-height: 1.8;
-//                             margin-top: 14px;
-//                         }
-
-//                         .user-name {
-//                             font-size: 14px;
-
-//                             text-align: right;
-//                         }
-
-//                         .check-mask {
-//                             width: 100%;
-//                             height: 100%;
-//                             padding-bottom: 15px;
-//                             position: absolute;
-//                             top: 0;
-//                             left: 0;
-//                             color: #fff;
-//                             display: none;
-//                             justify-content: center;
-//                             align-items: center;
-//                             z-index: 1;
-//                             background: rgba(74, 83, 89, .8);
-//                         }
-
-//                         .btn-wrap {
-//                             overflow: hidden;
-//                             width: 315px;
-//                             display: flex;
-//                             flex-wrap: nowrap;
-//                             position: absolute;
-//                             left: 25px;
-//                             right: 25px;
-//                             bottom: 25px;
-//                             // bottom: -34px;
-//                             z-index: 2;
-//                             transition: all .15s ease;
-
-//                         }
-
-//                         .focus {
-//                             position: absolute;
-//                             right: 0;
-//                             top: 0;
-//                             width: 12px;
-//                             height: 12px;
-//                             border-style: solid;
-//                             border-width: 0px 30px 30px 0px;
-//                             border-color: transparent $primary-color transparent transparent;
-//                             display: none;
-
-//                             .iconfont {
-//                                 color: #fff;
-//                                 font-size: 15px;
-//                                 position: relative;
-//                                 top: 0;
-//                                 right: -13px;
-//                             }
-//                         }
-//                     }
-//                 }
-
-//                 // 推廣收益
-//                 .qr-code-box {
-//                     width: 100%;
-//                     text-align: center;
-
-//                     img {
-//                         width: 300px;
-//                         height: 300px;
-//                         display: block;
-//                         margin: 0 auto;
-//                     }
-//                 }
-
-//                 .invite-item {
-//                     @include box-shadow;
-//                     border: 1px solid $border-color;
-//                     border-radius: 3px;
-//                     -webkit-border-radius: 3px;
-//                     -moz-border-radius: 3px;
-//                     -ms-border-radius: 3px;
-//                     -o-border-radius: 3px;
-//                     padding: 15px;
-//                     margin-top: 10px;
-//                     min-height: 90px;
-
-//                     div {
-//                         display: flex;
-//                         justify-content: space-between;
-//                         align-items: center;
-//                         font-size: 15px;
-//                         line-height: 1.8;
-//                     }
-//                 }
-
-//                 .table-wrap {
-//                     width: 100%;
-//                     height: 440px;
-//                     overflow-y: auto;
-
-//                     &::-webkit-scrollbar {
-//                         width: 10px;
-//                     }
-
-//                     &::-webkit-scrollbar-track {
-//                         background-color: transparent;
-//                     }
-
-//                     &::-webkit-scrollbar-thumb {
-//                         background-color: #d3d8da;
-//                         border-radius: 5px;
-//                     }
-//                 }
-
-//                 .team {
-//                     width: 100%;
-
-//                     overflow-y: auto;
-//                     @include box-shadow;
-
-//                     tr {
-//                         width: 100%;
-//                         display: flex;
-
-
-//                         &:last-of-type {
-//                             border-radius: 0 0 4px 4px;
-//                         }
-
-//                         &:nth-of-type(2n+1) {
-//                             background: $tablebg;
-//                         }
-
-//                         &:first-of-type {
-//                             background: $primary-gradient;
-//                             color: #fff;
-//                             font-weight: bold;
-//                             border-radius: 4px 4px 0 0;
-//                         }
-
-//                         th,
-//                         td {
-//                             width: 50%;
-//                             padding: 0.75rem 2rem;
-//                         }
-
-//                         td:nth-of-type(2) {
-//                             color: $second-text-color;
-//                         }
-//                     }
-//                 }
-
-
-//             }
-//         }
-//     }
-// }
 
 // 關於AG、幫助中心、條款規則
 .hp {

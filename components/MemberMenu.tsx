@@ -4,7 +4,7 @@ import { useRouter } from 'next/dist/client/router'
 import React, { ReactNode } from 'react'
 import { Box, Center, Image, Flex, Text } from '@chakra-ui/react'
 
-function MemberMenu({ children }: { children: ReactNode }) {
+function MemberMenu() {
   const router = useRouter()
   return (
     <Box className="user-menu ">
@@ -51,7 +51,6 @@ function MemberMenu({ children }: { children: ReactNode }) {
         <li>好友推荐</li>
         <li>意见反馈</li>
       </ul>
-      {children}
     </Box>
 
     // <main className="main">

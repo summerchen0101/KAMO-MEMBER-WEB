@@ -73,7 +73,7 @@ const register: React.FC = () => {
     <Center w="100vw" h="100vh" bgColor="" className="login-bg">
       <Box className="login-content" overflowY="auto">
         <Box mb="20px">
-          <Image src="/img/logo.png" m="auto" />
+          <Image src="/img/logo.svg" m="auto" />
         </Box>
         <Box
           className="form-wrap"

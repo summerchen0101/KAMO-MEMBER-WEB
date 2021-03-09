@@ -53,7 +53,7 @@ const Dashboard: React.FC = ({ children }) => {
         </HStack>
         <div className="nav-bg ">
           <div className="nav-content laout ">
-            <img className="logo" src="/img/logo.png" />
+            <img className="logo" src="/img/logo.svg" />
             <ul className="menu">
               <li>
                 <Link href="/home">首页</Link>

@@ -1,42 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="71.582" height="71.582" viewBox="0 0 71.582 71.582">
-  <defs>
-    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
-      <stop offset="0" stop-color="#00dcff"/>
-      <stop offset="1" stop-color="#00c2ff"/>
-    </linearGradient>
-    <linearGradient id="linear-gradient-12" x1="-0.733" y1="-1.976" x2="1.84" y2="2.147" gradientUnits="objectBoundingBox">
-      <stop offset="0" stop-color="#00dcff"/>
-      <stop offset="1" stop-color="#70deff"/>
-    </linearGradient>
-    <linearGradient id="linear-gradient-13" x1="-0.534" y1="-1.011" x2="1.53" y2="3.004" xlink:href="#linear-gradient-12"/>
-    <linearGradient id="linear-gradient-14" x1="-0.29" y1="-0.209" x2="3.118" y2="4.083" xlink:href="#linear-gradient-12"/>
-    <linearGradient id="linear-gradient-15" x1="-0.231" y1="-0.874" x2="2.57" y2="3.293" xlink:href="#linear-gradient-12"/>
-    <linearGradient id="linear-gradient-16" x1="-0.347" y1="-0.605" x2="1.77" y2="1.513" xlink:href="#linear-gradient-12"/>
-    <linearGradient id="linear-gradient-17" x1="-0.65" y1="-1.369" x2="1.306" y2="1.485" xlink:href="#linear-gradient-12"/>
-    <linearGradient id="linear-gradient-18" x1="-8.268" y1="-6.142" x2="5.499" y2="4.442" xlink:href="#linear-gradient-12"/>
-  </defs>
-  <g id="Group_967" data-name="Group 967" transform="translate(-1650.232 -1580.152)">
-    <path id="Path_758" data-name="Path 758" d="M1713.8,1612.473l.7,3.957,3.957.7-3.957.7-.7,3.957-.7-3.957-3.957-.7,3.957-.7Z" fill="url(#linear-gradient)"/>
-    <path id="Path_759" data-name="Path 759" d="M1693.677,1583.374l.978,5.54,5.54.978-5.54.978-.978,5.54-.978-5.54-5.54-.978,5.54-.978Z" fill="url(#linear-gradient)"/>
-    <g id="Group_965" data-name="Group 965">
-      <path id="Path_760" data-name="Path 760" d="M1696.641,1608.653l4.707-8.858h-13.18l3.021,3.158Z" fill="url(#linear-gradient)"/>
-      <path id="Path_761" data-name="Path 761" d="M1677.7,1609.476h16.432l-8.7-9.094-6.123,7.2Z" fill="url(#linear-gradient)"/>
-      <path id="Path_762" data-name="Path 762" d="M1690.061,1637.448l18.62-25.591H1697.8Z" fill="url(#linear-gradient)"/>
-      <path id="Path_763" data-name="Path 763" d="M1668.625,1600.966l-5.427,8.51h9.949Z" fill="url(#linear-gradient)"/>
-      <path id="Path_764" data-name="Path 764" d="M1681.355,1601.5l1.453-1.709H1670.7l4.657,8.765Z" fill="url(#linear-gradient)"/>
-      <path id="Path_765" data-name="Path 765" d="M1663.465,1611.857l19.846,25.458-9.024-25.458Z" fill="url(#linear-gradient)"/>
-      <path id="Path_766" data-name="Path 766" d="M1676.813,1611.857l9.983,28.164,8.52-28.164Z" fill="url(#linear-gradient)"/>
-      <path id="Path_767" data-name="Path 767" d="M1708.849,1609.476l-5.427-8.51-4.523,8.51Z" fill="url(#linear-gradient)"/>
-    </g>
-    <path id="Path_768" data-name="Path 768" d="M1686.023,1651.734a35.791,35.791,0,1,1,25.309-61.1l-.707.707a34.74,34.74,0,1,0,4.248,5.15l.828-.56a35.8,35.8,0,0,1-29.678,55.8Z" fill="url(#linear-gradient)"/>
-    <g id="Group_966" data-name="Group 966">
-      <path id="Path_769" data-name="Path 769" d="M1691.188,1602.953l5.452,5.7,4.707-8.858h-13.18Z" fill="url(#linear-gradient-12)"/>
-      <path id="Path_770" data-name="Path 770" d="M1677.7,1609.476h16.432l-8.7-9.094-6.123,7.2Z" fill="url(#linear-gradient-13)"/>
-      <path id="Path_771" data-name="Path 771" d="M1668.625,1600.966l-5.427,8.51h9.949Z" fill="url(#linear-gradient-14)"/>
-      <path id="Path_772" data-name="Path 772" d="M1681.355,1601.5l1.453-1.709H1670.7l4.657,8.765Z" fill="url(#linear-gradient-15)"/>
-      <path id="Path_773" data-name="Path 773" d="M1663.465,1611.857l13.441,17.242,2.578-2.578-5.2-14.663Z" fill="url(#linear-gradient-16)"/>
-      <path id="Path_774" data-name="Path 774" d="M1681.349,1624.655l12.8-12.8h-17.335Z" fill="url(#linear-gradient-17)"/>
-      <path id="Path_775" data-name="Path 775" d="M1703.422,1600.966l-1.834,3.451,2.463-2.463Z" fill="url(#linear-gradient-18)"/>
-    </g>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 71.6 71.6" style="enable-background:new 0 0 71.6 71.6;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#CBAB8B;}
+	.st1{fill:#DBB59A;}
+</style>
+<path id="Path_758" class="st0" d="M63.6,32.3l0.7,4l4,0.7l-4,0.7l-0.7,4l-0.7-4l-4-0.7l4-0.7L63.6,32.3z"/>
+<path id="Path_759" class="st0" d="M43.4,3.2l1,5.5l5.5,1l-5.5,1l-1,5.5l-1-5.5l-5.5-1l5.5-1L43.4,3.2z"/>
+<g id="Group_965">
+	<path id="Path_760" class="st0" d="M46.4,28.5l4.7-8.9H37.9l3,3.2L46.4,28.5z"/>
+	<path id="Path_761" class="st0" d="M27.5,29.3h16.4l-8.7-9.1l-6.1,7.2L27.5,29.3z"/>
+	<path id="Path_762" class="st0" d="M39.8,57.3l18.6-25.6H47.6L39.8,57.3z"/>
+	<path id="Path_763" class="st0" d="M18.4,20.8L13,29.3h9.9L18.4,20.8z"/>
+	<path id="Path_764" class="st0" d="M31.1,21.3l1.5-1.7H20.5l4.7,8.8L31.1,21.3z"/>
+	<path id="Path_765" class="st0" d="M13.2,31.7l19.8,25.5l-9-25.5H13.2z"/>
+	<path id="Path_766" class="st0" d="M26.6,31.7l10,28.2l8.5-28.2H26.6z"/>
+	<path id="Path_767" class="st0" d="M58.6,29.3l-5.4-8.5l-4.5,8.5H58.6z"/>
+</g>
+<path id="Path_768" class="st0" d="M35.8,71.6C16,71.6,0,55.6,0,35.8S16,0,35.8,0c9.5,0,18.6,3.8,25.3,10.5l-0.7,0.7
+	c-13.6-13.6-35.6-13.5-49.1,0s-13.5,35.6,0,49.1s35.6,13.5,49.1,0c11.7-11.8,13.5-30.2,4.2-44l0.8-0.6c11,16.4,6.7,38.6-9.7,49.7
+	C49.9,69.4,42.9,71.6,35.8,71.6L35.8,71.6z"/>
+<g id="Group_966">
+	<path id="Path_769" class="st1" d="M41,22.8l5.5,5.7l4.7-8.9H37.9L41,22.8z"/>
+	<path id="Path_770" class="st1" d="M27.5,29.3h16.4l-8.7-9.1l-6.1,7.2L27.5,29.3z"/>
+	<path id="Path_771" class="st1" d="M18.4,20.8L13,29.3h9.9L18.4,20.8z"/>
+	<path id="Path_772" class="st1" d="M31.1,21.3l1.5-1.7H20.5l4.7,8.8L31.1,21.3z"/>
+	<path id="Path_773" class="st1" d="M13.2,31.7l13.4,17.2l2.6-2.6l-5.2-14.7L13.2,31.7z"/>
+	<path id="Path_774" class="st1" d="M31.1,44.5l12.8-12.8H26.6L31.1,44.5z"/>
+	<path id="Path_775" class="st1" d="M53.2,20.8l-1.8,3.5l2.5-2.5L53.2,20.8z"/>
+</g>
 </svg>

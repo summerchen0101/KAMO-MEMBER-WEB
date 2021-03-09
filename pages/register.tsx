@@ -76,7 +76,7 @@ function login() {
                 type="text"
                 className="formInput"
                 name="acc"
-                placeholder="請輸入帳號"
+                placeholder="用户名"
                 ref={register({
                   required: '不可為空',
                   pattern: {
@@ -97,10 +97,21 @@ function login() {
                 className="formInput"
                 name="pass"
                 ref={register({ required: '不可為空' })}
-                placeholder="请输入密码"
+                placeholder="密码"
               />
             </Box>
-            {/* <i className="iconfont iconeye-close btn_eye" /> */}
+          </Box>
+          <Box className="formGroup" mb="20px">
+            <Box className="formInputGroup">
+              <i className="iconfont ic-password"></i>
+              <input
+                type="password"
+                className="formInput"
+                name="pass"
+                ref={register({ required: '不可為空' })}
+                placeholder="确认密码"
+              />
+            </Box>
           </Box>
           <HStack mb="20px">
             <Box className="formGroup">
@@ -123,36 +134,25 @@ function login() {
             <FormLabel className="formCheckbox" display="flex" w="">
               <input className="input-check" name="sort" type="checkbox" />
               <span className="checkmark" />
-              <Text fontSize="14px">记住密码</Text>
+              <Text fontSize="14px">
+                我已阅读并同意
+                <span className="text-gold">相关条款和隐私政策。</span>
+              </Text>
             </FormLabel>
-            <Spacer />
-            <Box fontSize="14px" color="#fff" cursor="pointer">
-              <Link href="/home"> 忘记密码?</Link>
-              {/* <Link href="/home">?</Link> */}
-            </Box>
           </Flex>
 
           <button type="submit" className="btnbase primary_btn">
-            登入
+            注册
           </button>
           <Center mt="15px">
             <Box fontSize="14px" color="brand.500" cursor="pointer">
-              <Link href="/register"> 注册新账号</Link>
-              {/* <Link href="/home">?</Link> */}
+              <Link href="/login"> 已有账户？</Link>
             </Box>
             <Box w="2px" h="14px" bg="rgba(255, 255, 255, .3)" mx="10px"></Box>
             <Box fontSize="14px" color="#fff" cursor="pointer">
               <Link href="/home"> 先去逛逛</Link>
-              {/* <Link href="/home">?</Link> */}
             </Box>
           </Center>
-          {/* <button
-            type="button"
-            className="btnbase forget_pwd"
-            onClick={() => setForgetVisible(true)}
-          >
-            忘记密码
-          </button> */}
         </Box>
       </Box>
     </Center>

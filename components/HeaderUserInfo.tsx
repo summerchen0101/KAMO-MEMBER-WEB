@@ -15,7 +15,7 @@ function HeaderUserInfo() {
   return (
     <>
       {/* 未登入前 */}
-      <HStack spacing="10px" as="form">
+      {/* <HStack spacing="10px" as="form">
         <Box
           w="140px"
           bgColor="#fff"
@@ -83,17 +83,15 @@ function HeaderUserInfo() {
         <button className="sec_btn color-primary" style={{ width: '70px' }}>
           登录
         </button>
-        <button
-          w="70px"
-          className="sec_btn color-blue"
-          style={{ width: '70px' }}
-        >
+        <button className="sec_btn color-blue" style={{ width: '70px' }}>
           注册
         </button>
-      </HStack>
+      </HStack> */}
 
       {/* 登入後 */}
-      {/* <Box className="name">{user?.name}</Box>
+      <Box className="name" onClick={() => router.push('/my/profile')}>
+        {user?.name}
+      </Box>
       <Box className="vip-level">VIP 0</Box>
       <Box className="account">¥ {toCurrency(user?.balance, 3)}</Box>
 
@@ -118,7 +116,7 @@ function HeaderUserInfo() {
         fontSize="20px"
         ml="10px"
         onClick={() => doLogout()}
-      ></Box> */}
+      ></Box>
     </>
   )
 }

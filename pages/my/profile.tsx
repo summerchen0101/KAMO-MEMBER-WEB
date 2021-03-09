@@ -51,7 +51,7 @@ const ProfilePage: React.FC = () => {
   return (
     <Dashboard>
       <main className="user-main">
-        <Box className="laout">
+        <Flex className="laout">
           <MemberMenu></MemberMenu>
 
           <Box className="user-centerContent">
@@ -174,7 +174,7 @@ const ProfilePage: React.FC = () => {
               </Flex>
             </Stack>
           </Box>
-        </Box>
+        </Flex>
       </main>
 
       {/* <MemberMenu>
