@@ -76,7 +76,7 @@ const agent: React.FC = () => {
                 </Stack>
               </Flex>
             </Center>
-            <Box w="700px">
+            <Box w="800px">
               <Image src="/img/agent-pic.png" />
             </Box>
           </Flex>
