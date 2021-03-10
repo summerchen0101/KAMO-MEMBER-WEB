@@ -18,7 +18,7 @@ import useTransfer from '@/utils/useTransfer'
 import { FormControl, FormLabel } from '@chakra-ui/form-control'
 import Icon from '@chakra-ui/icon'
 import { Input } from '@chakra-ui/input'
-import { Box, Divider, Text } from '@chakra-ui/layout'
+import { Box, Divider, Text, Flex, Stack } from '@chakra-ui/layout'
 import { useToast } from '@chakra-ui/toast'
 import classNames from 'classnames'
 import _ from 'lodash'
@@ -80,141 +80,102 @@ const WithdrawPage: React.FC = () => {
   }, [])
   return (
     <Dashboard>
-      <MemberMenu>
-        <Box className="menu-content-section">
-          <div className="title-col">立即提领</div>
-          <Divider color="gray.200" mt="4" />
-          <div className="mian-group mt-4 d-flex">
-            <form className="left-group" onSubmit={onSubmit}>
-              <FormControl className="form-group">
-                <label className="form-label2">
-                  銀行卡
-                  <Text
-                    float="right"
-                    fontSize="sm"
+      <main className="user-main">
+        <Flex className="laout">
+          <MemberMenu></MemberMenu>
+
+          <Box className="user-centerContent">
+            <Flex alignItems="flex-end" mb="32px">
+              <Text fontSize="24px" fontWeight="bold" color="gray.700">
+                取款
+              </Text>
+              <Text fontSize="14px" ml="8px" mb="2px">
+                您的提款只需3 - 15 分钟即到账, 若超过30分钟仍未到账，
+                请联系客服核查
+              </Text>
+            </Flex>
+            <Stack direction={['column']} spacing="20px" as="form">
+              <Box className="checkbox-container">
+                <label className="form-label2">支付方式</label>
+                <Box w="133px" height="85px" className="active">
+                  网银转账
+                </Box>
+                <Box w="133px" height="85px">
+                  虚拟币充值
+                </Box>
+                <Box w="133px" height="85px">
+                  银行卡转卡
+                </Box>
+                <Box w="133px" height="85px">
+                  银行卡转卡
+                </Box>
+                <Box w="133px" height="85px">
+                  银行卡转卡
+                </Box>
+              </Box>
+              <Box>
+                <Box className="form-label2">汇款人姓名</Box>
+                <Flex>
+                  <input
+                    type="text"
+                    className="centerformIinput"
+                    style={{ width: '346px' }}
+                    placeholder="请输入汇款人姓名"
+                  />
+                  <Flex fontSize="14px" alignItems="center" ml="20px">
+                    <Box
+                      className="ic-error iconfont"
+                      color="brand.500"
+                      mr="4px"
+                    ></Box>
+                    为及时到账，请务必输入正确的存款人姓名
+                  </Flex>
+                </Flex>
+              </Box>
+              <Box className="checkbox-container">
+                <label className="form-label2">存款金额</label>
+                <Box w="133px" height="40px" className="active">
+                  ¥105
+                </Box>
+                <Box w="133px" height="40px">
+                  ¥105
+                </Box>
+                <Box w="133px" height="40px">
+                  ¥105
+                </Box>
+                <Box w="133px" height="40px">
+                  ¥105
+                </Box>
+                <Box w="133px" height="40px">
+                  ¥105
+                </Box>
+              </Box>
+              <Flex mb="10px">
+                <input
+                  type="text"
+                  className="centerformIinput"
+                  style={{ width: '346px' }}
+                  placeholder="其他金额"
+                />
+                <Flex fontSize="14px" alignItems="center" ml="20px">
+                  <Box
+                    className="ic-error iconfont"
                     color="brand.500"
-                    cursor="pointer"
-                    onClick={() => router.push('/my/profile')}
-                  >
-                    前往设定
-                  </Text>
-                </label>
-                <BasicSelect
-                  placeholder="选择银行卡"
-                  name="bank_id"
-                  ref={register({ required: '不可為空' })}
-                  options={bankcardOpts.map((t, i) => ({
-                    label: t.name,
-                    value: t.id,
-                  }))}
-                />
-                <FieldValidateMessage error={errors.bank_id} />
-              </FormControl>
-
-              <FormControl className="form-group">
-                <label className="form-label2">提领金额</label>
-                <Input
-                  type="number"
-                  className="form-input"
-                  placeholder="請輸入提領金額"
-                  name="amount"
-                  ref={register({
-                    required: '不可為空',
-                    pattern: {
-                      value: pattern.positiveInt,
-                      message: '格式有誤',
-                    },
-                  })}
-                />
-                <FieldValidateMessage error={errors.amount} />
-              </FormControl>
-
-              <FormControl className="form-group">
-                <label className="form-label2">
-                  提领密码
-                  <Text
-                    float="right"
-                    fontSize="sm"
-                    color="brand.500"
-                    cursor="pointer"
-                    onClick={() => router.push('/my/profile')}
-                  >
-                    前往设定
-                  </Text>
-                </label>
-                <Input
-                  type="password"
-                  className="form-input"
-                  name="sec_pass"
-                  placeholder="请输入提领密码"
-                  ref={register({
-                    required: '不可為空',
-                    minLength: { value: 4, message: '格式不符' },
-                    maxLength: { value: 12, message: '格式不符' },
-                  })}
-                />
-                <FieldValidateMessage error={errors.sec_pass} />
-              </FormControl>
-
-              {/* <div class="background-gray row m-0 py-3">
-                              <div class="col-6 mb-2">手续费: <span class="ml-3">0</span></div>
-                              <div class="col-6 mb-2">行政费: <span class="ml-3">0</span></div>
-                              <div class="col-6">补充存款优惠: <span class="ml-3">0</span></div>
-                              <div class="col-6">实际到账:<span class="text-blue ml-3">0</span></div>
-                          </div> */}
-              <div className="w-100 my-4">
-                提领金额:
-                <span className="text-blue ml-3">¥ {watch('amount') || 0}</span>
-              </div>
-              <button type="submit" className="btnbase primary_btn mt-4">
-                立即提领
-              </button>
-            </form>
-            <div className="right-group">
-              <label className="form-label2">近期提领记录</label>
-              <div className="list-container">
-                {withdraws.map((t, i) => (
-                  <div key={i} className="list-item">
-                    <div className="list-title">
-                      交易单号{' '}
-                      <span>
-                        {t.sn}{' '}
-                        <Box
-                          className="copy iconfont"
-                          display="inline-block"
-                          float="right"
-                          fontSize="18px"
-                          marginLeft="5px"
-                          _hover={{ color: 'brand.500' }}
-                          onClick={() => copyToClipboard(t.sn)}
-                          cursor="pointer"
-                        ></Box>
-                      </span>
-                    </div>
-                    <div className="list-title">
-                      交易时间 <span>{toDateTime(t.created_at)}</span>
-                    </div>
-                    <div className="list-title">
-                      交易金額 <span className="text-red">{t.amount}</span>
-                    </div>
-                    <div className="list-title">
-                      交易状态{' '}
-                      <span>{toOptionName(processStatusOpts, t.status)}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div
-                className="pointer mt-3 more-btn"
-                onClick={() => router.push('/my/trade/withdraw-record')}
+                    mr="4px"
+                  ></Box>
+                  单笔存款金额：100.00元-500.00元
+                </Flex>
+              </Flex>
+              <button
+                className="btnbase primary_btn"
+                style={{ width: '346px' }}
               >
-                查询更多
-                <i className="iconfont allow-right" />
-              </div>
-            </div>
-          </div>
-        </Box>
-      </MemberMenu>
+                立即存款
+              </button>
+            </Stack>
+          </Box>
+        </Flex>
+      </main>
       <Footer />
       <FloatNav />
     </Dashboard>

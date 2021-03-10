@@ -18,12 +18,14 @@ import useTransfer from '@/utils/useTransfer'
 import { FormControl, FormLabel } from '@chakra-ui/form-control'
 import Icon from '@chakra-ui/icon'
 import { Input } from '@chakra-ui/input'
-import { Box, Divider, Text } from '@chakra-ui/layout'
+import { Box, Center, Divider, Text } from '@chakra-ui/layout'
 import { useToast } from '@chakra-ui/toast'
 import classNames from 'classnames'
 import _ from 'lodash'
 import { useRouter } from 'next/dist/client/router'
 import React, { useEffect, useMemo, useState } from 'react'
+import { Flex, Spacer, Stack } from '@chakra-ui/react'
+
 import { useForm } from 'react-hook-form'
 import { HiOutlineDuplicate } from 'react-icons/hi'
 
@@ -80,7 +82,102 @@ const WithdrawPage: React.FC = () => {
   }, [])
   return (
     <Dashboard>
-      <MemberMenu>
+      <main className="user-main">
+        <Flex className="laout">
+          <MemberMenu></MemberMenu>
+
+          <Box className="user-centerContent">
+            <Flex alignItems="flex-end" mb="32px">
+              <Text fontSize="24px" fontWeight="bold" color="gray.700">
+                存款
+              </Text>
+              <Text fontSize="14px" ml="8px" mb="2px">
+                存款金额会存入钱包
+              </Text>
+            </Flex>
+            <Stack direction={['column']} spacing="20px" as="form">
+              <Box className="checkbox-container">
+                <label className="form-label2">支付方式</label>
+                <Box w="133px" height="85px" className="active">
+                  网银转账
+                </Box>
+                <Box w="133px" height="85px">
+                  虚拟币充值
+                </Box>
+                <Box w="133px" height="85px">
+                  银行卡转卡
+                </Box>
+                <Box w="133px" height="85px">
+                  银行卡转卡
+                </Box>
+                <Box w="133px" height="85px">
+                  银行卡转卡
+                </Box>
+              </Box>
+              <Box>
+                <Box className="form-label2">汇款人姓名</Box>
+                <Flex>
+                  <input
+                    type="text"
+                    className="centerformIinput"
+                    style={{ width: '346px' }}
+                    placeholder="请输入汇款人姓名"
+                  />
+                  <Flex fontSize="14px" alignItems="center" ml="20px">
+                    <Box
+                      className="ic-error iconfont"
+                      color="brand.500"
+                      mr="4px"
+                    ></Box>
+                    为及时到账，请务必输入正确的存款人姓名
+                  </Flex>
+                </Flex>
+              </Box>
+              <Box className="checkbox-container">
+                <label className="form-label2">存款金额</label>
+                <Box w="133px" height="40px" className="active">
+                  ¥105
+                </Box>
+                <Box w="133px" height="40px">
+                  ¥105
+                </Box>
+                <Box w="133px" height="40px">
+                  ¥105
+                </Box>
+                <Box w="133px" height="40px">
+                  ¥105
+                </Box>
+                <Box w="133px" height="40px">
+                  ¥105
+                </Box>
+              </Box>
+              <Flex mb="10px">
+                <input
+                  type="text"
+                  className="centerformIinput"
+                  style={{ width: '346px' }}
+                  placeholder="其他金额"
+                />
+                <Flex fontSize="14px" alignItems="center" ml="20px">
+                  <Box
+                    className="ic-error iconfont"
+                    color="brand.500"
+                    mr="4px"
+                  ></Box>
+                  单笔存款金额：100.00元-500.00元
+                </Flex>
+              </Flex>
+              <button
+                className="btnbase primary_btn"
+                style={{ width: '346px' }}
+              >
+                立即存款
+              </button>
+            </Stack>
+          </Box>
+        </Flex>
+      </main>
+      {/* <MemberMenu>
         <Box className="menu-content-section">
           <div className="title-col">立即充值</div>
           <Divider color="gray.200" mt="4" />
@@ -194,7 +291,7 @@ const WithdrawPage: React.FC = () => {
             </div>
           </div>
         </Box>
-      </MemberMenu>
+      </MemberMenu> */}
       <Footer />
       <FloatNav />
     </Dashboard>

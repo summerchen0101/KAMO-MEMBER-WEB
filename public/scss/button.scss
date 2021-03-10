@@ -5,7 +5,8 @@
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
     outline: none;
     border: none;
     text-decoration: none;
@@ -14,6 +15,7 @@
     &:hover,
     &:focus {
         outline: none;
+        box-shadow: none;
     }
 }
 
@@ -50,7 +52,8 @@
 .outline_btn {
     background: transparent;
     // padding: .85rem .75rem;
-    line-height: 38px;
+    // line-height: 38px;
+    line-height: 30px;
     outline: none;
     @include border-radius(20px);
 }

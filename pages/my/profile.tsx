@@ -19,11 +19,10 @@ import PassPopup from '@/components/popups/PassPopup'
 import TradePassPopup from '@/components/popups/TradePassPopup'
 import BankcardListPopup from '@/components/popups/BankcardListPopup'
 import _ from 'lodash'
-import { Spacer, Image, Input, Button } from '@chakra-ui/react'
+import { Spacer, Image, Input, Button, Divider } from '@chakra-ui/react'
 import { Box, Center, Flex, Stack, Text } from '@chakra-ui/layout'
 
 import BankcardAddPopup from '@/components/popups/BankcardAddPopup'
-// import { Button, FormLabel } from 'react-bootstrap'
 
 const ProfilePage: React.FC = () => {
   const router = useRouter()
@@ -94,7 +93,8 @@ const ProfilePage: React.FC = () => {
                 保存
               </button>
             </Stack>
-            <Box w="full" height="1px" bgColor="#F0F0F0"></Box>
+
+            <Divider orientation="horizontal" borderColor="#F0F0F0" />
             <Stack direction={['column']} spacing="20px" mt="20px">
               <Box className="section-title color-red">账户安全</Box>
               <Flex w="428px" alignItems="center">
@@ -133,6 +133,7 @@ const ProfilePage: React.FC = () => {
                   className="
                   outline_btn color-primary "
                   style={{ width: '90px' }}
+                  onClick={() => setPassVisible(true)}
                 >
                   修改
                 </button>
@@ -168,6 +169,7 @@ const ProfilePage: React.FC = () => {
                   className="
                   outline_btn color-primary "
                   style={{ width: '90px' }}
+                  onClick={() => setTradePassVisible(true)}
                 >
                   修改
                 </button>
@@ -328,6 +330,8 @@ const ProfilePage: React.FC = () => {
           </table>
         </Box>
       </MemberMenu> */}
+      <Footer />
+      <FloatNav />
     </Dashboard>
   )
 }

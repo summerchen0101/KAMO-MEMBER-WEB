@@ -24,7 +24,7 @@ function MemberMenu() {
         <Center className="safe-level">安全等级：低</Center>
       </Box>
       <ul className="wall-menu">
-        <li>
+        <li className="active">
           <i className="ic-deposit iconfont"></i>存款
         </li>
         <li>
@@ -35,21 +35,39 @@ function MemberMenu() {
         </li>
       </ul>
       <ul className="menu-inner ">
-        <li className="active">个人资料</li>
-        <li>VIP特权</li>
+        <li className="active">
+          <i className="iconfont ic-profile"></i>个人资料
+        </li>
+        <li>
+          <i className="iconfont ic-vip"></i>VIP特权
+        </li>
       </ul>
       <Box w="full" height="1px" bgColor="#F0F0F0" m="8px 0"></Box>
       <ul className="menu-inner">
-        <li>我的钱包</li>
-        <li>交易记录</li>
-        <li>投注记录</li>
+        <li>
+          <i className="iconfont ic-wallet"></i>我的钱包
+        </li>
+        <li>
+          <i className="iconfont ic-trans-record"></i>交易记录
+        </li>
+        <li>
+          <i className="iconfont ic-bet-record"></i>投注记录
+        </li>
       </ul>
       <Box w="full" height="1px" bgColor="#F0F0F0" m="8px 0"></Box>
       <ul className="menu-inner ">
-        <li>公告中心</li>
-        <li>会员訊息</li>
-        <li>好友推荐</li>
-        <li>意见反馈</li>
+        <li>
+          <i className="iconfont ic-news"></i>公告中心
+        </li>
+        <li>
+          <i className="iconfont ic-mail"></i>会员訊息
+        </li>
+        <li>
+          <i className="iconfont ic-friends"></i>好友推荐
+        </li>
+        <li>
+          <i className="iconfont ic-feedback"></i>意见反馈
+        </li>
       </ul>
     </Box>
 
