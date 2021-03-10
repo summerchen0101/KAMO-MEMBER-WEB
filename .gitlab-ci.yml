@@ -1,63 +1,16 @@
-build-testing:
-  image: caixin0823/node
-  stage: build
-  script:
-    - npm install --progress=false
-    - npm run build && npm run export
-  only:
-    - dev
-  tags:
-    - blockchain
-  artifacts:
-    expire_in: 1 week
-    paths:
-      - out
+image: caixin0823/laravel-docker
       
 deploy-testing:
-  image: alpine
   stage: deploy
   script:
-    - rsync -rav --delete -e 'ssh -p 2222' out/ $SERVER_TOKEN_TEST:$WEB_ROOT${CI_PROJECT_NAME}
+    - ssh $SERVER_TOKEN_TEST -t "cd ${WEB_ROOT}${CI_PROJECT_NAME} && git pull && sh deploy.sh"
   only:
     - dev
   tags:
     - blockchain
   before_script:
-    - apk add --no-cache rsync openssh
     - mkdir -p ~/.ssh
     - echo "$SSH_PRIVATE_KEY_TEST" | tr -d '\r' > ~/.ssh/id_rsa
     - chmod -R 600 ~/.ssh
     - echo "$SSH_KNOWN_HOSTS_TEST" > ~/.ssh/known_hosts
-    - chmod 644 ~/.ssh/known_hosts
-
-build-master:
-  image: caixin0823/node
-  stage: build
-  script:
-    - npm install --progress=false
-    - npm run build
-  only:
-    - master
-  tags:
-    - blockchain
-  artifacts:
-    expire_in: 1 week
-    paths:
-      - out
-      
-deploy-master:
-  image: alpine
-  stage: deploy
-  script:
-    - rsync -rav --delete -e 'ssh -p 2222' out/ $SERVER_TOKEN:$WEB_ROOT${CI_PROJECT_NAME}
-  only:
-    - master
-  tags:
-    - blockchain
-  before_script:
-    - apk add --no-cache rsync openssh
-    - mkdir -p ~/.ssh
-    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
-    - chmod -R 600 ~/.ssh
-    - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
