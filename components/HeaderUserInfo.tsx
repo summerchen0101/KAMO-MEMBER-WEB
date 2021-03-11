@@ -98,11 +98,12 @@ function HeaderUserInfo() {
       <Link mx="5px" className="link" href="/my/deposit">
         存款
       </Link>
-      <Link mx="5px" className="link" href="/my/withdraw">
-        取款
-      </Link>
+
       <Link mx="5px" className="link" href="/my/transfer">
         转账
+      </Link>
+      <Link mx="5px" className="link" href="/my/withdraw">
+        取款
       </Link>
       <Box w="2px" h="14px" bg="rgba(255, 255, 255, .3)" mx="5px"></Box>
       <Box

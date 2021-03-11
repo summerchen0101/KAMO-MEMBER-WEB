@@ -17,6 +17,7 @@ import useService from '@/utils/useService'
 import useTransfer from '@/utils/useTransfer'
 import { FormControl, FormLabel } from '@chakra-ui/form-control'
 import Icon from '@chakra-ui/icon'
+import { Image, Select, Switch } from '@chakra-ui/react'
 import { Input } from '@chakra-ui/input'
 import {
   Box,
@@ -29,7 +30,7 @@ import {
   List,
   ListItem,
 } from '@chakra-ui/layout'
-import { Select, Switch } from '@chakra-ui/react'
+
 import { useToast } from '@chakra-ui/toast'
 import classNames from 'classnames'
 import _ from 'lodash'
@@ -108,10 +109,12 @@ const WithdrawPage: React.FC = () => {
             <Stack w="full" direction={['row']} spacing="20px">
               <Box className="account-container" mb="20px" w="634px">
                 <Box>
-                  <Center
-                    className="iconfont ic-wallet"
-                    bgColor="blue.500"
-                  ></Center>
+                  <Image
+                    w="45px"
+                    h="45px"
+                    mr="10px"
+                    src="/img/center/ic-transferWallet.png"
+                  ></Image>
                   <Flex flexDir="column">
                     中心钱包
                     <Text className="balance">0.00</Text>
@@ -122,10 +125,12 @@ const WithdrawPage: React.FC = () => {
                 </Box>
                 <Divider orientation="vertical" h="60%" />
                 <Box>
-                  <Center
-                    className="iconfont ic-password"
-                    bgColor="red.500"
-                  ></Center>
+                  <Image
+                    w="45px"
+                    h="45px"
+                    mr="10px"
+                    src="/img/center/ic-transferLock.png"
+                  ></Image>
                   <Flex flexDir="column">
                     锁定钱包
                     <Text className="balance">0.00</Text>

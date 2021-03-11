@@ -2012,7 +2012,7 @@ body {
   font-size: 22px;
   color: #fff;
   border-radius: 50%;
-  background: #9da5bb;
+  background: #C0C7DC;
   -webkit-transition: all .15s ease-in-out;
   transition: all .15s ease-in-out;
 }
@@ -2057,11 +2057,13 @@ body {
 
 .user-menu .menu-inner li.active .iconfont, .user-menu .menu-inner li:active .iconfont, .user-menu .menu-inner li:hover .iconfont {
   text-shadow: 0 2px 5px #cbab8b;
+  color: #fff;
 }
 
 .user-menu .menu-inner li .iconfont {
-  font-size: 19px;
+  font-size: 20px;
   margin-right: 10px;
+  color: #C0C7DC;
 }
 
 .user-centerContent {
@@ -2470,4 +2472,107 @@ body {
 
 .walletlist li:nth-of-type(4n) {
   margin-right: 0;
+}
+
+.vip-levelContainer {
+  width: 117px;
+  height: 127px;
+  display: block;
+  position: relative;
+  background-image: url(../img/vip-level.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.vip-levelContainer .vip-num {
+  position: absolute;
+  left: 50%;
+  text-align: center;
+  bottom: 12px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4B2116;
+}
+
+.chargeAndFLow {
+  width: 300px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 0 0 4px 4px;
+  -webkit-box-shadow: 0 4px 8px rgba(224, 235, 255, 0.55);
+          box-shadow: 0 4px 8px rgba(224, 235, 255, 0.55);
+  position: relative;
+  padding: 10px 20px;
+}
+
+.chargeAndFLow::before {
+  content: '';
+  width: 100%;
+  height: 3px;
+  background-color: #cbab8b;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.currGrade {
+  position: relative;
+  height: 70px;
+  padding: 42px 16px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.currGrade li {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  background-image: url(../img/center/ic-vipLevel.png);
+  background-position: 0 0;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.currGrade li > i {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 12px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  line-height: 1;
+  font-style: normal;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.currGrade li.active {
+  background-image: url(../img/center/ic-vipLevel-a.png);
+}
+
+.currGrade li.active > i {
+  color: #cbab8b;
+}
+
+.currGrade .process {
+  position: absolute;
+  top: 48px;
+  left: 25px;
+  height: 6px;
+  width: 852px;
+  background-color: #F0F0F0;
+  overflow: hidden;
 }

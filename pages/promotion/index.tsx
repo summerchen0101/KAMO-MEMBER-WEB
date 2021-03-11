@@ -50,7 +50,7 @@ const PromotionListPage: React.FC = () => {
                 <li className="active">全部优惠</li>
                 <li>充值奖励</li>
                 <li>签到奖励</li>
-                <li>成就奖力</li>
+                <li>成就奖励</li>
                 <li>反水活动</li>
                 <li>看板活动</li>
               </ul>

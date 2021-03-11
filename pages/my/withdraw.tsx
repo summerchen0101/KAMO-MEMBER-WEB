@@ -15,6 +15,7 @@ import useHelper from '@/utils/useHelper'
 import useRequest from '@/utils/useRequest'
 import useService from '@/utils/useService'
 import useTransfer from '@/utils/useTransfer'
+import { Image, ListItem, List } from '@chakra-ui/react'
 import { FormControl, FormLabel } from '@chakra-ui/form-control'
 import Icon from '@chakra-ui/icon'
 import { Input } from '@chakra-ui/input'
@@ -34,7 +35,7 @@ import { useRouter } from 'next/dist/client/router'
 import React, { useEffect, useMemo, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { HiOutlineDuplicate } from 'react-icons/hi'
-import { ListItem, List } from '@chakra-ui/react'
+
 type FormProps = {
   bank_id: number
   amount: number
@@ -105,10 +106,12 @@ const WithdrawPage: React.FC = () => {
 
             <Box className="account-container" mb="20px">
               <Box>
-                <Center
-                  className="iconfont ic-wallet"
-                  bgColor="blue.500"
-                ></Center>
+                <Image
+                  w="45px"
+                  h="45px"
+                  mr="10px"
+                  src="/img/center/ic-transferWallet.png"
+                ></Image>
                 <Flex flexDir="column">
                   中心钱包
                   <Text className="balance">0.00</Text>
@@ -117,10 +120,12 @@ const WithdrawPage: React.FC = () => {
               </Box>
               <Divider orientation="vertical" h="60%" />
               <Box>
-                <Center
-                  className="iconfont ic-password"
-                  bgColor="red.500"
-                ></Center>
+                <Image
+                  w="45px"
+                  h="45px"
+                  mr="10px"
+                  src="/img/center/ic-transferLock.png"
+                ></Image>
                 <Flex flexDir="column">
                   锁定钱包
                   <Text className="balance">0.00</Text>

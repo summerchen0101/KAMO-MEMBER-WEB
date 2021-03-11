@@ -24,21 +24,46 @@ function MemberMenu() {
         <Center className="safe-level">安全等级：低</Center>
       </Box>
       <ul className="wall-menu">
-        <li className="active">
+        <li
+          className={classNames({
+            active: router.pathname.includes('/my/deposit'),
+          })}
+          onClick={() => router.push('/my/deposit')}
+        >
           <i className="ic-deposit iconfont"></i>存款
         </li>
-        <li>
+        <li
+          className={classNames({
+            active: router.pathname.includes('/my/transfer'),
+          })}
+          onClick={() => router.push('/my/transfer')}
+        >
           <i className="ic-transfer iconfont"></i>转账
         </li>
-        <li>
+        <li
+          className={classNames({
+            active: router.pathname.includes('/my/withdraw'),
+          })}
+          onClick={() => router.push('/my/withdraw')}
+        >
           <i className="ic-withdrawal iconfont"></i>取款
         </li>
       </ul>
       <ul className="menu-inner ">
-        <li className="active">
+        <li
+          className={classNames({
+            active: router.pathname.includes('/my/profile'),
+          })}
+          onClick={() => router.push('/my/profile')}
+        >
           <i className="iconfont ic-profile"></i>个人资料
         </li>
-        <li>
+        <li
+          className={classNames({
+            active: router.pathname.includes('/my/vip'),
+          })}
+          onClick={() => router.push('/my/vip')}
+        >
           <i className="iconfont ic-vip"></i>VIP特权
         </li>
       </ul>
