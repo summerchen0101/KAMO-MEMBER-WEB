@@ -2,10 +2,18 @@ import { extendTheme } from '@chakra-ui/react'
 
 const colors = {
   brand: {
-    400: '#F1D3B6',
+    100: '#FCF7EC',
+    200: '#F9EEDA',
+    300: '#EFDDC2',
+    400: '#DFC7AA',
     500: '#cbab8b',
-    600: '#B78255',
+    600: '#AE8665',
+    700: '#926446',
+    800: '#75462C',
+    900: '#612F1A',
   },
+  divider: { 500: '#F0F0F0' },
+  border: { 500: '#D8DCE7' },
   gray: {
     500: '#9da5bb',
     600: '#858ca3',
@@ -15,6 +23,7 @@ const colors = {
     500: '#e4b2b3',
   },
   blue: {
+    400: '#EAF4FD',
     500: '#32c5ff',
   },
   green: {

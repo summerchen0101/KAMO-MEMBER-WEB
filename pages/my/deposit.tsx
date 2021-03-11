@@ -95,9 +95,10 @@ const WithdrawPage: React.FC = () => {
                 存款金额会存入钱包
               </Text>
             </Flex>
-            <Stack direction={['column']} spacing="20px" as="form">
+            <Stack direction={['column']} spacing="15px" as="form">
               <Box className="checkbox-container">
                 <label className="form-label2">支付方式</label>
+
                 <Box w="133px" height="85px" className="active">
                   网银转账
                 </Box>
@@ -119,7 +120,7 @@ const WithdrawPage: React.FC = () => {
                 <Flex>
                   <input
                     type="text"
-                    className="centerformIinput"
+                    className="centerInput"
                     style={{ width: '346px' }}
                     placeholder="请输入汇款人姓名"
                   />
@@ -154,7 +155,7 @@ const WithdrawPage: React.FC = () => {
               <Flex mb="10px">
                 <input
                   type="text"
-                  className="centerformIinput"
+                  className="centerInput"
                   style={{ width: '346px' }}
                   placeholder="其他金额"
                 />

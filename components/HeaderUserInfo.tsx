@@ -93,7 +93,7 @@ function HeaderUserInfo() {
         {user?.name}
       </Box>
       <Box className="vip-level">VIP 0</Box>
-      <Box className="account">¥ {toCurrency(user?.balance, 3)}</Box>
+      <Box className="balance">¥ {toCurrency(user?.balance, 3)}</Box>
 
       <Link mx="5px" className="link" href="/my/deposit">
         存款
@@ -101,19 +101,21 @@ function HeaderUserInfo() {
       <Link mx="5px" className="link" href="/my/withdraw">
         取款
       </Link>
-      <Link mx="5px" className="link" href="/home/transfer">
+      <Link mx="5px" className="link" href="/my/transfer">
         转账
       </Link>
-      <Box w="2px" h="14px" bg="rgba(255, 255, 255, .3)"></Box>
+      <Box w="2px" h="14px" bg="rgba(255, 255, 255, .3)" mx="5px"></Box>
       <Box
         className="iconfont ic-message link"
         fontSize="20px"
+        cursor="pointer"
         ml="10px"
         onClick={() => router.push('/my/message')}
       ></Box>
       <Box
         className="iconfont ic-exit link"
         fontSize="20px"
+        cursor="pointer"
         ml="10px"
         onClick={() => doLogout()}
       ></Box>

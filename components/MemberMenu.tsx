@@ -2,7 +2,7 @@ import { ReactJSXElement } from '@emotion/react/types/jsx-namespace'
 import classNames from 'classnames'
 import { useRouter } from 'next/dist/client/router'
 import React, { ReactNode } from 'react'
-import { Box, Center, Image, Flex, Text } from '@chakra-ui/react'
+import { Box, Center, Image, Flex, Text, Divider } from '@chakra-ui/react'
 
 function MemberMenu() {
   const router = useRouter()
@@ -42,7 +42,11 @@ function MemberMenu() {
           <i className="iconfont ic-vip"></i>VIP特权
         </li>
       </ul>
-      <Box w="full" height="1px" bgColor="#F0F0F0" m="8px 0"></Box>
+      <Divider
+        orientation="horizontal"
+        borderColor="divider.500"
+        m="8px 0"
+      ></Divider>
       <ul className="menu-inner">
         <li>
           <i className="iconfont ic-wallet"></i>我的钱包
@@ -54,7 +58,11 @@ function MemberMenu() {
           <i className="iconfont ic-bet-record"></i>投注记录
         </li>
       </ul>
-      <Box w="full" height="1px" bgColor="#F0F0F0" m="8px 0"></Box>
+      <Divider
+        orientation="horizontal"
+        borderColor="divider.500"
+        m="8px 0"
+      ></Divider>
       <ul className="menu-inner ">
         <li>
           <i className="iconfont ic-news"></i>公告中心

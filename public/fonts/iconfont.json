@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "20299381",
+      "name": "round-transfer",
+      "font_class": "round-transfer",
+      "unicode": "e695",
+      "unicode_decimal": 59029
+    },
+    {
+      "icon_id": "20289153",
+      "name": "add",
+      "font_class": "add",
+      "unicode": "e694",
+      "unicode_decimal": 59028
+    },
+    {
       "icon_id": "20282876",
       "name": "profile",
       "font_class": "profile",

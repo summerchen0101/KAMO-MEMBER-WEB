@@ -18,7 +18,15 @@ import useTransfer from '@/utils/useTransfer'
 import { FormControl, FormLabel } from '@chakra-ui/form-control'
 import Icon from '@chakra-ui/icon'
 import { Input } from '@chakra-ui/input'
-import { Box, Divider, Text, Flex, Stack } from '@chakra-ui/layout'
+import {
+  Box,
+  Divider,
+  Text,
+  Flex,
+  Stack,
+  Spacer,
+  Center,
+} from '@chakra-ui/layout'
 import { useToast } from '@chakra-ui/toast'
 import classNames from 'classnames'
 import _ from 'lodash'
@@ -26,7 +34,7 @@ import { useRouter } from 'next/dist/client/router'
 import React, { useEffect, useMemo, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { HiOutlineDuplicate } from 'react-icons/hi'
-
+import { ListItem, List } from '@chakra-ui/react'
 type FormProps = {
   bank_id: number
   amount: number
@@ -89,90 +97,142 @@ const WithdrawPage: React.FC = () => {
               <Text fontSize="24px" fontWeight="bold" color="gray.700">
                 取款
               </Text>
-              <Text fontSize="14px" ml="8px" mb="2px">
+              {/* <Text fontSize="14px" ml="8px" mb="2px">
                 您的提款只需3 - 15 分钟即到账, 若超过30分钟仍未到账，
                 请联系客服核查
-              </Text>
+              </Text> */}
             </Flex>
-            <Stack direction={['column']} spacing="20px" as="form">
-              <Box className="checkbox-container">
-                <label className="form-label2">支付方式</label>
-                <Box w="133px" height="85px" className="active">
-                  网银转账
-                </Box>
-                <Box w="133px" height="85px">
-                  虚拟币充值
-                </Box>
-                <Box w="133px" height="85px">
-                  银行卡转卡
-                </Box>
-                <Box w="133px" height="85px">
-                  银行卡转卡
-                </Box>
-                <Box w="133px" height="85px">
-                  银行卡转卡
-                </Box>
-              </Box>
+
+            <Box className="account-container" mb="20px">
               <Box>
-                <Box className="form-label2">汇款人姓名</Box>
-                <Flex>
-                  <input
-                    type="text"
-                    className="centerformIinput"
-                    style={{ width: '346px' }}
-                    placeholder="请输入汇款人姓名"
+                <Center
+                  className="iconfont ic-wallet"
+                  bgColor="blue.500"
+                ></Center>
+                <Flex flexDir="column">
+                  中心钱包
+                  <Text className="balance">0.00</Text>
+                </Flex>
+                <button className="outline_btn color-primary">一键回收</button>
+              </Box>
+              <Divider orientation="vertical" h="60%" />
+              <Box>
+                <Center
+                  className="iconfont ic-password"
+                  bgColor="red.500"
+                ></Center>
+                <Flex flexDir="column">
+                  锁定钱包
+                  <Text className="balance">0.00</Text>
+                </Flex>
+              </Box>
+            </Box>
+            <Flex>
+              <Stack
+                w="346px"
+                direction={['column']}
+                spacing="15px"
+                as="form"
+                float="left"
+              >
+                <Box w="full">
+                  <Box className="form-label2">银行卡</Box>
+                  {/* <BasicSelect
+                    placeholder="选择银行卡"
+                    name="bank_id"
+                    ref={register({ required: '不可為空' })}
+                    options={bankcardOpts.map((t, i) => ({
+                      label: t.name,
+                      value: t.id,
+                    }))}
                   />
-                  <Flex fontSize="14px" alignItems="center" ml="20px">
+                  <FieldValidateMessage error={errors.bank_id} /> */}
+                  <Center
+                    w="346px"
+                    h="40px"
+                    color="brand.500"
+                    borderWidth="1px"
+                    borderStyle="solid"
+                    borderColor="border.500"
+                    borderRadius="4px"
+                    cursor="pointer"
+                  >
+                    <Box className="iconfont ic-add" mr="4px"></Box>
+                    添加银行卡
+                  </Center>
+                  <Flex fontSize="14px" alignItems="flex-start" mt="10px">
                     <Box
                       className="ic-error iconfont"
                       color="brand.500"
                       mr="4px"
                     ></Box>
-                    为及时到账，请务必输入正确的存款人姓名
+                    您还没绑定银行卡，请先绑定一张银行卡
                   </Flex>
+                </Box>
+                <Box w="full">
+                  <Box className="form-label2">取款金额</Box>
+
+                  <input
+                    type="text"
+                    className="centerInput"
+                    style={{ width: '346px' }}
+                    placeholder="其他金额"
+                  />
+                  <Flex fontSize="14px" alignItems="center" mt="10px">
+                    <Box
+                      className="ic-error iconfont"
+                      color="brand.500"
+                      mr="4px"
+                    ></Box>
+                    单笔限额：¥500~450,000
+                  </Flex>
+                </Box>
+                <Box w="full">
+                  <Box className="form-label2">
+                    取款密码
+                    <span className="label-right pointer">前往设置</span>
+                  </Box>
+                  <Flex mb="10px">
+                    <input
+                      type="text"
+                      className="centerInput"
+                      style={{ width: '346px' }}
+                      placeholder="请输入取款密码"
+                    />
+                  </Flex>
+                </Box>
+                <Flex fontSize="15px">
+                  今日取款剩余次数：<Text color="brand.500">5</Text>
                 </Flex>
-              </Box>
-              <Box className="checkbox-container">
-                <label className="form-label2">存款金额</label>
-                <Box w="133px" height="40px" className="active">
-                  ¥105
-                </Box>
-                <Box w="133px" height="40px">
-                  ¥105
-                </Box>
-                <Box w="133px" height="40px">
-                  ¥105
-                </Box>
-                <Box w="133px" height="40px">
-                  ¥105
-                </Box>
-                <Box w="133px" height="40px">
-                  ¥105
-                </Box>
-              </Box>
-              <Flex mb="10px">
-                <input
-                  type="text"
-                  className="centerformIinput"
+                <button
+                  className="btnbase primary_btn"
                   style={{ width: '346px' }}
-                  placeholder="其他金额"
-                />
-                <Flex fontSize="14px" alignItems="center" ml="20px">
-                  <Box
-                    className="ic-error iconfont"
-                    color="brand.500"
-                    mr="4px"
-                  ></Box>
-                  单笔存款金额：100.00元-500.00元
-                </Flex>
-              </Flex>
-              <button
-                className="btnbase primary_btn"
-                style={{ width: '346px' }}
+                >
+                  立即存款
+                </button>
+              </Stack>
+
+              <List
+                fontSize="14px"
+                lineHeight="28px"
+                m="0 0 0 40px"
+                w="518px"
+                float="right"
+                p="10px 20px 20px"
+                color="gray.600"
               >
-                立即存款
-              </button>
-            </Stack>
+                <ListItem>
+                  您的提款只需3 -
+                  15分钟即到账，若超过30分钟仍未到账，请联系客服核查。
+                </ListItem>
+                <ListItem>
+                  只要发起提款，无论结果成功或失败都会计算次数。
+                </ListItem>
+                <ListItem>
+                  此银行卡的开户名必须与您帐号所填写真实姓名一致，否则提款可能会失败。
+                </ListItem>
+              </List>
+            </Flex>
           </Box>
         </Flex>
       </main>

@@ -2,6 +2,7 @@ import { OptionType } from '@/lib/types'
 import { Select, SelectProps } from '@chakra-ui/select'
 import React, { useEffect } from 'react'
 
+import { MdArrowDropDown } from 'react-icons/md'
 interface BasicSelectProps<T> extends SelectProps {
   options: OptionType<T>[]
 }
@@ -11,13 +12,15 @@ function BasicSelect<T extends string | number | readonly string[]>(
 ) {
   return (
     <Select
-      color="gray.500"
-      bgColor="#f2f2f2"
-      borderColor="rgb(235, 235, 235)"
-      borderRadius="3px"
-      h="45px"
+      icon={<MdArrowDropDown />}
+      color="gray.600"
+      bgColor="#fff"
+      fontSize="15px"
+      borderColor="border.500"
+      borderRadius="4px"
+      h="40px"
       placeholder="请选择"
-      _focus={{ borderColor: 'gray.200' }}
+      _focus={{ borderColor: 'brand.500', boxShadow: '0 0 20px 0 #f2eada' }}
       ref={ref}
       {...props}
     >

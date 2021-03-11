@@ -2,11 +2,20 @@ import Marquee from '@/components/Marquee'
 import { usePopupContext } from '@/context/PopupContext'
 import useService from '@/utils/useService'
 import { Box, HStack } from '@chakra-ui/layout'
-import { flexbox, Image } from '@chakra-ui/react'
+import {
+  Image,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Button,
+} from '@chakra-ui/react'
 import { useRouter } from 'next/dist/client/router'
 import Link from 'next/link'
 import React, { useEffect } from 'react'
 import HeaderUserInfo from './HeaderUserInfo'
+import { MdArrowDropDown } from 'react-icons/md'
+
 const Dashboard: React.FC = ({ children }) => {
   const router = useRouter()
   const { fetchMarquee, fetchUserInfo, marquee } = useService()
@@ -23,13 +32,6 @@ const Dashboard: React.FC = ({ children }) => {
       <nav className="navbar">
         <HStack className="head">
           <Box className="headbox laout">
-            {/* <Box className="left">
-              <Box
-                className="iconfont notification text-white"
-                fontSize="18px"
-              ></Box>
-              <Marquee msgs={marquee} />
-            </Box> */}
             <Box className="leftbox">
               <Box className="lang">
                 <Image src="/img/lang_cn.png" w="22px" h="22px" mr="5px" />
@@ -43,6 +45,31 @@ const Dashboard: React.FC = ({ children }) => {
                 bg="rgba(255, 255, 255, .3)"
                 mx="10px"
               ></Box>
+              {/* <Menu>
+                <MenuButton
+                  w="180px"
+                  as={Button}
+                  rightIcon={<MdArrowDropDown />}
+                  bg="transparent"
+                  display="flex"
+                  alignItems="center"
+                  p="0"
+                  _hover={{ bg: 'transparent' }}
+                >
+                  <Image src="/img/lang_cn.png" w="22px" h="22px" mr="5px" />{' '}
+                  中国-简体中文
+                </MenuButton>
+                <MenuList position="relative">
+                  <MenuItem minH="48px">
+                    <Image src="/img/lang_cn.png" w="22px" h="22px" mr="5px" />
+                    <span>中国-简体中文</span>
+                  </MenuItem>
+                  <MenuItem minH="40px">
+                    <Image src="/img/lang_cn.png" w="22px" h="22px" mr="5px" />
+                    <span>中國-繁體中文</span>
+                  </MenuItem>
+                </MenuList>
+              </Menu> */}
               <text className="time">GMT+8 2021-02-08 17:20:35</text>
             </Box>
 

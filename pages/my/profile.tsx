@@ -63,27 +63,27 @@ const ProfilePage: React.FC = () => {
               </Text>
             </Flex>
             <Stack direction={['column']} spacing="20px" as="form">
-              <Box className="section-title color-primary">基本资料</Box>
+              <Box className="section-title color-blue">基本资料</Box>
               <Flex alignItems="center">
-                <Box className="centerformLabel">真实姓名</Box>
+                <Box className="centerLabel">真实姓名</Box>
                 <input
                   type="text"
-                  className="centerformIinput"
+                  className="centerInput"
                   style={{ width: '346px' }}
                   placeholder="名字需要与银行卡持卡人姓名一致，否则无法提款"
                 />
               </Flex>
               <Flex alignItems="center">
-                <Box className="centerformLabel">出生日期</Box>
+                <Box className="centerLabel">出生日期</Box>
                 <input
                   type="text"
-                  className="centerformIinput"
+                  className="centerInput"
                   style={{ width: '346px' }}
                   placeholder="添加日期，确保您已满18周岁"
                 />
               </Flex>
               <Flex alignItems="center">
-                <Box className="centerformLabel">注册日期</Box>
+                <Box className="centerLabel">注册日期</Box>
                 <Text>2020-12-23 10:26:51</Text>
               </Flex>
               <button
@@ -94,11 +94,15 @@ const ProfilePage: React.FC = () => {
               </button>
             </Stack>
 
-            <Divider orientation="horizontal" borderColor="#F0F0F0" />
+            <Divider
+              orientation="horizontal"
+              borderColor="divider.500"
+              m="8px 0"
+            ></Divider>
             <Stack direction={['column']} spacing="20px" mt="20px">
               <Box className="section-title color-red">账户安全</Box>
               <Flex w="428px" alignItems="center">
-                <Box className="centerformLabel">手机号码</Box>
+                <Box className="centerLabel">手机号码</Box>
                 <Text fontSize="15px" color="red.500">
                   未验证
                 </Text>
@@ -112,7 +116,7 @@ const ProfilePage: React.FC = () => {
                 </button>
               </Flex>
               <Flex w="428px" alignItems="center">
-                <Box className="centerformLabel">电子邮箱</Box>
+                <Box className="centerLabel">电子邮箱</Box>
                 <Text fontSize="15px" color="blue.500">
                   已验证
                 </Text>
@@ -126,7 +130,7 @@ const ProfilePage: React.FC = () => {
                 </button>
               </Flex>
               <Flex w="428px" alignItems="center">
-                <Box className="centerformLabel">账户密码</Box>
+                <Box className="centerLabel">账户密码</Box>
                 <Text fontSize="15px">******</Text>
                 <Spacer />
                 <button
@@ -139,7 +143,7 @@ const ProfilePage: React.FC = () => {
                 </button>
               </Flex>
               <Flex w="428px" alignItems="center">
-                <Box className="centerformLabel">银行卡</Box>
+                <Box className="centerLabel">银行卡</Box>
                 <Text fontSize="15px" color="red.500">
                   未设置
                 </Text>
@@ -160,7 +164,7 @@ const ProfilePage: React.FC = () => {
                 </button>
               </Flex>
               <Flex w="428px" alignItems="center">
-                <Box className="centerformLabel">交易密码</Box>
+                <Box className="centerLabel">交易密码</Box>
                 <Text fontSize="15px" color="red.500">
                   未设置
                 </Text>

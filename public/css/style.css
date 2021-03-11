@@ -279,6 +279,7 @@ button:-moz-focusring,
 
 .outline_btn {
   background: transparent;
+  padding: 0 .75rem;
   line-height: 30px;
   outline: none;
   border-radius: 20px;
@@ -549,6 +550,12 @@ button:-moz-focusring,
   margin-right: 10px;
   margin-left: 10px;
   cursor: pointer;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+}
+
+.headbox .rightbox .name:hover {
+  color: #E8E3D9;
 }
 
 .headbox .rightbox .vip-level {
@@ -563,9 +570,15 @@ button:-moz-focusring,
   padding: 1px 5px;
   border-radius: 2px;
   color: #cbab8b;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
 }
 
-.headbox .rightbox .account {
+.headbox .rightbox .vip-level:hover {
+  background-color: #E8E3D9;
+}
+
+.headbox .rightbox .balance {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1001,11 +1014,17 @@ button:-moz-focusring,
 .form-label2 {
   width: 100%;
   font-size: 18px;
-  line-height: 45px;
+  line-height: 40px;
   font-weight: 600;
-  margin-bottom: 0px;
   position: relative;
   color: #515b7c;
+}
+
+.form-label2 .label-right {
+  font-size: 14px;
+  position: absolute;
+  right: 0;
+  color: #cbab8b;
 }
 
 .formGroup {
@@ -1155,7 +1174,7 @@ button:-moz-focusring,
   right: 15px;
 }
 
-.centerformLabel {
+.centerLabel {
   max-width: 80px;
   width: 56px;
   min-width: 72px;
@@ -1164,13 +1183,29 @@ button:-moz-focusring,
   margin-right: 10px;
 }
 
-.centerformIinput {
+.centerInput-wraper {
+  position: relative;
+}
+
+.centerInput-wraper .righText {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  right: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #cbab8b;
+}
+
+.centerInput {
   width: 100%;
   height: 40px;
   font-size: 15px;
   border-radius: 4px;
   padding: 4px 15px;
-  color: #9da5bb;
+  color: #858ca3;
   border: 1px solid #D8DCE7;
   -webkit-appearance: none;
   background-color: transparent;
@@ -1178,27 +1213,27 @@ button:-moz-focusring,
   transition: all .15s ease-in-out;
 }
 
-.centerformIinput::-webkit-input-placeholder {
+.centerInput::-webkit-input-placeholder {
   color: #D8DCE7;
 }
 
-.centerformIinput:-ms-input-placeholder {
+.centerInput:-ms-input-placeholder {
   color: #D8DCE7;
 }
 
-.centerformIinput::-ms-input-placeholder {
+.centerInput::-ms-input-placeholder {
   color: #D8DCE7;
 }
 
-.centerformIinput::placeholder {
+.centerInput::placeholder {
   color: #D8DCE7;
 }
 
-.centerformIinput:hover {
+.centerInput:hover {
   border-color: #cbab8b;
 }
 
-.centerformIinput:focus {
+.centerInput:focus {
   -webkit-box-shadow: 0 0 20px 0 #f2eada;
           box-shadow: 0 0 20px 0 #f2eada;
   border-color: #cbab8b;
@@ -1579,7 +1614,7 @@ body {
   font-weight: bold;
   position: relative;
   color: #515b7c;
-  line-height: 18px;
+  line-height: 40px;
   width: 100%;
   padding-left: 12px;
 }
@@ -1589,7 +1624,9 @@ body {
   width: 5px;
   height: 18px;
   position: absolute;
-  top: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   left: 0;
 }
 
@@ -1599,6 +1636,10 @@ body {
 
 .section-title.color-red::after {
   background: #E4B2B3;
+}
+
+.section-title.color-blue::after {
+  background: #32c5ff;
 }
 
 .main {
@@ -2260,7 +2301,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   border: 1px solid #D8DCE7;
-  border-radius: 5px;
+  border-radius: 4px;
   color: #515b7c;
   -webkit-transition: all .15s ease-in-out;
   transition: all .15s ease-in-out;
@@ -2291,4 +2332,142 @@ body {
   background: url(/img/checkbox-a.svg) 0 0/100% 100% no-repeat;
   width: 24px;
   height: 24px;
+}
+
+.account-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 90px;
+  position: relative;
+  border: 1px solid #F0F0F0;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.account-container > div {
+  width: 50%;
+  padding: 20px 20px 20px 30px;
+  height: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 15px;
+  position: relative;
+}
+
+.account-container > div .iconfont {
+  color: #fff;
+  font-size: 24px;
+  margin-right: 10px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.account-container > div .balance {
+  font-weight: bolder;
+  font-size: 20px;
+  color: #515b7c;
+}
+
+.account-container > div .outline_btn {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 20px;
+}
+
+.walletlist {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.walletlist li {
+  min-width: 211px;
+  height: auto;
+  min-height: 90px;
+  max-height: 125px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding: 15px 15px 10px 15px;
+  border: 1px solid #F0F0F0;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 2px 15px 0 rgba(139, 160, 203, 0.04);
+          box-shadow: 0 2px 15px 0 rgba(139, 160, 203, 0.04);
+}
+
+.walletlist li .clientName {
+  font-size: 14px;
+  color: #515b7c;
+  font-weight: 500;
+  width: 112px;
+}
+
+.walletlist li .actionBtn {
+  cursor: pointer;
+  padding: 0 6px;
+  height: 28px;
+  text-align: center;
+  line-height: 28px;
+  border-radius: 14px;
+  font-size: 13px;
+  -webkit-transition: none;
+  transition: none;
+  display: inline-block;
+  color: #858ca3;
+  border: 1px solid #F0F0F0;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+}
+
+.walletlist li .actionBtn:hover {
+  color: #cbab8b;
+  border-color: #cbab8b;
+}
+
+.walletlist li .transToggle {
+  cursor: pointer;
+  padding: 0 10px;
+  height: 28px;
+  text-align: center;
+  line-height: 28px;
+  border-radius: 14px;
+  font-size: 13px;
+  -webkit-transition: none;
+  transition: none;
+  display: inline-block;
+  color: #858ca3;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+}
+
+.walletlist li .transToggle:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#F1D3B6), to(#b78255));
+  background: linear-gradient(180deg, #F1D3B6 0%, #b78255 100%);
+  color: #fff;
+}
+
+.walletlist li .money {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #515b7c;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 5px 0;
+  display: block;
+}
+
+.walletlist li:nth-of-type(4n) {
+  margin-right: 0;
 }

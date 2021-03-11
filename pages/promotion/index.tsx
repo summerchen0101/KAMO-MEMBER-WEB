@@ -48,7 +48,11 @@ const PromotionListPage: React.FC = () => {
             <Box className="promo-menuWrap">
               <ul className="tab-inner">
                 <li className="active">全部优惠</li>
-                <li>限时优惠</li>
+                <li>充值奖励</li>
+                <li>签到奖励</li>
+                <li>成就奖力</li>
+                <li>反水活动</li>
+                <li>看板活动</li>
               </ul>
             </Box>
             <Stack
