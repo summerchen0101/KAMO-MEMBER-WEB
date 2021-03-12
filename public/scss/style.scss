@@ -359,184 +359,8 @@ body {
     }
 }
 
-/* my
+/* promotion
      ========================================================================== */
-.user-main {
-    padding-top: 130px;
-    width: 100%;
-    position: relative;
-    padding-bottom: 20px;
-}
-
-.user-menu {
-    width: 220px;
-    min-height: 821px;
-    box-sizing: border-box;
-    background: #fff;
-    @include border-radius(5px);
-    box-shadow: 0 10px 10px 0 rgba(139, 160, 203, 0.04);
-
-    .user-name {
-        color: $third-text-color;
-        text-align: center;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .user-vip {
-        background: linear-gradient(45deg, #FFDDBB 0%, #D1AF98 100%);
-        ;
-        display: inline-block;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bold;
-        font-style: italic;
-        font-size: 14px;
-        line-height: 14px;
-        padding: 1px 5px;
-        border-radius: 2px;
-        color: #fff;
-        height: 16px;
-        margin-left: 5px;
-    }
-
-    .safe-level {
-        font-size: 14px;
-        color: $base-text;
-        margin-top: 5px;
-    }
-
-    .wall-menu {
-        display: flex;
-        justify-content: space-between;
-        padding-left: 28px;
-        padding-right: 28px;
-        margin-top: 30px;
-        margin-bottom: 35px;
-
-        li {
-            cursor: pointer;
-            @include flex(column, center, center);
-            font-size: 14px;
-            transition: all .15s ease-in-out;
-
-            &:hover,
-            &.active {
-                color: $primary-color;
-
-                .iconfont {
-                    background: $primary-gradient;
-                }
-            }
-
-            .iconfont {
-                @include flex(row, center, center);
-                width: 35px;
-                height: 35px;
-                font-size: 22px;
-                color: #fff;
-                @include border-radius(50%);
-                background: #C0C7DC;
-                transition: all .15s ease-in-out;
-            }
-        }
-
-    }
-
-    .menu-inner {
-        li {
-            position: relative;
-            display: flex;
-            align-items: center;
-            font-size: 14px;
-            height: 48px;
-            line-height: 48px;
-            padding: 0 28px;
-            box-sizing: border-box;
-            cursor: pointer;
-            background: transparent;
-
-            &::after {
-                content: '';
-                height: 48px;
-                width: 3px;
-                background-color: $primary-color;
-                display: none;
-                position: absolute;
-                top: 0;
-                left: 0;
-
-            }
-
-            &.active,
-            &:active,
-            &:hover {
-                color: #fff;
-                background: linear-gradient(45deg, #F1D3B6 0%, #DBB290 100%);
-
-                &::after {
-                    display: block;
-                }
-
-                .iconfont {
-                    text-shadow: 0 2px 5px $primary-color;
-                    color: #fff;
-
-                }
-            }
-
-            .iconfont {
-                font-size: 20px;
-                margin-right: 10px;
-                color: #C0C7DC;
-
-                // &.ic-profile {
-                // }
-
-                // &.ic-vip {
-                //     color: #FFB988;
-                // }
-
-                // &.ic-wallet {
-                //     color: #CE7DFC;
-                // }
-
-                // &.ic-trans-record {
-                //     color: #7DF0FF;
-                // }
-                // &.ic-bet-record{
-                //     color: #FC7DA4;
-                // }
-                // &.ic-news{
-                //     color: #FDD490;
-                // }
-                // &.ic-mail{
-                //     color: #CE7DFC;
-                // }
-                // &.ic-friends{
-                //     color: #7dfca7;
-                // }
-                // &.ic-feedback{
-                //     color: #fdff80;
-                // }
-            }
-        }
-    }
-
-}
-
-.user-centerContent {
-    width: 964px;
-    padding: 30px;
-    margin-left: 16px;
-    box-sizing: border-box;
-    background: #fff;
-    height: auto;
-    min-height: 821px;
-    @include border-radius(5px);
-    box-shadow: 0 10px 10px 0 rgba(139, 160, 203, 0.04);
-
-}
-
-//优惠活動
 .promo-menuWrap {
     position: sticky;
     top: 126px;
@@ -717,7 +541,186 @@ body {
 
 }
 
-// 存款
+/* profile(member-center)
+     ========================================================================== */
+.user-main {
+    padding-top: 130px;
+    width: 100%;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.user-menu {
+    width: 220px;
+    min-height: 821px;
+    box-sizing: border-box;
+    background: #fff;
+    @include border-radius(5px);
+    box-shadow: 0 10px 10px 0 rgba(139, 160, 203, 0.04);
+
+    .user-name {
+        color: $third-text-color;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .user-vip {
+        background: linear-gradient(45deg, #FFDDBB 0%, #D1AF98 100%);
+        ;
+        display: inline-block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 14px;
+        line-height: 14px;
+        padding: 1px 5px;
+        border-radius: 2px;
+        color: #fff;
+        height: 16px;
+        margin-left: 5px;
+    }
+
+    .safe-level {
+        font-size: 14px;
+        color: $base-text;
+        margin-top: 5px;
+    }
+
+    .wall-menu {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 28px;
+        padding-right: 28px;
+        margin-top: 30px;
+        margin-bottom: 35px;
+
+        li {
+            cursor: pointer;
+            @include flex(column, center, center);
+            font-size: 14px;
+            transition: all .15s ease-in-out;
+
+            &:hover,
+            &.active {
+                color: $primary-color;
+
+                .iconfont {
+                    background: $primary-gradient;
+                }
+            }
+
+            .iconfont {
+                @include flex(row, center, center);
+                width: 35px;
+                height: 35px;
+                font-size: 22px;
+                color: #fff;
+                @include border-radius(50%);
+                background: #C0C7DC;
+                transition: all .15s ease-in-out;
+            }
+        }
+
+    }
+
+    .menu-inner {
+        li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            height: 48px;
+            line-height: 48px;
+            padding: 0 28px;
+            box-sizing: border-box;
+            cursor: pointer;
+            background: transparent;
+
+            &::after {
+                content: '';
+                height: 48px;
+                width: 3px;
+                background-color: $primary-color;
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+            }
+
+            &.active,
+            &:active,
+            &:hover {
+                color: #fff;
+                background: linear-gradient(45deg, #F1D3B6 0%, #DBB290 100%);
+
+                &::after {
+                    display: block;
+                }
+
+                .iconfont {
+                    text-shadow: 0 2px 5px $primary-color;
+                    color: #fff;
+
+                }
+            }
+
+            .iconfont {
+                font-size: 20px;
+                margin-right: 10px;
+                color: #C0C7DC;
+
+                // &.ic-profile {
+                // }
+
+                // &.ic-vip {
+                //     color: #FFB988;
+                // }
+
+                // &.ic-wallet {
+                //     color: #CE7DFC;
+                // }
+
+                // &.ic-trans-record {
+                //     color: #7DF0FF;
+                // }
+                // &.ic-bet-record{
+                //     color: #FC7DA4;
+                // }
+                // &.ic-news{
+                //     color: #FDD490;
+                // }
+                // &.ic-mail{
+                //     color: #CE7DFC;
+                // }
+                // &.ic-friends{
+                //     color: #7dfca7;
+                // }
+                // &.ic-feedback{
+                //     color: #fdff80;
+                // }
+            }
+        }
+    }
+
+}
+
+.user-centerContent {
+    width: 964px;
+    padding: 30px;
+    margin-left: 16px;
+    box-sizing: border-box;
+    background: #fff;
+    height: auto;
+    min-height: 821px;
+    @include border-radius(5px);
+    box-shadow: 0 10px 10px 0 rgba(139, 160, 203, 0.04);
+
+}
+
+/* deposit(member-center)
+     ========================================================================== */
+
 .checkbox-container {
     display: flex;
     flex-wrap: wrap;
@@ -761,7 +764,9 @@ body {
     }
 }
 
-//取款(中心錢包、鎖定錢包)
+/* withdraw(member-center)
+     ========================================================================== */
+//中心錢包、鎖定錢包
 .account-container {
     flex: 1;
     // width: 100%;
@@ -808,7 +813,9 @@ body {
 
 }
 
-// 轉帳
+/* transfer(member-center)
+     ========================================================================== */
+// 遊戲館轉帳
 .walletlist {
     position: relative;
     display: flex;
@@ -891,7 +898,8 @@ body {
     }
 }
 
-// VIP
+/* VIP(member-center)
+     ========================================================================== */
 .vip-levelContainer {
     width: 117px;
     height: 127px;
@@ -918,9 +926,9 @@ body {
 .chargeAndFLow {
     width: 300px;
     height: 80px;
-    background-color: #fff;
+    background: linear-gradient(to bottom, #f7fbff 0%, rgba(255, 255, 255, .45) 100%);
     border-radius: 0 0 4px 4px;
-    box-shadow: 0 4px 8px rgba(224,235,255,.55);
+    box-shadow: 0 4px 8px rgba(224, 235, 255, .55);
     position: relative;
     padding: 10px 20px;
 
@@ -936,6 +944,7 @@ body {
 
 }
 
+// 等級時間軸
 .currGrade {
     position: relative;
     height: 70px;
@@ -952,7 +961,8 @@ body {
         background-size: 100% 100%;
         background-repeat: no-repeat;
         z-index: 1;
-        &>i{
+
+        &>i {
             position: absolute;
             top: -20px;
             left: 50%;
@@ -964,9 +974,11 @@ body {
             font-weight: bold;
             font-family: Arial, Helvetica, sans-serif;
         }
-        &.active{
+
+        &.active {
             background-image: url(../img/center/ic-vipLevel-a.png);
-            &>i{
+
+            &>i {
                 color: $primary-color;
             }
         }
@@ -981,6 +993,77 @@ body {
         // box-shadow: inset 0 1px 4px 0 #bdc1d0;
         background-color: $border-color;
         overflow: hidden;
+    }
+}
+
+.nextGrade {
+    position: relative;
+    height: 110px;
+    margin-top: 8px;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #f7fbff 0%, rgba(255, 255, 255, .45) 100%);
+    box-shadow: 0 5px 5px 0 rgba(224, 235, 255, 87%), inset 0 2px 5px 0 #fff;
+    padding: 15px;
+    border: 1px solid #fff;
+}
+
+// VIP尊享
+.currGradeEnjoy {
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 5px 5px 0 rgba(224, 235, 255, 87%);
+
+    li {
+        text-align: center;
+        overflow: hidden;
+        flex: 1;
+        height: 170px;
+        padding: 20px 0;
+
+        &:nth-of-type(2n) {
+            background: linear-gradient(to bottom, #f7fbff 0%, rgba(255, 255, 255, .45) 100%);
+
+        }
+
+        .iconBox {
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            background-size: 100%;
+            background-image: url('../img/center/ic-vipEnjoy.png');
+            &.ic-depositCount{
+                background-position: 0 40%;
+            }
+            &.ic-withdrawlAmount {
+                background-position: 0 100%;
+            }
+            &.ic-upgrade {
+                background-position: 0 80%;
+            }
+            &.ic-birthday  {
+                background-position: 0 0%;
+            }
+            &.ic-redeEvelope  {
+                background-position: 0 60%;
+            }
+            &.ic-commission  {
+                background-position: 0 40%;
+            }
+        }
+
+        &>p:nth-of-type(1) {
+            font-size: 14px;
+            height: 50px;
+            margin-top: 5px;
+        }
+
+        &>p:nth-of-type(2) {
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: $third-text-color;
+        }
     }
 }
 

@@ -14,6 +14,11 @@ const colors = {
   },
   divider: { 500: '#F0F0F0' },
   border: { 500: '#D8DCE7' },
+  table: {
+    400: '#FBFCFF',
+    500: '#fbfcff',
+    600: '#B7BFDB',
+  },
   gray: {
     500: '#9da5bb',
     600: '#858ca3',

@@ -42,9 +42,9 @@ function MemberMenu() {
         </li>
         <li
           className={classNames({
-            active: router.pathname.includes('/my/withdraw'),
+            active: router.pathname.includes('/my/withdrawal'),
           })}
-          onClick={() => router.push('/my/withdraw')}
+          onClick={() => router.push('/my/withdrawal')}
         >
           <i className="ic-withdrawal iconfont"></i>取款
         </li>

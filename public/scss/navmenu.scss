@@ -148,11 +148,25 @@
                     transition: all 0.15s ease-out;
                     position: relative;
 
-                    &:hover,
-                    &:active,
-                    &.active {
-                        color: $primary-color;
+                    // &:hover,
+                    // &.active {
+                    //     color: $primary-color;
 
+                    //     &::after {
+                    //         content: "";
+                    //         display: block;
+                    //         width: 80%;
+                    //         height: 3px;
+                    //         border-radius: 3px;
+                    //         position: absolute;
+                    //         bottom: 0;
+                    //         background: $primary-color;
+                    //     }
+                    // }
+                }
+                &:hover,&.active{
+                    a{
+                        color: $primary-color;
                         &::after {
                             content: "";
                             display: block;
@@ -173,22 +187,22 @@
 
 
 
-// .page-link {
-//     color: $primary-color;
+.page-link {
+    color: $primary-color;
 
-//     &:hover {
-//         color: #999
-//     }
-// }
+    &:hover {
+        color: #999
+    }
+}
 
-// .page-item.active .page-link {
-//     border-color: $primary-color;
-//     background-color: $primary-color;
-// }
+.page-item.active .page-link {
+    border-color: $primary-color;
+    background-color: $primary-color;
+}
 
-// .page-item.disabled .page-link {
-//     color: $second-text-color
-// }
+.page-item.disabled .page-link {
+    color: $second-text-color
+}
 
 // nav side
 .nav-side {

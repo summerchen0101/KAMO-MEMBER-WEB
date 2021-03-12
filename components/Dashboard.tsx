@@ -11,6 +11,7 @@ import {
   Button,
 } from '@chakra-ui/react'
 import { useRouter } from 'next/dist/client/router'
+import classNames from 'classnames'
 import Link from 'next/link'
 import React, { useEffect } from 'react'
 import HeaderUserInfo from './HeaderUserInfo'
@@ -82,16 +83,28 @@ const Dashboard: React.FC = ({ children }) => {
           <div className="nav-content laout ">
             <img className="logo" src="/img/logo.svg" />
             <ul className="menu">
-              <li>
+              <li
+                className={classNames('', {
+                  active: router.pathname.includes('home'),
+                })}
+              >
                 <Link href="/home">首页</Link>
               </li>
               <li>
                 <Link href="/events">体育赛事</Link>
               </li>
-              <li>
+              <li
+                className={classNames('', {
+                  active: router.pathname.includes('promotion'),
+                })}
+              >
                 <Link href="/promotion">优惠活动</Link>
               </li>
-              <li>
+              <li
+                className={classNames('', {
+                  active: router.pathname.includes('agent'),
+                })}
+              >
                 <Link href="/agent">合营计划</Link>
               </li>
               <li>

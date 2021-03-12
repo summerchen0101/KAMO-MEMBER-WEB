@@ -26,6 +26,14 @@ import {
   Button,
   Divider,
   flexbox,
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
 } from '@chakra-ui/react'
 import {
   Box,
@@ -68,7 +76,11 @@ const ProfilePage: React.FC = () => {
         <Flex className="laout">
           <MemberMenu></MemberMenu>
 
-          <Box className="user-centerContent">
+          <Stack
+            className="user-centerContent"
+            direction={['column']}
+            spacing="20px"
+          >
             <Flex w="full">
               <Box className="vip-levelContainer">
                 <Box className="vip-num">0</Box>
@@ -124,7 +136,7 @@ const ProfilePage: React.FC = () => {
                 </Flex>
               </Flex>
             </Flex>
-            <List className="currGrade" mt="20px">
+            <List className="currGrade">
               <ListItem className="active">
                 <i>VIP0</i>
               </ListItem>
@@ -160,8 +172,109 @@ const ProfilePage: React.FC = () => {
               </ListItem>
               <Box className="process"></Box>
             </List>
-            <Box></Box>
-          </Box>
+
+            <Box className="nextGrade" fontSize="14px">
+              <Text
+                color="brand.500"
+                mb="5px"
+                fontSize="18px"
+                fontWeight="bold"
+              >
+                距离下一等级：VIP1
+              </Text>
+              <Flex mb="5px">
+                <Flex w="50%">
+                  存款还需金额约:
+                  <Text color="gray.700" ml="10px">
+                    500.00
+                  </Text>
+                </Flex>
+
+                <Flex W="50%">
+                  流水还需金额约:
+                  <Text color="gray.700" ml="10px">
+                    3,000.00
+                  </Text>
+                </Flex>
+              </Flex>
+              <Text>
+                当前累计存款和累计流水截止2021年03月02日09时54分（每日16点更新）
+              </Text>
+            </Box>
+
+            <Box className="section-title color-blue">VIP0尊享</Box>
+            <List className="currGradeEnjoy">
+              <ListItem>
+                <Box className="iconBox ic-depositCount"></Box>
+                <Text>每日提款次数</Text>
+                <Text>5</Text>
+              </ListItem>
+              <ListItem>
+                <Box className="iconBox ic-withdrawlAmount"></Box>
+                <Text>每日提款额度</Text>
+                <Text>200,000</Text>
+              </ListItem>
+              <ListItem>
+                <Box className="iconBox ic-upgrade"></Box>
+                <Text>
+                  升级礼金<br></br>(晋级自动发放)
+                </Text>
+                <Text>0</Text>
+              </ListItem>
+              <ListItem>
+                <Box className="iconBox ic-birthday "></Box>
+                <Text>生日礼金</Text>
+                <Text>0</Text>
+              </ListItem>
+              <ListItem>
+                <Box className="iconBox ic-redeEvelope"></Box>
+                <Text>
+                  每月红包<br></br>(1号和15号可领取)
+                </Text>
+                <Text>0</Text>
+              </ListItem>
+              <ListItem>
+                <Box className="iconBox ic-commission "></Box>
+                <Text>最高返水</Text>
+                <Text>0.08%</Text>
+              </ListItem>
+            </List>
+            <Box className="section-title color-primary">VIP最高返水比例</Box>
+            <Table size="sm">
+              <Thead>
+                <Tr>
+                  <Th>VIP等级</Th>
+                  <Th>VIP0</Th>
+                  <Th>VIP1</Th>
+                  <Th>VIP2</Th>
+                  <Th>VIP3</Th>
+                  <Th>VIP4</Th>
+                  <Th>VIP5</Th>
+                  <Th>VIP6</Th>
+                  <Th>VIP7</Th>
+                  <Th>VIP8</Th>
+                  <Th>VIP9</Th>
+                  <Th isNumeric>VIP10</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr>
+                  <Td>KAMO體育</Td>
+                  <Td>0.48%</Td>
+                  <Td>0.48%</Td>
+                  <Td>0.48%</Td>
+                  <Td>0.48%</Td>
+                  <Td>0.48%</Td>
+                  <Td>0.48%</Td>
+                  <Td>0.48%</Td>
+                  <Td>0.48%</Td>
+                  <Td>0.48%</Td>
+                  <Td>0.48%</Td>
+                  <Td isNumeric>0.48%</Td>
+                </Tr>
+              </Tbody>
+            </Table>
+          </Stack>
         </Flex>
       </main>
 
