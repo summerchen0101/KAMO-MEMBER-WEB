@@ -73,8 +73,11 @@ function MemberMenu() {
         m="8px 0"
       ></Divider>
       <ul className="menu-inner">
-        <li>
-          <i className="iconfont ic-wallet"></i>我的钱包
+        <li  className={classNames({
+            active: router.pathname.includes('/my/bankcard'),
+          })}
+          onClick={() => router.push('/my/bankcard')}>
+          <i className="iconfont ic-bankcard"></i>银行卡
         </li>
         <li>
           <i className="iconfont ic-trans-record"></i>交易记录

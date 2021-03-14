@@ -33,6 +33,7 @@
     &:hover {
         color: #fff;
         background: lighten($primary-color, 5%);
+        box-shadow: 0 10px 20px 0 #cbab8b33;
     }
 
     &:disabled {

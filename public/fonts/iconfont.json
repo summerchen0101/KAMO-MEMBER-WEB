@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "20320149",
+      "name": "bankcard",
+      "font_class": "bankcard",
+      "unicode": "e696",
+      "unicode_decimal": 59030
+    },
+    {
       "icon_id": "20299381",
       "name": "round-transfer",
       "font_class": "round-transfer",

@@ -74,6 +74,10 @@ const ProfilePage: React.FC = () => {
                 />
               </Flex>
               <Flex alignItems="center">
+                <Box className="centerLabel">性别</Box>
+                <Box w="163px" mr="20px" className="gender active">男</Box>  <Box className="gender" w="163px">女</Box>
+              </Flex>
+              <Flex alignItems="center">
                 <Box className="centerLabel">出生日期</Box>
                 <input
                   type="text"
@@ -142,7 +146,7 @@ const ProfilePage: React.FC = () => {
                   修改
                 </button>
               </Flex>
-              <Flex w="428px" alignItems="center">
+              {/* <Flex w="428px" alignItems="center">
                 <Box className="centerLabel">银行卡</Box>
                 <Text fontSize="15px" color="red.500">
                   未设置
@@ -162,7 +166,7 @@ const ProfilePage: React.FC = () => {
                 >
                   设置
                 </button>
-              </Flex>
+              </Flex> */}
               <Flex w="428px" alignItems="center">
                 <Box className="centerLabel">交易密码</Box>
                 <Text fontSize="15px" color="red.500">

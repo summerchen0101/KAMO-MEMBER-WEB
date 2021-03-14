@@ -26,14 +26,7 @@ import {
   Button,
   Divider,
   flexbox,
-  Table,
-  Thead,
-  Tbody,
-  Tfoot,
-  Tr,
-  Th,
-  Td,
-  TableCaption,
+
 } from '@chakra-ui/react'
 import {
   Box,
@@ -44,6 +37,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/layout'
+import BasicTable, { ColumnType } from '@/components/BasicTable'
 
 import BankcardAddPopup from '@/components/popups/BankcardAddPopup'
 
@@ -67,6 +61,24 @@ const ProfilePage: React.FC = () => {
     bankcards,
   ])
 
+  // const columns = [
+  //   { title: 'VIP等级', render: (_, row) => row.name },
+  //   { title: 'VIP0', render: (_, row) => row.level0 },
+  //   { title: 'VIP1', render: (_, row) => row.level1 },
+  //   { title: 'VIP2', render: (_, row) => row.level2 },
+  //   { title: 'VIP3', render: (_, row) => row.level3 },
+  //   { title: 'VIP4', render: (_, row) => row.level4 },
+  //   { title: 'VIP5', render: (_, row) => row.level5 },
+  //   { title: 'VIP6', render: (_, row) => row.level6 },
+  //   { title: 'VIP7', render: (_, row) => row.level7 },
+  //   { title: 'VIP8', render: (_, row) => row.level8 },
+  //   { title: 'VIP9', render: (_, row) => row.level9 },
+  //   { title: 'VIP10', render: (_, row) => row.level10 },
+  // ]
+
+  // const data = [
+  //   { name: 'KAMO體育', level0: '0.48%', level1: '0.48%', level2: '0.48%', level3: '0.48%', level4: '0.48%' , level5: '0.48%', level6: '0.48%', level7: '0.48%', level8: '0.48%', level9: '0.48%', level10: '0.48%'},
+  // ]
   useEffect(() => {
     Promise.all([fetchUserInfo(), fetchUserContact(), fetchMemberBankList()])
   }, [])
@@ -240,40 +252,39 @@ const ProfilePage: React.FC = () => {
               </ListItem>
             </List>
             <Box className="section-title color-primary">VIP最高返水比例</Box>
-            <Table size="sm">
-              <Thead>
-                <Tr>
-                  <Th>VIP等级</Th>
-                  <Th>VIP0</Th>
-                  <Th>VIP1</Th>
-                  <Th>VIP2</Th>
-                  <Th>VIP3</Th>
-                  <Th>VIP4</Th>
-                  <Th>VIP5</Th>
-                  <Th>VIP6</Th>
-                  <Th>VIP7</Th>
-                  <Th>VIP8</Th>
-                  <Th>VIP9</Th>
-                  <Th isNumeric>VIP10</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                <Tr>
-                  <Td>KAMO體育</Td>
-                  <Td>0.48%</Td>
-                  <Td>0.48%</Td>
-                  <Td>0.48%</Td>
-                  <Td>0.48%</Td>
-                  <Td>0.48%</Td>
-                  <Td>0.48%</Td>
-                  <Td>0.48%</Td>
-                  <Td>0.48%</Td>
-                  <Td>0.48%</Td>
-                  <Td>0.48%</Td>
-                  <Td isNumeric>0.48%</Td>
-                </Tr>
-              </Tbody>
-            </Table>
+            {/* <BasicTable columns={columns} data={data}/> */}
+
+            <table className="vipDiscount">
+              <tr>
+                <th>VIP等级</th>
+                <th>VIP0</th>
+                <th>VIP1</th>
+                <th>VIP2</th>
+                <th>VIP3</th>
+                <th>VIP4</th>
+                <th>VIP5</th>
+                <th>VIP6</th>
+                <th>VIP7</th>
+                <th>VIP8</th>
+                <th>VIP9</th>
+                <th>VIP10</th>
+              </tr>
+              <tr>
+                <td>KAMO體育</td>
+                <td>0.48%</td>
+                <td>0.48%</td>
+                <td>0.48%</td>
+                <td>0.48%</td>
+                <td>0.48%</td>
+                <td>0.48%</td>
+                <td>0.48%</td>
+                <td>0.48%</td>
+                <td>0.48%</td>
+                <td>0.48%</td>
+                <td>0.48%</td>
+              </tr>
+
+            </table>
           </Stack>
         </Flex>
       </main>

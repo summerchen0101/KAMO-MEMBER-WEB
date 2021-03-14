@@ -14,7 +14,7 @@ type BasicTableProps<T> = {
 
 const BasicTable = function <T>({ columns, data }: BasicTableProps<T>) {
   return (
-    <Box maxW="100%" overflowX="auto" bg="white" borderRadius="4px" shadow="sm">
+    <Box w="full" overflowX="auto" bg="white" borderRadius="4px" shadow="sm">
       <Table variant="striped" overflow="hidden" whiteSpace="nowrap">
         <Thead bg="brand.500">
           <Tr>
