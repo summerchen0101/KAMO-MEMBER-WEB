@@ -84,23 +84,22 @@ const DepositRecordPage: React.FC = () => {
   ]
   return (
     <Dashboard>
-      <MemberMenu>
-        <Box className="menu-content-section pt-0">
-          {/* <div className="title-col">资金明细</div> */}
-          <PageTabGroup
-            options={tabOpts}
-            value="deposit"
-            onChange={(v) => router.push(`/my/trade/${v}-record`)}
-          />
-          <TabGroup
-            options={beforeDateRangeOpts}
-            onChange={(value) => setCurrentTab(value)}
-            value={currentTab}
-            my="20px"
-          />
-          <EmptyHolder />
-        </Box>
-      </MemberMenu>
+      <MemberMenu />
+      <Box className="menu-content-section pt-0">
+        {/* <div className="title-col">资金明细</div> */}
+        <PageTabGroup
+          options={tabOpts}
+          value="deposit"
+          onChange={(v) => router.push(`/my/trade/${v}-record`)}
+        />
+        <TabGroup
+          options={beforeDateRangeOpts}
+          onChange={(value) => setCurrentTab(value)}
+          value={currentTab}
+          my="20px"
+        />
+        <EmptyHolder />
+      </Box>
       <Footer />
       <FloatNav />
     </Dashboard>

@@ -1,7 +1,7 @@
 import Marquee from '@/components/Marquee'
 import { usePopupContext } from '@/context/PopupContext'
 import useService from '@/utils/useService'
-import { Box, HStack } from '@chakra-ui/layout'
+import { Box, HStack, Text } from '@chakra-ui/layout'
 import {
   Image,
   Menu,
@@ -71,7 +71,7 @@ const Dashboard: React.FC = ({ children }) => {
                   </MenuItem>
                 </MenuList>
               </Menu> */}
-              <text className="time">GMT+8 2021-02-08 17:20:35</text>
+              <Text className="time">GMT+8 2021-02-08 17:20:35</Text>
             </Box>
 
             <Box className="rightbox">

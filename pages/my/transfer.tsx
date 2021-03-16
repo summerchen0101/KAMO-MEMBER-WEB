@@ -95,7 +95,7 @@ const WithdrawPage: React.FC = () => {
     <Dashboard>
       <main className="user-main">
         <Flex className="laout">
-          <MemberMenu></MemberMenu>
+          <MemberMenu />
 
           <Box className="user-centerContent">
             <Flex alignItems="flex-end" mb="32px">

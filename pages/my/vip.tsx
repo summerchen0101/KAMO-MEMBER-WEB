@@ -2,91 +2,16 @@ import Dashboard from '@/components/Dashboard'
 import FloatNav from '@/components/FloatNav'
 import Footer from '@/components/Footer'
 import MemberMenu from '@/components/MemberMenu'
-import NicknamePopup from '@/components/popups/NicknamePopup'
-import WechatPopup from '@/components/popups/WechatPopup'
-import LinePopup from '@/components/popups/LinePopup'
-import { useGlobalProvider } from '@/context/GlobalProvider'
-import { usePopupContext } from '@/context/PopupContext'
-import useRequest from '@/utils/useRequest'
-import useService from '@/utils/useService'
-import { useRouter } from 'next/dist/client/router'
-import React, { useEffect, useMemo } from 'react'
-import TelegramPopup from '@/components/popups/TelegramPopup'
-import QqPopup from '@/components/popups/QqPopup'
-import EmailPopup from '@/components/popups/EmailPopup'
-import PhonePopup from '@/components/popups/PhonePopup'
-import PassPopup from '@/components/popups/PassPopup'
-import TradePassPopup from '@/components/popups/TradePassPopup'
-import BankcardListPopup from '@/components/popups/BankcardListPopup'
-import _ from 'lodash'
-import {
-  Spacer,
-  Image,
-  Input,
-  Button,
-  Divider,
-  flexbox,
-
-} from '@chakra-ui/react'
-import {
-  Box,
-  Center,
-  Flex,
-  List,
-  ListItem,
-  Stack,
-  Text,
-} from '@chakra-ui/layout'
-import BasicTable, { ColumnType } from '@/components/BasicTable'
-
-import BankcardAddPopup from '@/components/popups/BankcardAddPopup'
+import { Box, Flex, List, ListItem, Stack, Text } from '@chakra-ui/layout'
+import { Image } from '@chakra-ui/react'
+import React from 'react'
 
 const ProfilePage: React.FC = () => {
-  const router = useRouter()
-  const [, setNicknameVisible] = usePopupContext('nickname')
-  const [, setWechatVisible] = usePopupContext('wechat')
-  const [, setLineVisible] = usePopupContext('line')
-  const [, setTelegramVisible] = usePopupContext('telegram')
-  const [, setQqVisible] = usePopupContext('qq')
-  const [, setEmailVisible] = usePopupContext('email')
-  const [, setPhoneVisible] = usePopupContext('phone')
-  const [, setPassVisible] = usePopupContext('pass')
-  const [, setTradePassVisible] = usePopupContext('tradePass')
-  const [, setBankcardVisible] = usePopupContext('bankcardList')
-  const [, setBankcardAddVisible] = usePopupContext('bankcardAdd')
-  const API = useRequest()
-  const { fetchUserContact, fetchUserInfo, fetchMemberBankList } = useService()
-  const { userContact, user, bankcards } = useGlobalProvider()
-  const defaultBankcard = useMemo(() => bankcards.find((t) => t.is_default), [
-    bankcards,
-  ])
-
-  // const columns = [
-  //   { title: 'VIP等级', render: (_, row) => row.name },
-  //   { title: 'VIP0', render: (_, row) => row.level0 },
-  //   { title: 'VIP1', render: (_, row) => row.level1 },
-  //   { title: 'VIP2', render: (_, row) => row.level2 },
-  //   { title: 'VIP3', render: (_, row) => row.level3 },
-  //   { title: 'VIP4', render: (_, row) => row.level4 },
-  //   { title: 'VIP5', render: (_, row) => row.level5 },
-  //   { title: 'VIP6', render: (_, row) => row.level6 },
-  //   { title: 'VIP7', render: (_, row) => row.level7 },
-  //   { title: 'VIP8', render: (_, row) => row.level8 },
-  //   { title: 'VIP9', render: (_, row) => row.level9 },
-  //   { title: 'VIP10', render: (_, row) => row.level10 },
-  // ]
-
-  // const data = [
-  //   { name: 'KAMO體育', level0: '0.48%', level1: '0.48%', level2: '0.48%', level3: '0.48%', level4: '0.48%' , level5: '0.48%', level6: '0.48%', level7: '0.48%', level8: '0.48%', level9: '0.48%', level10: '0.48%'},
-  // ]
-  useEffect(() => {
-    Promise.all([fetchUserInfo(), fetchUserContact(), fetchMemberBankList()])
-  }, [])
   return (
     <Dashboard>
       <main className="user-main">
         <Flex className="laout">
-          <MemberMenu></MemberMenu>
+          <MemberMenu />
 
           <Stack
             className="user-centerContent"
@@ -283,7 +208,6 @@ const ProfilePage: React.FC = () => {
                 <td>0.48%</td>
                 <td>0.48%</td>
               </tr>
-
             </table>
           </Stack>
         </Flex>

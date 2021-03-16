@@ -86,31 +86,30 @@ const WithdrawRecordPage: React.FC = () => {
   ]
   return (
     <Dashboard>
-      <MemberMenu>
-        <Box className="menu-content-section pt-0">
-          {/* <div className="title-col">资金明细</div> */}
-          <PageTabGroup
-            options={tabOpts}
-            value="withdraw"
-            onChange={(v) => router.push(`/my/trade/${v}-record`)}
-          />
-          <TabGroup
-            options={beforeDateRangeOpts}
-            onChange={(value) => setCurrentTab(value)}
-            value={currentTab}
-            my="20px"
-          />
-          {!isLoading && (
-            <>
-              {!isEmpty ? (
-                <BasicTable columns={columns} data={withdraws} />
-              ) : (
-                <EmptyHolder />
-              )}
-            </>
-          )}
-        </Box>
-      </MemberMenu>
+      <MemberMenu />
+      <Box className="menu-content-section pt-0">
+        {/* <div className="title-col">资金明细</div> */}
+        <PageTabGroup
+          options={tabOpts}
+          value="withdraw"
+          onChange={(v) => router.push(`/my/trade/${v}-record`)}
+        />
+        <TabGroup
+          options={beforeDateRangeOpts}
+          onChange={(value) => setCurrentTab(value)}
+          value={currentTab}
+          my="20px"
+        />
+        {!isLoading && (
+          <>
+            {!isEmpty ? (
+              <BasicTable columns={columns} data={withdraws} />
+            ) : (
+              <EmptyHolder />
+            )}
+          </>
+        )}
+      </Box>
 
       <Footer />
       <FloatNav />

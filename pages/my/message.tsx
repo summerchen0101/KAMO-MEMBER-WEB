@@ -41,56 +41,55 @@ const MessagePage: React.FC = () => {
   }, [])
   return (
     <Dashboard>
-      <MemberMenu>
-        <Box className="menu-content-section">
-          <div className="title-col">站内信</div>
-          <Divider color="gray.200" mt="4" />
-          <div className="main-group d-flex">
-            <div className="tab-content left-group w-50">
-              <div className="tab-pane active" id="tabs-1" role="tabpanel">
-                <ul
-                  className="message-inner list-group"
-                  style={{ height: '611px' }}
-                >
-                  {!messages && !isLoading && <EmptyHolder />}
-                  {messages?.map((t, i) => (
-                    <li
-                      key={i}
-                      className={classNames('message-list', {
-                        active: t.id === currentMessage?.id,
-                      })}
-                      onClick={() => setCurrentMessage(t)}
-                    >
-                      <div className="message-item">
-                        <div className="message-title-col ">
-                          <div className="message-title">{t.title}</div>
-                          <div className="message-time">
-                            {toDate(t.created_at)}
-                          </div>
+      <MemberMenu />
+      <Box className="menu-content-section">
+        <div className="title-col">站内信</div>
+        <Divider color="gray.200" mt="4" />
+        <div className="main-group d-flex">
+          <div className="tab-content left-group w-50">
+            <div className="tab-pane active" id="tabs-1" role="tabpanel">
+              <ul
+                className="message-inner list-group"
+                style={{ height: '611px' }}
+              >
+                {!messages && !isLoading && <EmptyHolder />}
+                {messages?.map((t, i) => (
+                  <li
+                    key={i}
+                    className={classNames('message-list', {
+                      active: t.id === currentMessage?.id,
+                    })}
+                    onClick={() => setCurrentMessage(t)}
+                  >
+                    <div className="message-item">
+                      <div className="message-title-col ">
+                        <div className="message-title">{t.title}</div>
+                        <div className="message-time">
+                          {toDate(t.created_at)}
                         </div>
-                        <i className="iconfont allow-right" />
                       </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="right-group message-content w-50">
-              {currentMessage && (
-                <>
-                  <div className="d-flex justify-content-between mb-4">
-                    <div className="title">{currentMessage.title}</div>
-                    <div className="time">
-                      {toDate(currentMessage.created_at)}
+                      <i className="iconfont allow-right" />
                     </div>
-                  </div>
-                  <p className="text">{currentMessage.content}</p>
-                </>
-              )}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-        </Box>
-      </MemberMenu>
+          <div className="right-group message-content w-50">
+            {currentMessage && (
+              <>
+                <div className="d-flex justify-content-between mb-4">
+                  <div className="title">{currentMessage.title}</div>
+                  <div className="time">
+                    {toDate(currentMessage.created_at)}
+                  </div>
+                </div>
+                <p className="text">{currentMessage.content}</p>
+              </>
+            )}
+          </div>
+        </div>
+      </Box>
       <Footer />
       <FloatNav />
     </Dashboard>

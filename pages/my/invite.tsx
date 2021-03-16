@@ -45,121 +45,120 @@ const InvitePage: React.FC = () => {
   }, [user])
   return (
     <Dashboard>
-      <MemberMenu>
-        <Box className="menu-content-section">
-          <div className="mian-group d-flex">
-            <div className="left-group">
-              <div className="title-col mb-4">会员推广</div>
-              <div className="qr-code-box">
-                <img src={qrcode} />
-              </div>
-              <label className="form-label2">推广连结</label>
-              <div className="form-group">
-                <div className="form-copy">{promoLink.current}</div>
-                <CopyToClipboard
-                  text={promoLink.current}
-                  onCopy={() =>
-                    toast({ status: 'success', title: '已複製至剪貼簿' })
-                  }
-                >
-                  <i className="copy iconfont btn_copy" />
-                </CopyToClipboard>
-              </div>
-              <label className="form-label2">推广代码</label>
-              <div className="form-group">
-                <div className="form-copy">{user?.promo_code}</div>
-                <CopyToClipboard
-                  text={user?.promo_code}
-                  onCopy={() =>
-                    toast({ status: 'success', title: '已複製至剪貼簿' })
-                  }
-                >
-                  <i className="copy iconfont btn_copy" />
-                </CopyToClipboard>
-              </div>
+      <MemberMenu />]
+      <Box className="menu-content-section">
+        <div className="mian-group d-flex">
+          <div className="left-group">
+            <div className="title-col mb-4">会员推广</div>
+            <div className="qr-code-box">
+              <img src={qrcode} />
             </div>
-            <div className="right-group">
-              <label className="form-label2">推广收益</label>
-              <div className="form-group">
-                <select className="form-select">
-                  <option>前月</option>
-                  <option>本月</option>
-                </select>
-              </div>
-              {/* <div class="status-tab" style="width: 144px;">
+            <label className="form-label2">推广连结</label>
+            <div className="form-group">
+              <div className="form-copy">{promoLink.current}</div>
+              <CopyToClipboard
+                text={promoLink.current}
+                onCopy={() =>
+                  toast({ status: 'success', title: '已複製至剪貼簿' })
+                }
+              >
+                <i className="copy iconfont btn_copy" />
+              </CopyToClipboard>
+            </div>
+            <label className="form-label2">推广代码</label>
+            <div className="form-group">
+              <div className="form-copy">{user?.promo_code}</div>
+              <CopyToClipboard
+                text={user?.promo_code}
+                onCopy={() =>
+                  toast({ status: 'success', title: '已複製至剪貼簿' })
+                }
+              >
+                <i className="copy iconfont btn_copy" />
+              </CopyToClipboard>
+            </div>
+          </div>
+          <div className="right-group">
+            <label className="form-label2">推广收益</label>
+            <div className="form-group">
+              <select className="form-select">
+                <option>前月</option>
+                <option>本月</option>
+              </select>
+            </div>
+            {/* <div class="status-tab" style="width: 144px;">
                               <div class="status-switch active">前月</div>
                               <div class="status-switch">
                                   本月</div>
                           </div> */}
-              <div className="invite-item">
-                <div>
-                  <p>您邀请注册</p>
-                  <span className="text-blue">20</span>
-                </div>
-                <div>
-                  <p>下注成功</p>
-                  <span className="text-blue">10</span>
-                </div>
+            <div className="invite-item">
+              <div>
+                <p>您邀请注册</p>
+                <span className="text-blue">20</span>
               </div>
-              <label className="form-label2">团队列表</label>
-              <div className="table-wrap">
-                <table className="team ">
-                  <tbody>
-                    <tr>
-                      <th>会员帐号</th>
-                      <th>名称</th>
-                    </tr>
-                    <tr>
-                      <td>bet888</td>
-                      <td>王曉明</td>
-                    </tr>
-                    <tr>
-                      <td>bet888</td>
-                      <td>王曉明</td>
-                    </tr>
-                    <tr>
-                      <td>bet888</td>
-                      <td>王曉明</td>
-                    </tr>
-                    <tr>
-                      <td>bet888</td>
-                      <td>王曉明</td>
-                    </tr>
-                    <tr>
-                      <td>bet888</td>
-                      <td>王曉明</td>
-                    </tr>
-                    <tr>
-                      <td>bet888</td>
-                      <td>王曉明</td>
-                    </tr>
-                    <tr>
-                      <td>bet888</td>
-                      <td>王曉明</td>
-                    </tr>
-                    <tr>
-                      <td>bet888</td>
-                      <td>王曉明</td>
-                    </tr>
-                    <tr>
-                      <td>bet888</td>
-                      <td>王曉明</td>
-                    </tr>
-                    <tr>
-                      <td>bet888</td>
-                      <td>王曉明</td>
-                    </tr>
-                    <tr>
-                      <td>bet888</td>
-                      <td>王曉明</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div>
+                <p>下注成功</p>
+                <span className="text-blue">10</span>
               </div>
             </div>
+            <label className="form-label2">团队列表</label>
+            <div className="table-wrap">
+              <table className="team ">
+                <tbody>
+                  <tr>
+                    <th>会员帐号</th>
+                    <th>名称</th>
+                  </tr>
+                  <tr>
+                    <td>bet888</td>
+                    <td>王曉明</td>
+                  </tr>
+                  <tr>
+                    <td>bet888</td>
+                    <td>王曉明</td>
+                  </tr>
+                  <tr>
+                    <td>bet888</td>
+                    <td>王曉明</td>
+                  </tr>
+                  <tr>
+                    <td>bet888</td>
+                    <td>王曉明</td>
+                  </tr>
+                  <tr>
+                    <td>bet888</td>
+                    <td>王曉明</td>
+                  </tr>
+                  <tr>
+                    <td>bet888</td>
+                    <td>王曉明</td>
+                  </tr>
+                  <tr>
+                    <td>bet888</td>
+                    <td>王曉明</td>
+                  </tr>
+                  <tr>
+                    <td>bet888</td>
+                    <td>王曉明</td>
+                  </tr>
+                  <tr>
+                    <td>bet888</td>
+                    <td>王曉明</td>
+                  </tr>
+                  <tr>
+                    <td>bet888</td>
+                    <td>王曉明</td>
+                  </tr>
+                  <tr>
+                    <td>bet888</td>
+                    <td>王曉明</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-        </Box>
-      </MemberMenu>
+        </div>
+      </Box>
       <Footer />
       <FloatNav />
     </Dashboard>

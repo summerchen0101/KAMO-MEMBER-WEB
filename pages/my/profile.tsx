@@ -51,7 +51,7 @@ const ProfilePage: React.FC = () => {
     <Dashboard>
       <main className="user-main">
         <Flex className="laout">
-          <MemberMenu></MemberMenu>
+          <MemberMenu />
 
           <Box className="user-centerContent">
             <Flex alignItems="flex-end" mb="32px">
@@ -75,7 +75,12 @@ const ProfilePage: React.FC = () => {
               </Flex>
               <Flex alignItems="center">
                 <Box className="centerLabel">性别</Box>
-                <Box w="163px" mr="20px" className="gender active">男</Box>  <Box className="gender" w="163px">女</Box>
+                <Box w="163px" mr="20px" className="gender active">
+                  男
+                </Box>{' '}
+                <Box className="gender" w="163px">
+                  女
+                </Box>
               </Flex>
               <Flex alignItems="center">
                 <Box className="centerLabel">出生日期</Box>
